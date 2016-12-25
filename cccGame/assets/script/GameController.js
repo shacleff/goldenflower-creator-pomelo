@@ -17,14 +17,16 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         cc.game.addPersistRootNode(this.node);
-
-        cc.loader.loadResAll(Game.Config.Path.DataPath,function(err,jsons)
-        {
-            Game.Config.init();
-            console.log(Game.Data.StaticInformation)
+        var self = this;
+        cc.loader.loadResAll(Game.Config.Path.DataPath, function (err, jsons) {
+            self.gameInit();
         });
         //
     },
+    gameInit: function ()
+    {
+        Game.Config.init();
+    }
 
     // called every frame, uncomment this function to activate update callback
     // update: function (dt) {
