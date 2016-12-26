@@ -165,6 +165,9 @@
     "_components": [
       {
         "__id__": 17
+      },
+      {
+        "__id__": 18
       }
     ],
     "_prefab": null,
@@ -597,12 +600,16 @@
       "__id__": 5
     },
     "_enabled": true,
-    "mPercentLabel": {
+    "PercentLabel": {
       "__id__": 14
     },
-    "mPercentBar": {
+    "PercentBar": {
       "__id__": 12
-    }
+    },
+    "Target": null,
+    "CompleteCallBack": null,
+    "TotalPercent": 100,
+    "CurrentPercent": 0
   },
   {
     "__type__": "dbdf2bYb/5EqJvnK5ls/Mkt",
@@ -612,5 +619,18 @@
       "__id__": 4
     },
     "_enabled": true
+  },
+  {
+    "__type__": "cb1d3/yN5RHFbL/pv72wxPl",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 4
+    },
+    "_enabled": true,
+    "Loading": {
+      "__id__": 16
+    },
+    "NextScene": "login"
   }
 ]

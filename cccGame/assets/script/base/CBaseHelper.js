@@ -38,4 +38,20 @@ if(!String.prototype.Format)
                 return~~d < a.length ? String.Parse(a[~~d]) : c
             })
     }
+
+    function a(a, c, e, f) {
+        var g;
+        return g = function() {
+            c ? a.apply(c, e) : a.apply(null, e);
+            f && clearTimeout(g)
+        }
+    }
+    function c(b) {
+        return function(c, e, f, g) {
+            c = a(c, f, g);
+            return b(c, e)
+        }
+    }
+    global.setTimeout = c(setTimeout);
+    global.setInterval = c(setInterval)
 }

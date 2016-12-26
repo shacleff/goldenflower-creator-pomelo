@@ -3,48 +3,58 @@ cc.Class({
 
     properties: {
         
-        mPercentLabel:cc.Label,
-        mPercentBar:cc.ProgressBar
+        PercentLabel:cc.Label,
+        PercentBar:cc.ProgressBar,
+        Target:null,
+        CompleteCallBack:null,
+        TotalPercent:100,
+        CurrentPercent:0
     },
 
     // use this for initialization
     onLoad: function () {
-        this.mCacheString = this.mPercentLabel.string;
-        this.reset();
-        this.startLoad();
+        this.mCacheString = this.PercentLabel.string;
+        this.m_CurentLoadPercent = 0;
+        //this.StopLoad();
     },
 
-    reset:function()
+    StartLoad:function()
     {
-        this.mCurrentPercent = 0;
-        this.mTotalPercent = 100;
-        this.updateBar();
-        
-            
+        this.node.active = true;
     },
-    updateBar:function()
+    update:function()
     {
-        var current = this.mCurrentPercent+1;
-        this.mCurrentPercent = Math.min(current, this.mTotalPercent);
-        this.mPercentLabel.string = this.mCacheString.Format(this.mCurrentPercent,this.mTotalPercent);
-        this.mPercentBar.progress = this.mCurrentPercent/this.mTotalPercent;
-        
-        if(current>this.mTotalPercent)
+        if(this.mComplete)
+            return;
+        this.m_CurentLoadPercent =  Math.min(++this.m_CurentLoadPercent, this.CurrentPercent);
+        var current  = Math.min(this.m_CurentLoadPercent, this.TotalPercent);
+        this.PercentLabel.string = this.mCacheString.Format(current,this.TotalPercent);
+        this.PercentBar.progress = current/this.TotalPercent;
+
+        if(current == this.TotalPercent)
         {
-            this.complete();
+            this.mComplete = true;
+            setTimeout(this.complete,100,this);
         }
     },
-    startLoad:function()
+    StopLoad:function()
     {
-        if(!this.m_pTimer)
-            this.m_pTimer = setInterval(this.updateBar.bind(this),10,this);
+        this.CurrentPercent = 0;
+        this.PercentBar.progress = 0;
+        this.TotalPercent = 100;
+        this.Target = null;
+        this.CompleteCallBack = null;
+        this.mComplete = false;
+
+        this.node.active = false;
     },
     complete:function()
     {
-        if(!!this.m_pTimer)
+        this.node.active = false;
+        if(this.CompleteCallBack)
         {
-            clearInterval(this.m_pTimer);
-            this.m_pTimer = null;
+            this.CompleteCallBack.call(this.Target,null);
         }
+        this.StopLoad();
     }
 });
