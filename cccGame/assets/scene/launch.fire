@@ -165,9 +165,6 @@
     "_components": [
       {
         "__id__": 17
-      },
-      {
-        "__id__": 18
       }
     ],
     "_prefab": null,
@@ -618,19 +615,10 @@
     "node": {
       "__id__": 4
     },
-    "_enabled": true
-  },
-  {
-    "__type__": "cb1d3/yN5RHFbL/pv72wxPl",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 4
-    },
     "_enabled": true,
-    "Loading": {
+    "Loader": {
       "__id__": 16
     },
-    "NextScene": "login"
+    "DefaultScene": "login"
   }
 ]
