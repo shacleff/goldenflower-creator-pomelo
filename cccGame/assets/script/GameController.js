@@ -11,19 +11,15 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         cc.game.addPersistRootNode(this.node);
-        var self = this;
+        cc.view.adjustViewPort(true);
+        cc.view.setDesignResolutionSize(1366, 768,cc.ResolutionPolicy.SHOW_ALL);
+        cc.view.resizeWithBrowserSize(true);
         var sceneFSM = Game.SceneState.CSceneStateFSM.Instance;
         sceneFSM.Loader = this.Loader;
         sceneFSM.TransformToState(this.DefaultScene);//Game.Const.SceneState.Login
-        // cc.loader.loadResAll(Game.Config.Path.DataPath, function (err, jsons) {
-        //     self.gameInit();
-        // });
-        //
+
     }
-    // gameInit: function ()
-    // {
-    //     Game.Config.init();
-    // }
+
 
     // called every frame, uncomment this function to activate update callback
 });
