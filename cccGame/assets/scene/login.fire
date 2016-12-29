@@ -40,7 +40,8 @@
     "_globalZOrder": 0,
     "_tag": -1,
     "_opacityModifyRGB": false,
-    "_id": "57c24ZAwHxD4qA9U8DV5g88"
+    "_id": "20ff5581-dd29-4eac-9b1b-77ef117a490d",
+    "autoReleaseAssets": false
   },
   {
     "__type__": "cc.Node",
