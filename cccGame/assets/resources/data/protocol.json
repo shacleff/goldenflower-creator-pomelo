@@ -1,0 +1,10 @@
+{
+  "Client":[
+    {"ID":"10001", "name":"racesofa","route":"business.barHandler.race","parameters":"id;m","CNotify":"0","http":1,"comment":"抢占沙发"}
+
+  ],
+  "Server":[
+
+    {"ID":"10001","parameters":"","onmessage":"racesofaRes","comment":"抢占沙发"}
+  ]
+}

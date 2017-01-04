@@ -7,6 +7,8 @@ Core.$Defines("Game.Config")({
     init:function()
     {
         Game.Data.init();
+        Server.init("{0}/protocol.json".Format(this.Path.DataPath));
+        Client.init();
     },
     Path:{
         DataPath:"data"

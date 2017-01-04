@@ -23,6 +23,10 @@ Class({
             this.Loader.TotalPercent = v;
         }
     },
+    ctor:function()
+    {
+        cc.director.loadScene(new cc.Scene())
+    },
     onEnter:function(cacheInfo)
     {
         // if(!this.m_pTimer)

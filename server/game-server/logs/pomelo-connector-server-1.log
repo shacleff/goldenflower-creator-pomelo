@@ -1,0 +1,26 @@
+[2017-01-04 22:44:36.310] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2017-01-04 22:44:37.142] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2017-01-04 22:44:37.149] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2017-01-04 22:44:37.149] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 749 ms
+[2017-01-04 22:48:11.597] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2017-01-04 22:48:11.815] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2017-01-04 22:48:11.821] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2017-01-04 22:48:11.821] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 190 ms
+[2017-01-04 22:53:21.686] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2017-01-04 22:53:22.020] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2017-01-04 22:53:22.026] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2017-01-04 22:53:22.026] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 212 ms
+[2017-01-04 22:53:22.183] [DEBUG] pomelo - [36m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/modules/monitorwatcher.js] [39m[connector-server-1] receive addServer signal: {"action":"addServer","server":{"main":"/home/roo/Desktop/work/cccGame/server/game-server/app.js","env":"development","id":"manager-server-1","host":"127.0.0.1","port":3750,"args":"--debug=6868","serverType":"manager","pid":20570}}
+[2017-01-04 22:54:52.035] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2017-01-04 22:54:52.529] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2017-01-04 22:54:52.536] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2017-01-04 22:54:52.536] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 426 ms
+[2017-01-04 22:55:12.892] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2017-01-04 22:55:13.114] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2017-01-04 22:55:13.121] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2017-01-04 22:55:13.121] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 205 ms
+[2017-01-04 22:55:13.122] [DEBUG] pomelo - [36m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/modules/monitorwatcher.js] [39m[connector-server-1] receive addServer signal: {"action":"addServer","server":{"main":"/home/roo/Desktop/work/cccGame/server/game-server/app.js","env":"development","id":"manager-server-1","host":"127.0.0.1","port":3750,"args":"--debug=6868","serverType":"manager","pid":20694}}
+[2017-01-04 22:55:25.541] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2017-01-04 22:55:25.800] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2017-01-04 22:55:25.806] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2017-01-04 22:55:25.806] [INFO] pomelo - [32m[/home/roo/Desktop/work/cccGame/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 214 ms
