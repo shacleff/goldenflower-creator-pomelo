@@ -21,67 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cccGame/assets/script/net/Server.js">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="63" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#50#0" expanded="false" />
-                <element signature="e#2330#3101#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cccGame/assets/script/net/Client.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="e#235#356#0" expanded="false" />
-                <element signature="e#392#1221#0" expanded="false" />
-                <element signature="e#1256#1942#0" expanded="false" />
-                <element signature="e#1974#2204#0" expanded="false" />
-                <element signature="e#2237#2415#0" expanded="false" />
-                <element signature="e#2451#2492#0" expanded="false" />
-                <element signature="e#2528#2614#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSceneStateFSM.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cccGame/assets/script/ui/sceneState/CSceneStateFSM.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.90898204">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSceneLoginState.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cccGame/assets/script/ui/sceneState/CSceneLoginState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6825029">
-              <caret line="31" column="14" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSceneBaseState.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cccGame/assets/script/ui/sceneState/CSceneBaseState.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="14" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="14" />
-              <folding>
-                <element signature="e#159#257#0" expanded="false" />
-                <element signature="e#278#371#0" expanded="false" />
-                <element signature="e#390#483#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -118,6 +63,7 @@
         <option value="$PROJECT_DIR$/cccGame/assets/script/net/Client.js" />
         <option value="$PROJECT_DIR$/cccGame/assets/script/net/Server.js" />
         <option value="$PROJECT_DIR$/cccGame/assets/script/ui/sceneState/CSceneBaseState.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -129,8 +75,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="176" />
-    <option name="y" value="92" />
+    <option name="x" value="826" />
+    <option name="y" value="100" />
     <option name="width" value="1557" />
     <option name="height" value="1000" />
   </component>
@@ -273,10 +219,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="176" y="92" width="1557" height="1000" extended-state="1" />
-    <editor active="false" />
+    <frame x="826" y="100" width="1557" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22063595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22063595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -632,7 +578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cccGame/assets/script/ui/sceneState/CSceneBaseState.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.6604867">
           <caret line="45" column="14" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="14" />
           <folding>
             <element signature="e#159#257#0" expanded="false" />
@@ -646,6 +592,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6825029">
           <caret line="31" column="14" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.90898204">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
           <folding />
         </state>
       </provider>
