@@ -3,7 +3,15 @@ require("../../base/Core");
 var baseCompent = require("./CUIBaseComponent");
 Class({
     ClassName:"Game.UI.CUIBaseController",
-    node:null
+    node:null,
+    setDirty:function()
+    {
+        setTimeout(this.refreshUI,1,this);
+    },
+    refreshUI:function()
+    {
+        console.warn("must overwrite this refreshUI");
+    }
 }).Static({
     Create:function(){
         var cInstance = new this;
@@ -15,6 +23,7 @@ Class({
         if(cInstance.init)
             cInstance.init.apply(cInstance,arguments);
         return pInstance;
+
     }
     //initCompent:function()
     //{

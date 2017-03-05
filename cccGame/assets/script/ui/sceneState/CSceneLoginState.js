@@ -37,7 +37,7 @@ Class({
     },
     onExit:function()
     {
-       
+       this._super();
     },
     onComplete:function()
     {

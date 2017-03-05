@@ -45,6 +45,15 @@ Class({
     },
     onExit:function()
     {
+        if(this.m_pPreloadPrefabs)
+        {
+            for(var i=0;i<this.m_pPreloadPrefabs.length;i++)
+            {
+                var res = "prefabs/{0}".Format(this.m_pPreloadPrefabs[i]);
+                cc.loader.releaseAsset(res);
+            }
+        }
+        this.Prefabs = {};
        console.log("must overWrite onExit");
     },
     onComplete:function()
