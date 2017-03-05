@@ -2,16 +2,23 @@
  * Created by Administrator on 2016/11/29.
  */
 
-var Core = require("../base/Core");
+require("../base/Core");
+require("../data/GameLocalData");
 Core.$Defines("Game.Config")({
     init:function()
     {
         Game.Data.init();
-        Server.init("{0}/protocol.json".Format(this.Path.DataPath));
-        Client.init();
+       var protocol = cc.loader.getRes("{0}/protocol.json".Format(this.Path.DataPath));
+        Server.init(protocol["Client"]);
+        Client.init(protocol["Server"]);
+        Game.Data.GameLocalData.init();
     },
     Path:{
         DataPath:"data"
+    },
+    ScreenSize:{
+        width:1280,
+        height:720
     },
     Data: {
         "StaticNames":

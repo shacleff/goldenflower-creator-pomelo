@@ -5,6 +5,10 @@ Class({
     m_pTimer:null,
     Loader:null,
     m_pCacheInfo:null,
+    m_pPreloadPrefabs:null,
+    m_pCurrentPrefab:0,
+    Prefabs:null,
+    Controllers:{},
     ScneneName:{
         get:function()
         {
@@ -46,6 +50,38 @@ Class({
     onComplete:function()
     {
        console.log("must overWrite onComplete");
+    },
+    loadPrefabs:function()
+    {
+        this.m_pCurrentPrefab = -1;
+        this.Prefabs = {};
+        if(this.m_pPreloadPrefabs == null)
+        {
+            this.prefabsLoaded();
+        }
+        else
+        {
+            this.prefabOneLoaded();
+        }
+
+    },
+    prefabOneLoaded:function(err,perfab)
+    {
+        if(this.m_pCurrentPrefab>-1 && !err)
+        {
+            this.Prefabs[this.m_pPreloadPrefabs[this.m_pCurrentPrefab]] = perfab;
+        }
+        this.m_pCurrentPrefab++;
+        if(this.m_pCurrentPrefab == this.m_pPreloadPrefabs.length)
+        {
+            this.prefabsLoaded();
+            return;
+        }
+        cc.loader.loadRes("prefabs/{0}".Format(this.m_pPreloadPrefabs[this.m_pCurrentPrefab]), this.prefabOneLoaded.bind(this));
+    },
+    prefabsLoaded:function()
+    {
+        console.log("prefabsLoaded loaded over");
     }
 }).Static({
     Create:function()

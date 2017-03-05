@@ -12,7 +12,7 @@ cc.Class({
     onLoad: function () {
         cc.game.addPersistRootNode(this.node);
         cc.view.adjustViewPort(true);
-        cc.view.setDesignResolutionSize(1366, 768,cc.ResolutionPolicy.SHOW_ALL);
+        cc.view.setDesignResolutionSize(Game.Config.ScreenSize.width, Game.Config.ScreenSize.height,cc.ResolutionPolicy.SHOW_ALL);
         cc.view.resizeWithBrowserSize(true);
         var sceneFSM = Game.SceneState.CSceneStateFSM.Instance;
         sceneFSM.Loader = this.Loader;

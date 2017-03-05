@@ -1,5 +1,6 @@
 var fs = require('fs');
 var pomelo = require('pomelo');
+require('./app/httpserver/login');
 
 /**
  * Init app for client.
@@ -24,8 +25,7 @@ app.configure('production|development', 'connector', function(){
 });
 app.configure('production|development', 'manager', function(){
 
-  var loginServer = require('./app/httpserver/login');
-  loginServer.init(5150,10000,app);
+  Game.HttpServer.Login.Instance.init(app);
 });
 // start app
 app.start();

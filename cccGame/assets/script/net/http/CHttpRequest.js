@@ -7,18 +7,20 @@ Class({
     onError:null,
     mTimer:null,
     /*
-     * p : POST GET
-     * asyn : true 异步  false 同步
-     * cb 异步调用 回调
+     * route : url
+     * vMap : value
+     * id protocol id
+     * name protocol name
+     * cb callback {t:target,cb:callback}
+     * notify isNotify
      * */
-    Send : function(url,vMap,target) {
+    Send : function(route,vMap,id,payloadName,cb,notify) {
 
         var xhr = cc.loader.getXMLHttpRequest();
         var params = "?";
-        var parId = url.split("/")[3];
-        var errorAy = cObj?cObj["e"]:null;
-        var callfunc = cObj?cObj.cb:null;
-        var target = cObj?cObj.t:null;
+        var errorAy = cb?cb["e"]:null;
+        var callfunc = cb?cb.cb:null;
+        var target = cb?cb.t:null;
         for(var key in vMap)
         {
             //params.length? params+="&":params="?"
@@ -26,15 +28,12 @@ Class({
         }
         var self = this;
         //No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:63342' is therefore not allowed access.
-        url=encodeURI("{0}{1}".Format(url,params));
+        var url=encodeURI("http://{0}{1}".Format(route,params));
         xhr.open("POST", url, true);
         xhr.onreadystatechange = function()
         {
             if (xhr.readyState == 4 )
             {
-
-                if(self.onRecv)
-                    self.onRecv(null,0);
                 if(self.mTimer)
                 {
                     clearTimeout(self.mTimer);
@@ -43,33 +42,16 @@ Class({
                 if(xhr.status >= 200 && xhr.status <= 207)
                 {
                     var obj = JSON.parse(xhr.responseText);
-                    var id = obj.code;
-                    if(id !=0)
-                    {
-                        if(errorAy != "all" && errorAy && !self.CheckError(errorAy,id))
-                        {
-                            Client.onservererror(id);
-                        }
-                        else
-                        {
-                            if(callfunc)
-                                callfunc.call(target,obj);
-                            else
-                                Client.onservererror(id);
-                        }
-                    }
-                    else
-                    {
-                        Server.toclient("http_" + parId + "_Res",obj,vMap);
-                    }
+                    Server.onmessage(obj, id ,payloadName ,vMap, notify, cb);
+
                 }
                 else{
-                    //cb(null);
+                    cc.asset(false,"http back state error");
+                    //Server.onmessage();
                 }
             }
         }
-        if(this.onSent)
-            this.onSent(null,0);
+
         xhr.send();
         this.mTimer = setTimeout(function()
         {
@@ -87,8 +69,5 @@ Class({
 
     }
 }).Static({
-    Create:function()
-    {
-        return new this;
-    }
+    Instance:Core.Instance
 })

@@ -1,10 +1,9 @@
 {
   "Client":[
-    {"ID":"10001", "name":"racesofa","route":"business.barHandler.race","parameters":"id;m","CNotify":"0","http":1,"comment":"ÇÀÕ¼É³·¢"}
-
+    {"ID":"10001", "name":"login","route":"192.168.2.7:8001/login","parameters":"token;type","CNotify":"0","http":1,"comment":"µÇÂ¼"}
   ],
   "Server":[
 
-    {"ID":"10001","parameters":"","onmessage":"racesofaRes","comment":"ÇÀÕ¼É³·¢"}
+    {"ID":"10001","onmessage":"loginRes","comment":"µÇÂ¼·µ»Ø"}
   ]
 }
