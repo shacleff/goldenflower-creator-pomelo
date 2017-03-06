@@ -3,8 +3,7 @@
  */
 Core.$Defines("Server")({
 
-    onopen: null,
-    state:0,
+
     m_pIdMaps:{},
     m_pNameMaps:{},
     __send: function(h,r, c, b, d,notify) {
@@ -51,13 +50,7 @@ Core.$Defines("Server")({
         }
         else
         {
-            if(this.state == 1)
-            {
-                //a(r,e,c,b,cb,notify);
-            }
-            else{
-                this.onfaildsend(notify);
-            }
+            Game.Net.CWebSocket.Instance.Send(r,a,i,n,cb,notify);
         }
     },
     //  data id payloadName send notify cb
@@ -91,6 +84,10 @@ Core.$Defines("Server")({
                 delete c.timestamp;
             }
         } while ( 0 );
+    },
+    disconect:function()
+    {
+        Game.Net.CWebSocket.Instance.disconect();
     }
 
 });

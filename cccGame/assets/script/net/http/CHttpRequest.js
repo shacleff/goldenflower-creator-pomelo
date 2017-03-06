@@ -1,10 +1,7 @@
 Class({
     ClassName:"Game.Net.CHttpRequest",
     DefaultTimeOut:10000,
-    onRecv:null,
-    onSent:null,
     onTimeout:null,
-    onError:null,
     mTimer:null,
     /*
      * route : url
