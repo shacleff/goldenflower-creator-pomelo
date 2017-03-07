@@ -7,6 +7,10 @@ Core.$Defines("Client")({
 
     m_pMsgHanders:null,
     m_pMsgConfig:null,
+    onservererror:function(code)
+    {
+        alert("server error back:"+code);
+    },
     init:function(protocol) {
         this.m_pMsgHanders = {};
         this.m_pMsgConfig = {};

@@ -21,22 +21,42 @@ Class({
     },
     onEnable:function()
     {
-        Client.addmap("loginRes",this);
+        Client.addmap("getTokenRes",this);
+        Client.addmap("newUserRes",this);
     },
     onDisable:function()
     {
-        Client.removemap("loginRes",this);
+        Client.removemap("getTokenRes",this);
+        Client.removemap("newUserRes",this);
     },
     Btn_Visitor_Click:function()
     {
-        Server.login(Game.Data.GameLocalData.token,0);
+        Server.getToken(Game.Data.GameLocalData.token,0);
     },
     Btn_Wechat_Click:function()
     {
-        Server.login(Game.Data.GameLocalData.token,1);
+        Server.getToken(Game.Data.GameLocalData.token,1);
     },
-    loginRes:function()
+    getTokenRes:function(msg,req)
     {
-        this.node.active = false;
+        var token = msg.token;
+        var rtoken = msg.token;
+        if(token)
+        {
+            this.loginByToken(rtoken);
+        }
+        else
+        {
+            Server.newUser(Game.Data.GameLocalData.rtoken,"asd");
+        }
+    },
+    newUserRes:function(msg,req)
+    {
+        var token = msg.token;
+        this.loginByToken(rtoken);
+    },
+    loginByToken:function(toeken)
+    {
+        Game.Data.GameLocalData.token = toeken;
     }
 })

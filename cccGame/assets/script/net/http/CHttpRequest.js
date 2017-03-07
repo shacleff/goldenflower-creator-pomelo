@@ -21,7 +21,8 @@ Class({
         for(var key in vMap)
         {
             //params.length? params+="&":params="?"
-            params="{0}{1}={2}&".Format(params,key,vMap[key]);
+            if(void 0 != vMap[key])
+                params="{0}{1}={2}&".Format(params,key,vMap[key]);
         }
         var self = this;
         //No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:63342' is therefore not allowed access.
@@ -43,7 +44,7 @@ Class({
 
                 }
                 else{
-                    cc.asset(false,"http back state error");
+                    cc.Asset(false,"http back state error");
                     //Server.onmessage();
                 }
             }

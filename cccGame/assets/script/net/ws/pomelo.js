@@ -2,8 +2,8 @@ if(!Window || !Window.pomelo)
 {
     (function(){
 
-        (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-            var Util = require('util');
+        (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof myRequire=="function"&&myRequire;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={myExports:{}};t[o][0].call(l.myExports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.myExports,e,t,n,r)}return n[o].myExports}var i=typeof myRequire=="function"&&myRequire;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(myRequire,module,myExports){
+            var Util = myRequire('util');
 
             function checkCocos2dJsb() {
                 if (typeof cc !== 'undefined' && cc && cc.sys && cc.sys.isNative) {
@@ -13,26 +13,20 @@ if(!Window || !Window.pomelo)
                 return false;
             }
 
-            var Root;
-            (function() {
-                Root = this;
-            }());
+            var Root = {};
+           
+            Root.console = cc;
+            cc.formatStr = Util.format;
 
-            if (checkCocos2dJsb()) {
-                var console = cc;
-                Root.console = console;
-                cc.formatStr = Util.format;
-            }
-
-            var EventEmitter = require('events').EventEmitter;
+            var EventEmitter = myRequire('events').EventEmitter;
             Root.EventEmitter = EventEmitter;
-            var protobuf = require('pomelo-protobuf');
+            var protobuf = myRequire('pomelo-protobuf');
             Root.protobuf = protobuf;
-            var Protocol = require('pomelo-protocol');
+            var Protocol = myRequire('pomelo-protocol');
             Root.Protocol = Protocol;
-            var pomelo = require('pomelo-jsclient-websocket');
+            var pomelo = myRequire('pomelo-jsclient-websocket');
             Root.pomelo = pomelo;
-        },{"events":6,"pomelo-jsclient-websocket":11,"pomelo-protobuf":17,"pomelo-protocol":19,"util":10}],2:[function(require,module,exports){
+        },{"events":6,"pomelo-jsclient-websocket":11,"pomelo-protobuf":17,"pomelo-protocol":19,"util":10}],2:[function(myRequire,module,myExports){
             /*!
              * The buffer module from node.js, for the browser.
              *
@@ -40,13 +34,13 @@ if(!Window || !Window.pomelo)
              * @license  MIT
              */
 
-            var base64 = require('base64-js')
-            var ieee754 = require('ieee754')
-            var isArray = require('is-array')
+            var base64 = myRequire('base64-js')
+            var ieee754 = myRequire('ieee754')
+            var isArray = myRequire('is-array')
 
-            exports.Buffer = Buffer
-            exports.SlowBuffer = SlowBuffer
-            exports.INSPECT_MAX_BYTES = 50
+            myExports.Buffer = Buffer
+            myExports.SlowBuffer = SlowBuffer
+            myExports.INSPECT_MAX_BYTES = 50
             Buffer.poolSize = 8192 // not used by this implementation
 
             var kMaxLength = 0x3fffffff
@@ -327,7 +321,7 @@ if(!Window || !Window.pomelo)
 
             Buffer.prototype.inspect = function inspect () {
                 var str = ''
-                var max = exports.INSPECT_MAX_BYTES
+                var max = myExports.INSPECT_MAX_BYTES
                 if (this.length > 0) {
                     str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
                     if (this.length > max) str += ' ... '
@@ -1365,10 +1359,10 @@ if(!Window || !Window.pomelo)
                 }
             }
 
-        },{"base64-js":3,"ieee754":4,"is-array":5}],3:[function(require,module,exports){
+        },{"base64-js":3,"ieee754":4,"is-array":5}],3:[function(myRequire,module,myExports){
             var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
-            ;(function (exports) {
+            ;(function (myExports) {
                 'use strict';
 
                 var Arr = (typeof Uint8Array !== 'undefined')
@@ -1487,12 +1481,12 @@ if(!Window || !Window.pomelo)
                     return output
                 }
 
-                exports.toByteArray = b64ToByteArray
-                exports.fromByteArray = uint8ToBase64
-            }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
+                myExports.toByteArray = b64ToByteArray
+                myExports.fromByteArray = uint8ToBase64
+            }(typeof myExports === 'undefined' ? (this.base64js = {}) : myExports))
 
-        },{}],4:[function(require,module,exports){
-            exports.read = function(buffer, offset, isLE, mLen, nBytes) {
+        },{}],4:[function(myRequire,module,myExports){
+            myExports.read = function(buffer, offset, isLE, mLen, nBytes) {
                 var e, m,
                     eLen = nBytes * 8 - mLen - 1,
                     eMax = (1 << eLen) - 1,
@@ -1525,7 +1519,7 @@ if(!Window || !Window.pomelo)
                 return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
             };
 
-            exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
+            myExports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
                 var e, m, c,
                     eLen = nBytes * 8 - mLen - 1,
                     eMax = (1 << eLen) - 1,
@@ -1577,7 +1571,7 @@ if(!Window || !Window.pomelo)
                 buffer[offset + i - d] |= s * 128;
             };
 
-        },{}],5:[function(require,module,exports){
+        },{}],5:[function(myRequire,module,myExports){
 
             /**
              * isArray
@@ -1608,11 +1602,11 @@ if(!Window || !Window.pomelo)
              * @return {bool}
              */
 
-            module.exports = isArray || function (val) {
+            module.myExports = isArray || function (val) {
                     return !! val && '[object Array]' == str.call(val);
                 };
 
-        },{}],6:[function(require,module,exports){
+        },{}],6:[function(myRequire,module,myExports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1638,10 +1632,10 @@ if(!Window || !Window.pomelo)
                 this._events = this._events || {};
                 this._maxListeners = this._maxListeners || undefined;
             }
-            module.exports = EventEmitter;
-
+            module.myExports = EventEmitter;
 // Backwards-compat with node 0.10.x
             EventEmitter.EventEmitter = EventEmitter;
+            window.EventEmitter = EventEmitter;
 
             EventEmitter.prototype._events = undefined;
             EventEmitter.prototype._maxListeners = undefined;
@@ -1915,10 +1909,10 @@ if(!Window || !Window.pomelo)
                 return arg === void 0;
             }
 
-        },{}],7:[function(require,module,exports){
+        },{}],7:[function(myRequire,module,myExports){
             if (typeof Object.create === 'function') {
                 // implementation from standard node.js 'util' module
-                module.exports = function inherits(ctor, superCtor) {
+                module.myExports = function inherits(ctor, superCtor) {
                     ctor.super_ = superCtor
                     ctor.prototype = Object.create(superCtor.prototype, {
                         constructor: {
@@ -1931,7 +1925,7 @@ if(!Window || !Window.pomelo)
                 };
             } else {
                 // old school shim for old browsers
-                module.exports = function inherits(ctor, superCtor) {
+                module.myExports = function inherits(ctor, superCtor) {
                     ctor.super_ = superCtor
                     var TempCtor = function () {}
                     TempCtor.prototype = superCtor.prototype
@@ -1940,10 +1934,10 @@ if(!Window || !Window.pomelo)
                 }
             }
 
-        },{}],8:[function(require,module,exports){
+        },{}],8:[function(myRequire,module,myExports){
 // shim for using process in browser
 
-            var process = module.exports = {};
+            var process = module.myExports = {};
             var queue = [];
             var draining = false;
 
@@ -2000,14 +1994,14 @@ if(!Window || !Window.pomelo)
             };
             process.umask = function() { return 0; };
 
-        },{}],9:[function(require,module,exports){
-            module.exports = function isBuffer(arg) {
+        },{}],9:[function(myRequire,module,myExports){
+            module.myExports = function isBuffer(arg) {
                 return arg && typeof arg === 'object'
                     && typeof arg.copy === 'function'
                     && typeof arg.fill === 'function'
                     && typeof arg.readUInt8 === 'function';
             }
-        },{}],10:[function(require,module,exports){
+        },{}],10:[function(myRequire,module,myExports){
             (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -2031,7 +2025,7 @@ if(!Window || !Window.pomelo)
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
                 var formatRegExp = /%[sdj%]/g;
-                exports.format = function(f) {
+                myExports.format = function(f) {
                     if (!isString(f)) {
                         var objects = [];
                         for (var i = 0; i < arguments.length; i++) {
@@ -2073,11 +2067,11 @@ if(!Window || !Window.pomelo)
 // Mark that a method should not be used.
 // Returns a modified function which warns once by default.
 // If --no-deprecation is set, then it is a no-op.
-                exports.deprecate = function(fn, msg) {
+                myExports.deprecate = function(fn, msg) {
                     // Allow for deprecating things in the process of starting up.
                     if (isUndefined(global.process)) {
                         return function() {
-                            return exports.deprecate(fn, msg).apply(this, arguments);
+                            return myExports.deprecate(fn, msg).apply(this, arguments);
                         };
                     }
 
@@ -2106,7 +2100,7 @@ if(!Window || !Window.pomelo)
 
                 var debugs = {};
                 var debugEnviron;
-                exports.debuglog = function(set) {
+                myExports.debuglog = function(set) {
                     if (isUndefined(debugEnviron))
                         debugEnviron = process.env.NODE_DEBUG || '';
                     set = set.toUpperCase();
@@ -2114,7 +2108,7 @@ if(!Window || !Window.pomelo)
                         if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
                             var pid = process.pid;
                             debugs[set] = function() {
-                                var msg = exports.format.apply(exports, arguments);
+                                var msg = myExports.format.apply(myExports, arguments);
                                 console.error('%s %d: %s', set, pid, msg);
                             };
                         } else {
@@ -2147,7 +2141,7 @@ if(!Window || !Window.pomelo)
                         ctx.showHidden = opts;
                     } else if (opts) {
                         // got an "options" object
-                        exports._extend(ctx, opts);
+                        myExports._extend(ctx, opts);
                     }
                     // set default options
                     if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
@@ -2157,7 +2151,7 @@ if(!Window || !Window.pomelo)
                     if (ctx.colors) ctx.stylize = stylizeWithColor;
                     return formatValue(ctx, obj, ctx.depth);
                 }
-                exports.inspect = inspect;
+                myExports.inspect = inspect;
 
 
 // http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
@@ -2226,7 +2220,7 @@ if(!Window || !Window.pomelo)
                         value &&
                         isFunction(value.inspect) &&
                             // Filter out the util module, it's inspect function is special
-                        value.inspect !== exports.inspect &&
+                        value.inspect !== myExports.inspect &&
                             // Also filter out any prototype objects using the circular check.
                         !(value.constructor && value.constructor.prototype === value)) {
                         var ret = value.inspect(recurseTimes, ctx);
@@ -2461,68 +2455,68 @@ if(!Window || !Window.pomelo)
                 function isArray(ar) {
                     return Array.isArray(ar);
                 }
-                exports.isArray = isArray;
+                myExports.isArray = isArray;
 
                 function isBoolean(arg) {
                     return typeof arg === 'boolean';
                 }
-                exports.isBoolean = isBoolean;
+                myExports.isBoolean = isBoolean;
 
                 function isNull(arg) {
                     return arg === null;
                 }
-                exports.isNull = isNull;
+                myExports.isNull = isNull;
 
                 function isNullOrUndefined(arg) {
                     return arg == null;
                 }
-                exports.isNullOrUndefined = isNullOrUndefined;
+                myExports.isNullOrUndefined = isNullOrUndefined;
 
                 function isNumber(arg) {
                     return typeof arg === 'number';
                 }
-                exports.isNumber = isNumber;
+                myExports.isNumber = isNumber;
 
                 function isString(arg) {
                     return typeof arg === 'string';
                 }
-                exports.isString = isString;
+                myExports.isString = isString;
 
                 function isSymbol(arg) {
                     return typeof arg === 'symbol';
                 }
-                exports.isSymbol = isSymbol;
+                myExports.isSymbol = isSymbol;
 
                 function isUndefined(arg) {
                     return arg === void 0;
                 }
-                exports.isUndefined = isUndefined;
+                myExports.isUndefined = isUndefined;
 
                 function isRegExp(re) {
                     return isObject(re) && objectToString(re) === '[object RegExp]';
                 }
-                exports.isRegExp = isRegExp;
+                myExports.isRegExp = isRegExp;
 
                 function isObject(arg) {
                     return typeof arg === 'object' && arg !== null;
                 }
-                exports.isObject = isObject;
+                myExports.isObject = isObject;
 
                 function isDate(d) {
                     return isObject(d) && objectToString(d) === '[object Date]';
                 }
-                exports.isDate = isDate;
+                myExports.isDate = isDate;
 
                 function isError(e) {
                     return isObject(e) &&
                         (objectToString(e) === '[object Error]' || e instanceof Error);
                 }
-                exports.isError = isError;
+                myExports.isError = isError;
 
                 function isFunction(arg) {
                     return typeof arg === 'function';
                 }
-                exports.isFunction = isFunction;
+                myExports.isFunction = isFunction;
 
                 function isPrimitive(arg) {
                     return arg === null ||
@@ -2532,9 +2526,9 @@ if(!Window || !Window.pomelo)
                         typeof arg === 'symbol' ||  // ES6 symbol
                         typeof arg === 'undefined';
                 }
-                exports.isPrimitive = isPrimitive;
+                myExports.isPrimitive = isPrimitive;
 
-                exports.isBuffer = require('./support/isBuffer');
+                myExports.isBuffer = myRequire('./support/isBuffer');
 
                 function objectToString(o) {
                     return Object.prototype.toString.call(o);
@@ -2560,8 +2554,8 @@ if(!Window || !Window.pomelo)
 
 
 // log is just a thin wrapper to console.log that prepends a timestamp
-                exports.log = function() {
-                    console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+                myExports.log = function() {
+                    console.log('%s - %s', timestamp(), myExports.format.apply(myExports, arguments));
                 };
 
 
@@ -2578,9 +2572,9 @@ if(!Window || !Window.pomelo)
                  *     prototype.
                  * @param {function} superCtor Constructor function to inherit prototype from.
                  */
-                exports.inherits = require('inherits');
+                myExports.inherits = myRequire('inherits');
 
-                exports._extend = function(origin, add) {
+                myExports._extend = function(origin, add) {
                     // Don't do anything if add isn't an object
                     if (!add || !isObject(add)) return origin;
 
@@ -2596,8 +2590,8 @@ if(!Window || !Window.pomelo)
                     return Object.prototype.hasOwnProperty.call(obj, prop);
                 }
 
-            }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-        },{"./support/isBuffer":9,"_process":8,"inherits":7}],11:[function(require,module,exports){
+            }).call(this,myRequire('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+        },{"./support/isBuffer":9,"_process":8,"inherits":7}],11:[function(myRequire,module,myExports){
             (function() {
                 var JS_WS_CLIENT_TYPE = 'js-websocket';
                 var JS_WS_CLIENT_VERSION = '0.0.1';
@@ -3069,11 +3063,11 @@ if(!Window || !Window.pomelo)
                     }
                 };
 
-                module.exports = pomelo;
+                module.myExports = pomelo;
             })();
 
-        },{}],12:[function(require,module,exports){
-            var Encoder = module.exports;
+        },{}],12:[function(myRequire,module,myExports){
+            var Encoder = module.myExports;
 
             /**
              * [encode an uInt32, return a array of bytes]
@@ -3141,8 +3135,8 @@ if(!Window || !Window.pomelo)
                 return n;
             };
 
-        },{}],13:[function(require,module,exports){
-            module.exports = {
+        },{}],13:[function(myRequire,module,myExports){
+            module.myExports = {
                 TYPES : {
                     uInt32 : 0,
                     sInt32 : 0,
@@ -3153,11 +3147,11 @@ if(!Window || !Window.pomelo)
                     float : 5
                 }
             }
-        },{}],14:[function(require,module,exports){
-            var codec = require('./codec');
-            var util = require('./util');
+        },{}],14:[function(myRequire,module,myExports){
+            var codec = myRequire('./codec');
+            var util = myRequire('./util');
 
-            var Decoder = module.exports;
+            var Decoder = module.myExports;
 
             var buffer;
             var offset = 0;
@@ -3194,7 +3188,7 @@ if(!Window || !Window.pomelo)
 
                     switch(protos[name].option){
                         case 'optional' :
-                        case 'required' :
+                        case 'myRequired' :
                             msg[name] = decodeProp(protos[name].type, protos);
                             break;
                         case 'repeated' :
@@ -3306,13 +3300,13 @@ if(!Window || !Window.pomelo)
             function peekBytes(){
                 return getBytes(true);
             }
-        },{"./codec":12,"./util":18}],15:[function(require,module,exports){
+        },{"./codec":12,"./util":18}],15:[function(myRequire,module,myExports){
             (function (Buffer){
-                var codec = require('./codec');
-                var constant = require('./constant');
-                var util = require('./util');
+                var codec = myRequire('./codec');
+                var constant = myRequire('./constant');
+                var util = myRequire('./util');
 
-                var Encoder = module.exports;
+                var Encoder = module.myExports;
 
                 Encoder.init = function(protos){
                     this.protos = protos || {};
@@ -3362,11 +3356,11 @@ if(!Window || !Window.pomelo)
                     for(var name in protos){
                         var proto = protos[name];
 
-                        //All required element must exist
+                        //All myRequired element must exist
                         switch(proto.option){
-                            case 'required' :
+                            case 'myRequired' :
                                 if(typeof(msg[name]) === 'undefined'){
-                                    console.warn('no property exist for required! name: %j, proto: %j, msg: %j', name, proto, msg);
+                                    console.warn('no property exist for myRequired! name: %j, proto: %j, msg: %j', name, proto, msg);
                                     return false;
                                 }
                             case 'optional' :
@@ -3401,7 +3395,7 @@ if(!Window || !Window.pomelo)
                             var proto = protos[name];
 
                             switch(proto.option){
-                                case 'required' :
+                                case 'myRequired' :
                                 case 'optional' :
                                     offset = writeBytes(buffer, offset, encodeTag(proto.type, proto.tag));
                                     offset = encodeProp(msg[name], proto.type, offset, buffer, protos);
@@ -3505,9 +3499,9 @@ if(!Window || !Window.pomelo)
                     return codec.encodeUInt32((tag<<3)|value);
                 }
 
-            }).call(this,require("buffer").Buffer)
-        },{"./codec":12,"./constant":13,"./util":18,"buffer":2}],16:[function(require,module,exports){
-            var Parser = module.exports;
+            }).call(this,myRequire("buffer").Buffer)
+        },{"./codec":12,"./constant":13,"./util":18,"buffer":2}],16:[function(myRequire,module,myExports){
+            var Parser = module.myExports;
 
             /**
              * [parse the original protos, give the paresed result can be used by protobuf encode/decode.]
@@ -3544,7 +3538,7 @@ if(!Window || !Window.pomelo)
                             }
                             nestProtos[params[1]] = parseObject(tag);
                             continue;
-                        case 'required':
+                        case 'myRequired':
                         case 'optional':
                         case 'repeated':{
                             //params length should be 3 and tag can't be duplicated
@@ -3565,13 +3559,13 @@ if(!Window || !Window.pomelo)
                 proto.__tags = tags;
                 return proto;
             }
-        },{}],17:[function(require,module,exports){
+        },{}],17:[function(myRequire,module,myExports){
             (function (Buffer){
-                var encoder = require('./encoder');
-                var decoder = require('./decoder');
-                var parser = require('./parser');
+                var encoder = myRequire('./encoder');
+                var decoder = myRequire('./decoder');
+                var parser = myRequire('./parser');
 
-                var Protobuf = module.exports;
+                var Protobuf = module.myExports;
 
                 /**
                  * [encode the given message, return a Buffer represent the message encoded by protobuf]
@@ -3634,9 +3628,10 @@ if(!Window || !Window.pomelo)
                     decoder.init(opts.decoderProtos);
 
                 };
-            }).call(this,require("buffer").Buffer)
-        },{"./decoder":14,"./encoder":15,"./parser":16,"buffer":2}],18:[function(require,module,exports){
-            var util = module.exports;
+                Window.Protobuf=Protobuf;
+            }).call(this,myRequire("buffer").Buffer)
+        },{"./decoder":14,"./encoder":15,"./parser":16,"buffer":2}],18:[function(myRequire,module,myExports){
+            var util = module.myExports;
 
             util.isSimpleType = function(type){
                 return ( type === 'uInt32' ||
@@ -3664,12 +3659,12 @@ if(!Window || !Window.pomelo)
 
                 return true;
             };
-        },{}],19:[function(require,module,exports){
-            module.exports = require('./lib/protocol');
-        },{"./lib/protocol":20}],20:[function(require,module,exports){
+        },{}],19:[function(myRequire,module,myExports){
+            module.myExports = myRequire('./lib/protocol');
+        },{"./lib/protocol":20}],20:[function(myRequire,module,myExports){
             (function (Buffer){
-                (function (exports, ByteArray, global) {
-                    var Protocol = exports;
+                (function (myExports, ByteArray, global) {
+                    var Protocol = myExports;
 
                     var PKG_HEAD_BYTES = 4;
                     var MSG_FLAG_BYTES = 1;
@@ -4025,13 +4020,13 @@ if(!Window || !Window.pomelo)
                         return offset + msg.length;
                     };
 
-                    module.exports = Protocol;
+                    module.myExports = Protocol;
                     if(typeof(window) != "undefined") {
                         window.Protocol = Protocol;
                     }
-                })(typeof(window)=="undefined" ? module.exports : (this.Protocol = {}),typeof(window)=="undefined"  ? Buffer : Uint8Array, this);
+                })(typeof(window)=="undefined" ? module.myExports : (this.Protocol = {}),typeof(window)=="undefined"  ? Buffer : Uint8Array, this);
 
-            }).call(this,require("buffer").Buffer)
+            }).call(this,myRequire("buffer").Buffer)
         },{"buffer":2}]},{},[1]);
 
     })()
