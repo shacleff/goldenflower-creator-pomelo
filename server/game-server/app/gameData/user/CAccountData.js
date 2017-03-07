@@ -1,8 +1,8 @@
 /**
  * Created by root on 3/6/17.
  */
-
-var accountDao = require("../dao/accountDao");
+require("../../core/Core");
+var accountDao = require("../../dao/accountDao");
 Class({
     ClassName:"Game.Data.CAccountData"
 

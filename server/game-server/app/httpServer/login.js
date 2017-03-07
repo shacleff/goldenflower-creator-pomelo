@@ -3,8 +3,8 @@
  */
 
 require("../core/Core");
-require("../gameData/CAccountData");
-require("../gameData/CUserData");
+require("../gameData/user/CAccountData");
+require("../gameData/user/CUserData");
 var CBaseHttp = require("./CBaseHttp");
 var consts = require('../consts/consts');
 var Token = require('../util/token');

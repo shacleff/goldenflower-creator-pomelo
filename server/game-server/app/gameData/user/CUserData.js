@@ -1,8 +1,8 @@
 /**
  * Created by root on 3/6/17.
  */
-
-var userDao = require("../dao/userDao");
+require("../../core/Core");
+var userDao = require("../../dao/userDao");
 Class({
     ClassName:"Game.Data.CUserData"
 
