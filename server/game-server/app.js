@@ -1,31 +1,41 @@
 var fs = require('fs');
 var pomelo = require('pomelo');
-require('./app/httpserver/login');
-
+require('./app/httpServer/login');
+var mysqlMgr = require("./app/dao/mysql/mysqlMgr");
+var mysqlName="cccGame";
 /**
  * Init app for client.
  */
 var app = pomelo.createApp();
 app.set('name', 'server');
 
+
 // app configuration
 app.configure('production|development', 'connector', function(){
   app.set('connectorConfig',
-    {
-      connector : pomelo.connectors.hybridconnector,
-      heartbeat : 3,
-      useDict : true,
-      useProtobuf : true,
-      //ssl: {
-      //  type: 'wss',
-      //	key: fs.readFileSync('../shared/server.key'),
-  		//	cert: fs.readFileSync('../shared/server.crt')
-      //}
-    });
+      {
+        connector : pomelo.connectors.hybridconnector,
+        heartbeat : 3,
+        useDict : true,
+        useProtobuf : true,
+        //ssl: {
+        //  type: 'wss',
+        //	key: fs.readFileSync('../shared/server.key'),
+        //	cert: fs.readFileSync('../shared/server.crt')
+        //}
+      });
+});
+app.configure('production|development', function(){
+  app.loadConfig(mysqlName,app.getBase()+"/config/mysql.json");
 });
 app.configure('production|development', 'manager', function(){
 
   Game.HttpServer.Login.Instance.init(app);
+});
+app.configure('production|development', 'manager', function(){
+
+  var dbMgr = mysqlMgr.init(app,mysqlName,1);
+  app.set("dbMgr",dbMgr);
 });
 // start app
 app.start();

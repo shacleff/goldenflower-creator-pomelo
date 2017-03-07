@@ -1,9 +1,11 @@
 {
   "Client":[
-    {"ID":"10001", "name":"login","route":"192.168.2.7:8001/login","parameters":"token;type","CNotify":"0","http":1,"comment":"登录"}
+    {"ID":"10001", "name":"getToken","route":"192.168.2.7:8001/getToken","parameters":"ses;type","CNotify":"0","http":1,"comment":"获取token"},
+    {"ID":"10002", "name":"newUser","route":"192.168.2.7:8001/nUser","parameters":"rtoken;name","CNotify":"0","http":1,"comment":"新建用户"}
   ],
   "Server":[
 
-    {"ID":"10001","onmessage":"loginRes","comment":"登录返回"}
+    {"ID":"10001","onmessage":"getTokenRes","comment":"获取token返回"},
+    {"ID":"10002","onmessage":"newUserRes","comment":"新建用户返回"}
   ]
 }

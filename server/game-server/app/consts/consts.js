@@ -8,5 +8,11 @@ module.exports = {
 
 
         ERR_UNKNOWN                 :-100
+    },
+    LOGIN:{
+        REGIEST_FAIL                : 10001,
+        LOGIN_FAIL                : 10002,
+        LOGIN_TOKEN_ERR                : 10003,
+        CREATE_USER_ERROR   :10004
     }
 };
