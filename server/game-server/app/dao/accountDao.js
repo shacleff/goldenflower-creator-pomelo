@@ -7,7 +7,7 @@ var sanitizer = require('sanitizer');
 var accountDao = module.exports;
 accountDao.getDataByAcc = function(acc,cb)
 {
-    var sql = 'select * from money where accounts = ?';
+    var sql = 'select * from accounts where `account` = ?';
     var args = [sanitizer.sanitize(acc)];
 
     pomelo.app.get("dbMgr").query(sql, args, cb);
@@ -15,7 +15,7 @@ accountDao.getDataByAcc = function(acc,cb)
 
 accountDao.CreateData = function(acc,pwd,cb)
 {
-    var sql = 'insert into accounts(account, password) values (?, ?)';
+    var sql = 'insert into accounts(`account`, `password`) values (?,?)';
     var args = [sanitizer.sanitize(acc), sanitizer.sanitize(pwd)];
 
     pomelo.app.get('dbMgr').insert(sql, args, cb);

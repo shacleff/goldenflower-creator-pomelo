@@ -40,7 +40,7 @@ Class({
             }
             else
             {
-                cb(null,{"account":data.account,"password":data.account})
+                cb(null,data[0])
             }
         })
     }

@@ -12,7 +12,7 @@ var crypto = require('crypto');
  * @return {String}     token string
  */
 module.exports.create = function(uid, pwd) {
-    var msg = uid + '|' + Date.parse(new Date())/1000 + '|' + ip;
+    var msg = uid + '|' + Date.parse(new Date())/1000 ;
     var cipher = crypto.createCipher('aes256', pwd);
     var enc = cipher.update(msg, 'utf8', 'hex');
     enc += cipher.final('hex');

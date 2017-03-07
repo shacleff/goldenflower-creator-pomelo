@@ -43,7 +43,7 @@ Class({
                         {
                             if(!err)
                             {
-                                resback({token:Token.create(userData.uid,secret)});
+                                resback({token:Token.create(userData.uid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
                             }
                             else
                             {
@@ -65,16 +65,16 @@ Class({
     createUser:function(reqInfo,resback)
     {
 
-        var rtoken = reqInfo.rtoken,nickName = reqInfo.name;
+        var rtoken = reqInfo.rtoken,nickName = reqInfo.name,sex=parseInt(reqInfo.sex) || 0;
         var info = Token.parse(rtoken,secret);
         if(info)
         {
             var acc = info.userid;
-            Game.Data.CUserData.CreateByMysql(acc,nickName,function(err,userData)
+            Game.Data.CUserData.CreateByData(acc,nickName,sex,function(err,userData)
             {
                 if(!err)
                 {
-                    resback({token:Token.create(userData.uid,secret)});
+                    resback({token:Token.create(userData.uid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
                 }
                 else
                 {
@@ -87,11 +87,11 @@ Class({
     },
     register:function(acc,pwd,resback)
     {
-        Game.Data.CAccountData.CreateData(acc,pwd,function(err,accData)
+        Game.Data.CAccountData.CreateByData(acc,encode.md5(pwd),function(err,accData)
         {
             if(!err )
             {
-                resback({acc: accData.account});
+                resback({rtoken: Token.create(acc,secret),acc:acc});
             }
             else
             {

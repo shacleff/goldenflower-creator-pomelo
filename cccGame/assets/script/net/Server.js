@@ -3,9 +3,6 @@
  */
 Core.$Defines("Server")({
 
-
-    m_pIdMaps:{},
-    m_pNameMaps:{},
     __send: function(h,r, c, b, d,notify) {
         this[b] = function() {
             /// 回调函数
@@ -23,7 +20,6 @@ Core.$Defines("Server")({
 
     init:function(protocol)
     {
-        var I = this.m_pIdMaps,M=this.m_pNameMaps;
         var f = protocol;
         var k,l;
         for (var g = 0; g < f.length; g++) {
@@ -58,7 +54,7 @@ Core.$Defines("Server")({
     {
         do {
             if (Client.onrecv) Client.onrecv(c, notify);
-            var code = c.code;
+            var code = c.code || 0;
             if(code !== 0 )
             {
                 if(cb && cb.hasOwnProperty('e') &&(cb['e'] == "all" || k2(cb['e'],code)))
@@ -88,6 +84,11 @@ Core.$Defines("Server")({
     disconect:function()
     {
         Game.Net.CWebSocket.Instance.disconect();
+    },
+    beginConnect:function()
+    {
+        var cw = Game.Net.CWebSocket.Instance;
+        cw.beginConnect.apply(cw,arguments);
     }
 
 });

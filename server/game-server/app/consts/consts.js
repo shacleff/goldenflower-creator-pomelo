@@ -2,6 +2,10 @@
  * Created by root on 3/4/17.
  */
 module.exports = {
+    GAME_INFO:{
+        HOST:"192.168.2.7",
+        PORT:3010
+    },
     NOR_CODE : {
         SUC_OK						: 0,		// success
         ERR_FAIL					: -1,		// Failded without specific reason

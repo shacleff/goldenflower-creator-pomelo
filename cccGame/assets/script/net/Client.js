@@ -66,15 +66,11 @@ Core.$Defines("Client")({
 
     dispatch:function(back,send)
     {
-        var code = back.code;
-        if(code == 0)
+        var id = back.ID,name=this.m_pMsgConfig[back.ID], ay = this.m_pMsgHanders[name],dt=back.timestamp;
+        for(var i=0;i<ay.length;i++)
         {
-            var id = back.ID,name=this.m_pMsgConfig[back.ID], ay = this.m_pMsgHanders[name],data=back.data,dt=back.timestamp;
-            for(var i=0;i<ay.length;i++)
-            {
-                var info = ay[i];
-                info[0].call(info[1],data,send,dt);
-            }
+            var info = ay[i];
+            info[0].call(info[1],back,send,dt);
         }
 
 

@@ -7,9 +7,9 @@ Class({
     ClassName:"Game.Data.CUserData"
 
 }).Static({
-    CreateByData:function(acc,name,cb)
+    CreateByData:function(acc,name,sex,cb)
     {
-        userDao.CreateData(acc,name,function(err,data)
+        userDao.CreateData(acc,name,sex,function(err,data)
         {
             if(err)
             {
@@ -17,11 +17,11 @@ Class({
             }
             else
             {
-                cb(null,{"userid":data.userid,"name":name})
+                cb(null,{"userid":data.insertId})
             }
         })
     },
-    CreateByMysql:function(acc,name,cb)
+    CreateByMysql:function(acc,cb)
     {
         userDao.getDataByAcc(acc,function(err,data)
         {
@@ -31,7 +31,7 @@ Class({
             }
             else
             {
-                cb(null,{"userid":data.userid,"name":data.name})
+                cb(null,data[0])
             }
         })
         //cb({

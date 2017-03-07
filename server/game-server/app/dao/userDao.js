@@ -8,16 +8,16 @@ var userDao = module.exports;
 
 userDao.getDataByAcc = function(acc,cb)
 {
-    var sql = 'select * from money where users = ?';
+    var sql = 'select * from users where `account` = ?';
     var args = [sanitizer.sanitize(acc)];
 
     pomelo.app.get("dbMgr").query(sql, args, cb);
 }
 
-userDao.CreateData = function(acc,cb)
+userDao.CreateData = function(acc,name,sex,cb)
 {
-    var sql = 'insert into users(account) values (?)';
-    var args = [sanitizer.sanitize(acc), sanitizer.sanitize(pwd)];
+    var sql = 'insert into users(`account`,`name`,sex) values (?,?,?)';
+    var args = [sanitizer.sanitize(acc), sanitizer.sanitize(name),sex];
 
     pomelo.app.get('dbMgr').insert(sql, args, cb);
 }
