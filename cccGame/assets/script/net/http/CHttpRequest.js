@@ -54,10 +54,7 @@ Class({
         this.mTimer = setTimeout(function()
         {
             xhr.abort();
-            if(this.onTimeout)
-            {
-                this.onTimeout();
-            }
+            this.onTimeout();
         },this.DefaultTimeOut,this);
 
 
@@ -65,6 +62,10 @@ Class({
     CheckError:function()
     {
 
+    },
+    onTimeout:function()
+    {
+        Server.onfaildsend(0);
     }
 }).Static({
     Instance:Core.Instance

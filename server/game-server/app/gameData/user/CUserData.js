@@ -4,9 +4,27 @@
 require("../../core/Core");
 var userDao = require("../../dao/userDao");
 Class({
-    ClassName:"Game.Data.CUserData"
+    ClassName:"Game.Data.CUserData",
+    Value:null,
+    ctor:function(data)
+    {
+        var value = {};
+        for(var key in data)
+        {
+            value[key] = data[key];
+        }
+        this.Value = value;
+    },
+    toJSON:function()
+    {
+        return this.Value;
+    }
 
 }).Static({
+    Create:function(data)
+    {
+        return new this(data);
+    },
     CreateByData:function(acc,name,sex,cb)
     {
         userDao.CreateData(acc,name,sex,function(err,data)
@@ -44,5 +62,21 @@ Class({
         //    coins:1,
         //    gems:1
         //})
+    },
+    CreateByMysqlByUid:function(uid,cb)
+    {
+        var self = this;
+        userDao.getDataByUid(uid,function(err,data)
+        {
+            if(err)
+            {
+                cb(err,null)
+            }
+            else
+            {
+                cb(null,self.Create(data[0]))
+            }
+        })
     }
+
 })

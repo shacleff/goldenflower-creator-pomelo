@@ -2,7 +2,7 @@ require("./pomelo");
 Class({
     ClassName:"Game.Net.CWebSocket",
     state:0,
-    pomelo:Window.pomelo,
+    pomelo:window.pomelo,
     IsOpened:function()
     {
         return this.state==1;

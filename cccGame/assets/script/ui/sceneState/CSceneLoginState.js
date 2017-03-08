@@ -1,4 +1,5 @@
 require("../../base/Core");
+require("../../data/user/CDataCenter");
 Class({
     ClassName:"Game.SceneState.login",
     Base:"Game.SceneState.SceneStateBase",
@@ -18,6 +19,7 @@ Class({
     GameDataInit:function()
     {
         Game.Config.init();
+        Game.Data.CDataCenter.Instance.Clear();
         this.CurrentPercent = 30;
         this.loadPrefabs();
 

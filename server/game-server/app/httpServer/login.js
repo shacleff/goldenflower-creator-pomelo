@@ -43,7 +43,7 @@ Class({
                         {
                             if(!err)
                             {
-                                resback({token:Token.create(userData.uid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
+                                resback({token:Token.create(userData.userid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
                             }
                             else
                             {
@@ -74,7 +74,7 @@ Class({
             {
                 if(!err)
                 {
-                    resback({token:Token.create(userData.uid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
+                    resback({token:Token.create(userData.userid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
                 }
                 else
                 {

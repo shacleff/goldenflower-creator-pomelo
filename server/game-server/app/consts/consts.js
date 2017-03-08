@@ -17,6 +17,7 @@ module.exports = {
         REGIEST_FAIL                : 10001,
         LOGIN_FAIL                : 10002,
         LOGIN_TOKEN_ERR                : 10003,
-        CREATE_USER_ERROR   :10004
+        CREATE_USER_ERROR   :10004,
+        DB_GETINFO_ERROR:10005
     }
 };

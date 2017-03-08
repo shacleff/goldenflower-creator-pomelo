@@ -70,8 +70,8 @@ Class({
             Server.enterGame(token);
         });
     },
-    enterGameRes:function()
+    enterGameRes:function(msg)
     {
-        alert("ws ok");
+        alert("ws ok:"+JSON.stringify(msg));
     }
 })

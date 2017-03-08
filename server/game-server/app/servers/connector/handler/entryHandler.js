@@ -12,7 +12,19 @@ Class({
 		var tokenInfo = Token.parse(msg.token,secret);
 		if(tokenInfo)
 		{
-			next(null, {msg: 'game server is ok.'});
+			var uid = tokenInfo.userid;
+			var self = this;
+			self.app.rpc.db.dbRemote.GetUser(session,uid,function(err,data)
+			{
+				if(err)
+				{
+					next(null, {code: consts.LOGIN.LOGIN_TOKEN_ERR});
+					return;
+				}
+
+				next(null, {user:data});
+
+			});
 			return;
 		}
 		next(null, {code: consts.LOGIN.LOGIN_TOKEN_ERR});

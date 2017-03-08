@@ -32,7 +32,7 @@ app.configure('production|development', 'manager', function(){
 
   Game.HttpServer.Login.Instance.init(app);
 });
-app.configure('production|development', 'manager', function(){
+app.configure('production|development', 'manager|db', function(){
 
   var dbMgr = mysqlMgr.init(app,mysqlName,1);
   app.set("dbMgr",dbMgr);

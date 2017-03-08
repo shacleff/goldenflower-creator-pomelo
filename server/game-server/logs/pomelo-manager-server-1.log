@@ -86,3 +86,183 @@
 [2017-03-05 22:53:08.037] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
 [2017-03-05 22:53:08.039] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
 [2017-03-05 22:53:08.039] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 745 ms
+[2017-03-07 22:17:10.502] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:17:11.754] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:17:11.755] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:17:11.755] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1232 ms
+[2017-03-07 22:19:37.204] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:19:37.645] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:19:37.645] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:19:37.645] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 432 ms
+[2017-03-07 22:22:41.093] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:22:42.331] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:22:42.331] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:22:42.331] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1216 ms
+[2017-03-07 22:24:48.504] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:24:49.438] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:24:49.440] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:24:49.440] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 928 ms
+[2017-03-07 22:39:37.581] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:39:38.034] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:39:38.034] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:39:38.035] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 442 ms
+[2017-03-07 22:41:28.420] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:41:28.828] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:41:28.828] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:41:28.828] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 397 ms
+[2017-03-07 22:44:32.225] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:44:32.598] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:44:32.598] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:44:32.598] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 362 ms
+[2017-03-07 22:49:26.468] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:49:27.295] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:49:27.296] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:49:27.297] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 820 ms
+[2017-03-07 22:50:47.045] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:50:47.889] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:50:47.890] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:50:47.890] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 836 ms
+[2017-03-07 22:51:35.113] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:51:35.455] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:51:35.456] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:51:35.456] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 334 ms
+[2017-03-07 22:51:43.730] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:51:44.252] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:51:44.254] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:51:44.254] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 511 ms
+[2017-03-07 22:52:32.390] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:52:33.323] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:52:33.323] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:52:33.323] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 914 ms
+[2017-03-07 22:53:52.215] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 22:53:52.632] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 22:53:52.633] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 22:53:52.633] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 409 ms
+[2017-03-07 23:01:17.602] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:01:18.369] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:01:18.371] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:01:18.371] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 759 ms
+[2017-03-07 23:05:44.267] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:05:44.695] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:05:44.695] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:05:44.695] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 419 ms
+[2017-03-07 23:07:23.413] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:07:23.757] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:07:23.757] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:07:23.757] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 332 ms
+[2017-03-07 23:08:54.844] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:08:55.642] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:08:55.644] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:08:55.644] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 792 ms
+[2017-03-07 23:09:36.537] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:09:36.917] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:09:36.917] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:09:36.917] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 371 ms
+[2017-03-07 23:10:45.941] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:10:46.405] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:10:46.409] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:10:46.409] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 460 ms
+[2017-03-07 23:12:24.473] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:12:24.841] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:12:24.841] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:12:24.841] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 362 ms
+[2017-03-07 23:13:28.077] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:13:28.981] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:13:28.981] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:13:28.981] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 858 ms
+[2017-03-07 23:13:42.745] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:13:43.147] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:13:43.147] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:13:43.148] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 394 ms
+[2017-03-07 23:17:56.310] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:17:56.761] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:17:56.762] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:17:56.762] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 444 ms
+[2017-03-07 23:19:01.273] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:19:02.075] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:19:02.076] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:19:02.077] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 794 ms
+[2017-03-07 23:19:57.194] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:19:57.599] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:19:57.599] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:19:57.599] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 394 ms
+[2017-03-07 23:21:02.502] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:21:02.892] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:21:02.893] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:21:02.893] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 381 ms
+[2017-03-07 23:28:30.179] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-07 23:28:30.600] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-07 23:28:30.601] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-07 23:28:30.601] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 411 ms
+[2017-03-08 21:08:58.210] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 21:08:59.316] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 21:08:59.316] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 21:08:59.316] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1049 ms
+[2017-03-08 22:03:05.200] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:03:06.591] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:03:06.592] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:03:06.592] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1383 ms
+[2017-03-08 22:03:21.730] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:03:23.103] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:03:23.103] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:03:23.103] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1338 ms
+[2017-03-08 22:05:17.656] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:05:18.709] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:05:18.709] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:05:18.710] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1046 ms
+[2017-03-08 22:05:51.962] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:05:53.073] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:05:53.074] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:05:53.074] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1051 ms
+[2017-03-08 22:08:15.470] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:08:17.261] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:08:17.262] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:08:17.262] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1747 ms
+[2017-03-08 22:09:21.075] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:09:22.408] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:09:22.408] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:09:22.408] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1311 ms
+[2017-03-08 22:35:30.269] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:35:31.225] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:35:31.225] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:35:31.225] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 926 ms
+[2017-03-08 22:35:54.338] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:35:55.392] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:35:55.393] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:35:55.393] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 968 ms
+[2017-03-08 22:37:42.063] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:37:42.976] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:37:42.977] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:37:42.977] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 906 ms
+[2017-03-08 22:38:56.443] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:38:57.416] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:38:57.417] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:38:57.417] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 943 ms
+[2017-03-08 22:39:41.212] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:39:42.358] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:39:42.358] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:39:42.358] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1138 ms
+[2017-03-08 22:40:22.207] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:40:23.388] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:40:23.388] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:40:23.388] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 1137 ms
+[2017-03-08 22:42:30.579] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:42:31.567] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:42:31.567] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:42:31.567] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 952 ms
+[2017-03-08 22:43:37.432] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:43:38.392] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:43:38.393] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:43:38.393] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 912 ms
+[2017-03-08 22:44:18.320] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:44:19.097] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:44:19.097] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:44:19.097] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 730 ms
+[2017-03-08 22:44:47.825] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:44:48.594] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:44:48.595] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:44:48.595] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 733 ms
+[2017-03-08 22:45:19.396] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "manager-server-1"
+[2017-03-08 22:45:20.422] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" enter after start...
+[2017-03-08 22:45:20.423] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" finish start
+[2017-03-08 22:45:20.423] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"manager-server-1" startup in 982 ms

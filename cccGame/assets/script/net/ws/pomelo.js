@@ -1,4 +1,4 @@
-if(!Window || !Window.pomelo)
+if(!window || !window.pomelo)
 {
     (function(){
 
@@ -3628,7 +3628,7 @@ if(!Window || !Window.pomelo)
                     decoder.init(opts.decoderProtos);
 
                 };
-                Window.Protobuf=Protobuf;
+                window.Protobuf=Protobuf;
             }).call(this,myRequire("buffer").Buffer)
         },{"./decoder":14,"./encoder":15,"./parser":16,"buffer":2}],18:[function(myRequire,module,myExports){
             var util = module.myExports;
