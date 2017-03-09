@@ -6,17 +6,18 @@ require("./CCard");
 Class({
     ClassName:"Game.Data.CBasePerson",
     Cards:null,
-    ctor:function(f)
+    ctor:function(uid)
     {
         Object.defineProperty(this, "userid", {
             get: function () {
-                return f;
+                return uid;
             }
         });
-        this.Cards = [];
+
+        this.Cards = new Core.CMapArray("ID",this.CardsSortKeys);
     },
-    AddOneCard:function(num)
+    AddCard:function(f,ID)
     {
-        this.Cards.push(Game.Data.CCard.Create(num))
+        this.Cards.InsertValue(new this.CardClass(f,ID));
     }
 })
