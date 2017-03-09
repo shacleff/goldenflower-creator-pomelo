@@ -42,5 +42,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# My configurations:
 ./server/.idea
 ./server/server/game-server/logs
+.idea
+*.meta
