@@ -20,24 +20,6 @@ Class({
             return this.m_pCurrentCount == this.MaxCount;
         }
     },
-    isReady:{
-        get:function(){
-            var r = false;
-            if(this.m_pCurrentCount>1)
-            {
-                r = true;
-                for(var uid in this.Persons)
-                {
-                    if(!this.Persons[uid].Ready)
-                    {
-                        r = false;
-                        break;
-                    }
-                }
-            }
-            return  r;
-        }
-    },
     ChannelName:{
         get:function()
         {
