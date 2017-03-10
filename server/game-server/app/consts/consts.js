@@ -2,6 +2,7 @@
  * Created by root on 3/4/17.
  */
 module.exports = {
+
     GAME_INFO:{
         HOST:"192.168.2.7",
         PORT:3010

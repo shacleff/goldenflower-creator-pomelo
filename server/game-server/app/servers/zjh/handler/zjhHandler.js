@@ -10,15 +10,17 @@ require('../../../base/CBaseHandler');
 Class({
     ClassName:"CPomelo.Handler.CZJHHandler",
     Base:"CPomelo.Handler.CBaseHandler",
-    entry:function(msg, session, next)
+    join:function(msg, session, next)
     {
-        var tokenInfo = Token.parse(msg.token,secret);
-        if(tokenInfo)
-        {
-            next(null, {msg: 'game server is ok.'});
-            return;
-        }
-        next(null, {code: consts.LOGIN.LOGIN_TOKEN_ERR});
+
+    },
+    ready:function(msg, session, next)
+    {
+
+    },
+    start:function(msg, session, next)
+    {
+
     }
 })
 

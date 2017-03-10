@@ -39,7 +39,7 @@ Class({
 
 //for(var i=1;i<4;i++)
 //{
-//    for(var j=1;j<14;j++)
+//    for(var j=2;j<15;j++)
 //    {
 //        var num = i<<4|j;
 //        Cards.push(new CCard(num));
