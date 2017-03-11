@@ -3,7 +3,7 @@
  */
 require("../../../core/Core");
 Class({
-    ClassName:"Game.Data.CDataCenter",
+    ClassName:"Game.Data.CZJHDataCenter",
     Persons:null,
     Rooms:null,
     m_pNextRoomId:1,

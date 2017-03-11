@@ -17,13 +17,24 @@ Class({
         var cInstance = new this;
         var perfab = Game.SceneState.CSceneStateFSM.Instance.CurrentSceneState.Prefabs[cInstance.PerfabName];
         var pInstance = cc.instantiate(perfab);
-        pInstance.addComponent(baseCompent);
         cInstance.node = pInstance;
         pInstance.Controller = cInstance;
+        pInstance.addComponent(baseCompent);
         if(cInstance.init)
             cInstance.init.apply(cInstance,arguments);
         return pInstance;
 
+    },
+    CreateByExistRoot:function(root)
+    {
+        var cInstance = new this;
+        var pInstance = root;
+        cInstance.node = pInstance;
+        pInstance.Controller = cInstance;
+        pInstance.addComponent(baseCompent);
+        if(cInstance.init)
+            cInstance.init.apply(cInstance,arguments);
+        return pInstance;
     }
     //initCompent:function()
     //{

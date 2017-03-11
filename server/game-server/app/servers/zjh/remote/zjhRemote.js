@@ -5,6 +5,7 @@ var consts = require('../../../consts/consts');
 var Token = require('../../../util/token');
 var secret = require('../../../../config/session').secret;
 require('../../../base/CBaseRemote');
+require('../../../gameData/game/zjh/CZJHDataCenter');
 
 
 Class({
@@ -20,7 +21,7 @@ Class({
     init:function(next)
     {
         next();
-        this.DataCenter = Game.Data.CDataCenter.Instance;
+        this.DataCenter = Game.Data.CZJHDataCenter.Instance;
     },
     join:function(uid,rid, next)
     {
@@ -67,6 +68,10 @@ Class({
         }
 
         next();
+    },
+    onUserLeave:function(uid, next)
+    {
+
     }
 })
 

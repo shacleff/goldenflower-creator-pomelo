@@ -5,8 +5,7 @@
 require('../../../core/Core');
 require('../../../gameData/user/CUserData');
 Class({
-    ClassName:"Game.Data.CDataPerson",
-
+    ClassName:"Game.Data.CDBDataPerson",
     UserData:null,
 
 }).Static({

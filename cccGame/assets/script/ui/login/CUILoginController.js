@@ -72,6 +72,6 @@ Class({
     },
     enterGameRes:function(msg)
     {
-        alert("ws ok:"+JSON.stringify(msg));
+        Game.SceneState.CSceneStateFSM.Instance.TransformToState(Game.Const.SceneState.StateID.Hall);
     }
 })

@@ -23,7 +23,8 @@ Class({
             sex:msg.sex,
             headimg:msg.headimg,
             lv:msg.lv,
-            exp:msg.exp
+            exp:msg.exp,
+            userid:msg.userid
         }
         this.NewValue = value;
     }

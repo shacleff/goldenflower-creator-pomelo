@@ -4,7 +4,8 @@ require("../../base/Core");
 Core.$Defines("Game.Const.SceneState", global)({
     StateID:
     {
-        "Login":"login"
+        "Login":"login",
+        "Hall":"hall"
     }
 });
 Class({

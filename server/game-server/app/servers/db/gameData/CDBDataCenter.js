@@ -2,9 +2,9 @@
  * Created by root on 3/8/17.
  */
 require('../../../core/Core');
-require('./CDataPerson');
+require('./CDBDataPerson');
 Class({
-    ClassName:"Game.Data.CDataCenter",
+    ClassName:"Game.Data.CDBDataCenter",
     Persons:{},
     SafeGetPerson:function(uid,cb)
     {
@@ -16,7 +16,7 @@ Class({
         }
 
         var self = this;
-        Game.Data.CDataPerson.Create(uid,function(person)
+        Game.Data.CDBDataPerson.Create(uid,function(person)
         {
             if(person)
             {
