@@ -37,10 +37,16 @@ Class({
         this.Persons[uid] = 1;
         return rid;
     },
-    removePerson:function(uid,rid,sid)
+    removePerson:function(uid,rid)
     {
-        this.Rooms[rid].removePerson(uid,sid);
+        this.Rooms[rid].removePerson(uid);
         delete this.Persons[uid] ;
+    },
+    ClearRoom:function(rid)
+    {
+        var room = this.Rooms[rid];
+        room.$Dispose();
+        delete this.Rooms[rid] ;
     }
 
 

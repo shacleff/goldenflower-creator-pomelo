@@ -5,12 +5,42 @@ require('../../../core/Core');
 require('./CDBDataPerson');
 Class({
     ClassName:"Game.Data.CDBDataCenter",
-    Persons:{},
+    Persons:null,
+    OfflinePersons:null,
+    ReadyClearPersons:null,
+    ctor:function()
+    {
+        this.Persons = {};
+        this.OfflinePersons = {};
+        this.ReadyClearPersons = {};
+        setTimeout(this.ClearPersons.bind(this),1000*60*60*24,this);
+    },
+    ClearPersons:function()
+    {
+        this.ReadyClearPersons = this.OfflinePersons;
+        this.OfflinePersons = {};
+    },
     SafeGetPerson:function(uid,cb)
     {
         var person = this.Persons[uid];
         if(person)
         {
+            cb(person);
+            return;
+        }
+        person = this.OfflinePersons[uid];
+        if(person)
+        {
+            delete this.OfflinePersons[uid];
+            this.Persons[uid] = person;
+            cb(person);
+            return;
+        }
+        person = this.ReadyClearPersons[uid];
+        if(person)
+        {
+            delete this.ReadyClearPersons[uid];
+            this.Persons[uid] = person;
             cb(person);
             return;
         }
@@ -28,6 +58,14 @@ Class({
                 cb(null);
             }
         })
+    },
+    removeUser:function(uid)
+    {
+        if(this.Persons.hasOwnProperty(uid))
+        {
+            this.OfflinePersons[uid]=this.Persons[uid];
+            delete this.Persons[uid];
+        }
     }
 
 }).Static({

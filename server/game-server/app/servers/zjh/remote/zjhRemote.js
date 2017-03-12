@@ -71,6 +71,12 @@ Class({
     },
     onUserLeave:function(uid, next)
     {
+        next();
+        var rid = this.uid2Roomid(uid);
+        if(rid>0)
+        {
+            this.DataCenter.removePerson(uid,rid);
+        }
 
     }
 })

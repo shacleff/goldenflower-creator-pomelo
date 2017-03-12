@@ -9,6 +9,7 @@ Class({
     RoomId:null,
     Ready:false,
     Data:null,
+    Seat:0,
     ctor:function(uid,sid,rid)
     {
         Object.defineProperty(this, "userid", {

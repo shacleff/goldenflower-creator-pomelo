@@ -32,7 +32,8 @@ Class({
     },
     onUserLeave:function(uid, next)
     {
-
+        next();
+        this.DataCenter.removeUser(uid);
     }
 })
 

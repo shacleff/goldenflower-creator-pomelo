@@ -19,7 +19,7 @@ Class({
                 var t = this.CheckBZ();
                 if(0 === t)
                 {
-                    t = this.CheckTH() | this.CheckSZ();
+                    t = this.CheckTH() | (this.CheckSZ() || this.CheckSZTS());
                     if(0 === t)
                     {
                         t = this.CheckDZ();
@@ -54,6 +54,11 @@ Class({
         var ay = this.Cards.Ay;
         return (ay[0].Num + ay[2].Num == 2*ay[1].Num && ay[0].Num -ay[1].Num == 1 )? Game.Data.CZJHPerson.Types.SZ : 0;
     },
+    CheckSZTS:function()
+    {
+        var ay = this.Cards.Ay;
+        return (ay[0].Num == 14 && ay[1].Num == 3 && ay[2].Num == 2)? Game.Data.CZJHPerson.Types.SZ : 0;
+    },
     CheckDZ:function()
     {
         var ay = this.Cards.Ay;
@@ -70,11 +75,12 @@ Class({
     }
 
 }).Static({
-    //豹子，同花，顺子，对子，单张0,特殊
+    //豹子，同花，顺子,123，对子，单张0,特殊
     Types:{
-        BZ:0x1<5,
-        TH:0x1<4,
-        SZ:0x1<3,
+        BZ:0x1<6,
+        TH:0x1<5,
+        SZ:0x1<4,
+        SZTS:0x1<3,
         DZ:0x1<2,
         DN:0x1<1,
         TS:0x1
