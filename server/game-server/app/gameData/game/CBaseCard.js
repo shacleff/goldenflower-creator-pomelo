@@ -5,7 +5,6 @@
 require("../../core/Core");
 Class({
     ClassName:"Game.Data.CBaseCard",
-    ID:0,
     Color:
     {
         get:function()
@@ -20,15 +19,13 @@ Class({
             return this.Face&0xF;
         }
     },
-    ctor:function(f,ID)
+    ctor:function(f)
     {
         Object.defineProperty(this, "Face", {
             get: function () {
                 return f;
             }
         });
-
-        this.ID = ID;
     },
     toJSON:function()
     {

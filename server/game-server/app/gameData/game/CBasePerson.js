@@ -23,11 +23,11 @@ Class({
             }
         });
         this.RoomId = rid;
-        this.Cards = new Core.CMapArray("ID",this.CardsSortKeys);
+        this.Cards = new Core.CMapArray("f",this.CardsSortKeys);
     },
-    AddCard:function(f,ID)
+    AddCard:function(f)
     {
-        this.Cards.InsertValue(new this.CardClass(f,ID));
+        this.Cards.InsertValue(new this.CardClass(f));
     },
     toJSON:function()
     {

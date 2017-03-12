@@ -8,6 +8,14 @@ Class({
     Base: "Game.Data.CBasePerson",
     CardsSortKeys:[{"Num":false}],
     CardClass:Game.Data.CZJHCard,
+    CostPoints:0,
+    Radix:{
+        get:function()
+        {
+            return this.CardsSaw?2:1;
+        }
+    },
+    CardsSaw:false,
     Type:{
         key:"__type",
         value:0,
@@ -37,6 +45,11 @@ Class({
             }
             return this.__type;
         }
+    },
+    Reset:function()
+    {
+        this.CardsSaw = false;
+        this.Cards.RemoveAll();
     },
     CheckBZ:function()
     {
@@ -72,6 +85,10 @@ Class({
     {
         var ay = this.Cards.Ay;
         return (ay[2].Num === 2 &&ay[1].Num === 3 || ay[0].Num === 5)? Game.Data.CZJHPerson.Types.TS : 0;
+    },
+    seeCards:function()
+    {
+        this.CardsSaw = true;
     }
 
 }).Static({
