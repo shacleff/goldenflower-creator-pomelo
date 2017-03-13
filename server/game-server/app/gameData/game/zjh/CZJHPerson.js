@@ -3,6 +3,8 @@
  */
 require("./CZJHCard");
 require("../CBasePerson");
+var enums = require("../../../consts/enums");
+
 Class({
     ClassName: "Game.Data.CZJHPerson",
     Base: "Game.Data.CBasePerson",
@@ -89,6 +91,9 @@ Class({
     seeCards:function()
     {
         this.CardsSaw = true;
+        var rs = [{'uid':this.userid,sid:this.sid}];
+        var info =
+        this.app.get('channelService').pushMessageByUids(enums.PUSH_KEY.PUSH, info, rs, errHandler);
     }
 
 }).Static({

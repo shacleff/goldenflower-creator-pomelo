@@ -51,7 +51,10 @@ Class({
             }
             this.Persons.InsertValue(p);
         }
-        this.Channel.pushMessage(enums.PUSH_KEY.ROOM_NEW_PERSON, p, function(err, res){});
+        var res = {};
+        res[enums.PUSH_KEY.ROOM_NEW_PERSON] = p;
+        this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
+
         this.Channel.add(uid,sid);
     },
     removePerson:function(uid)
@@ -72,17 +75,19 @@ Class({
             }
             else
             {
-                var res = {uid:uid};
+                var value = {uid:uid};
                 if(uid == this.Roomer)
                 {
                     for(var key in this.Persons)
                     {
                         this.Roomer = key;
-                        res[roomer] = key;
+                        value[roomer] = key;
                         break;
                     }
                 }
-                this.Channel.pushMessage(enums.PUSH_KEY.ROOM_LEAVE_PERSON, res, function(err, res){ });
+                var res = {};
+                res[enums.PUSH_KEY.ROOM_LEAVE_PERSON] = value;
+                this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
             }
 
         }
@@ -97,7 +102,9 @@ Class({
     ready:function(uid,r)
     {
         this.Persons.Map[uid].Ready = r;
-        this.Channel.pushMessage(enums.PUSH_KEY.USER_READY, {userid:uid,r:r}, function(err, res){ });
+        var res = {};
+        res[enums.PUSH_KEY.USER_READY] = {userid:uid,r:r};
+        this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
     },
     start:function()
     {

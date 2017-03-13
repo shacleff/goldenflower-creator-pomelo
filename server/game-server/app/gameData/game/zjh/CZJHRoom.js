@@ -87,7 +87,9 @@ Class({
         {
             cards[id] = persons.Cards;
         }
-        this.Channel.pushMessage(enums.PUSH_KEY.GAME_ZJH.NEXT_ACTIVITY, {w:winner,c:cards}, function(err, res){ });
+        var res = {};
+        res[enums.PUSH_KEY.GAME_ZJH.SEE_CARDS] = this.Cards;
+        this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
     },
 
     removePerson:function(uid)
@@ -132,8 +134,9 @@ Class({
         obj = obj || {};
         obj["hp"] = this.HallPoint;
         obj["au"] = this.GamePersons[this.CurrentActivity];
-
-        this.Channel.pushMessage(enums.PUSH_KEY.GAME_ZJH.NEXT_ACTIVITY, res, function(err, res){ });
+        var res = {};
+        res[enums.PUSH_KEY.GAME_ZJH.NEXT_ACTIVITY] = obj;
+        this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
     },
     seeCards:function(uid)
     {

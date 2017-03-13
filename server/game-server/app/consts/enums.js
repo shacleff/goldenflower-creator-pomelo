@@ -3,11 +3,13 @@
  */
 module.exports = {
     PUSH_KEY:{
+        PUSH:"push",
         ROOM_NEW_PERSON:"rnp",
         ROOM_LEAVE_PERSON:"rlp",
         USER_READY:"urdy",
         GAME_ZJH:{
-            NEXT_ACTIVITY:"zjhnact"
+            NEXT_ACTIVITY:"zjhnact",
+            SEE_CARDS:"seecard"
         }
     },
     TOKEN:{
