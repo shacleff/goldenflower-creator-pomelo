@@ -12,27 +12,27 @@ Class({
     Base:"CPomelo.Handler.CBaseHandler",
     join:function(msg, session, next)
     {
-        this.app.rpc.zjhRemote.join(null,msg.rid,session.uid,session.frontendId ,next)
+        this.app.rpc.zjh.zjhRemote.join(null,msg.rid,session.uid,session.frontendId ,next)
     },
     ready:function(msg, session, next)
     {
-        this.app.rpc.zjhRemote.ready(null,session.uid ,next)
+        this.app.rpc.zjh.zjhRemote.ready(null,session.uid ,next)
     },
     start:function(msg, session, next)
     {
-        this.app.rpc.zjhRemote.start(null,session.uid ,next)
+        this.app.rpc.zjh.zjhRemote.start(null,session.uid ,next)
     },
     giveup:function(msg, session, next)
     {
-        this.app.rpc.zjhRemote.giveup(null,session.uid ,next)
+        this.app.rpc.zjh.zjhRemote.giveup(null,session.uid ,next)
     },
     follow:function(msg, session, next)
     {
-        this.app.rpc.zjhRemote.follow(null,msg.p,session.uid ,next)
+        this.app.rpc.zjh.zjhRemote.follow(null,msg.p,session.uid ,next)
     },
     see:function(msg, session, next)
     {
-        this.app.rpc.zjhRemote.seeCards(null,session.uid ,next)
+        this.app.rpc.zjh.zjhRemote.seeCards(null,session.uid ,next)
     }
 
 })

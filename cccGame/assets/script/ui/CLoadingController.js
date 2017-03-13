@@ -50,7 +50,6 @@ cc.Class({
     },
     complete:function()
     {
-        this.node.active = false;
         if(this.CompleteCallBack)
         {
             this.CompleteCallBack.call(this.Target,null);

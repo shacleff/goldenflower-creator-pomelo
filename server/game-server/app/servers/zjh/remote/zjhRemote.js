@@ -21,6 +21,7 @@ Class({
     init:function(next)
     {
         next();
+        Core.app = this.app;
         this.DataCenter = Game.Data.CZJHDataCenter.Instance;
     },
     join:function(rid,uid,sid, next)
@@ -30,12 +31,12 @@ Class({
         {
             if(!err)
             {
-                var rid = this.DataCenter.intoRoom(uid,rid,sid);
+                rid = self.DataCenter.intoRoom(uid,rid,sid);
                 if(rid>0)
                 {
-                    var p = this.DataCenter.Persons[uid];
+                    var p = self.DataCenter.Persons[uid];
                     p.Data=data;
-                    var roomInfo = this.DataCenter.Rooms[rid];
+                    var roomInfo = self.DataCenter.Rooms[rid];
                     next(null, {r: roomInfo});
                     return;
                 }

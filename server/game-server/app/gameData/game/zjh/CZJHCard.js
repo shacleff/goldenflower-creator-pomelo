@@ -1,7 +1,7 @@
 /**
  * Created by Class on 2017/3/9.
  */
-require("../CBasePerson");
+require("../CBaseCard");
 
 // 2-14   14=A
 Class({

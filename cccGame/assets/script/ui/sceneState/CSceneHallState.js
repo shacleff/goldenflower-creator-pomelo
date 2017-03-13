@@ -10,7 +10,9 @@ Class({
     {
         var self = this;
 
-
+        var scene = cc.director.getRunningScene();
+        if(scene)
+            scene.removeAllChildren();
         this.CurrentPercent = 30;
         this.loadPrefabs();
         this._super();
@@ -29,10 +31,7 @@ Class({
         }
         this._super(err,prefab);
     },
-    onExit:function()
-    {
-        this._super();
-    },
+
     onComplete:function()
     {
         var self = this;
@@ -44,7 +43,7 @@ Class({
             var controller = hallUI.Controller;
             self.Controllers[controller.PerfabName] = controller;
         });
-
+        this._super();
     },
     prefabsLoaded:function()
     {

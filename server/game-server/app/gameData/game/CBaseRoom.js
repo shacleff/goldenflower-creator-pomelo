@@ -2,8 +2,9 @@
  * Created by Class on 2017/3/7.
  */
 require("../../core/Core");
+require("../../core/CMapArray");
 var enums = require("../../consts/enums");
-var pomelo = require("pomelo");
+
 Class({
     ClassName:"Game.Data.CBaseRoom",
     Persons:null,
@@ -33,18 +34,19 @@ Class({
     },
     ctor:function(id) {
         this.Roomid = id;
-        this.Persons = new Core.CMapArray("userid",[{"Seat":true}]);
-        this.Channel = pomelo.get('channelService').getChannel(this.ChannelName, false);
+        this.Persons = new Core.mapArray("userid",[{"Seat":true}]);
+        this.Channel = Core.app.get('channelService').getChannel(this.ChannelName, true);
     },
     destruct:function()
     {
-        pomelo.get('channelService').destroyChannel(this.ChannelName);
+        Core.app.get('channelService').destroyChannel(this.ChannelName);
     },
     addPerson:function(uid,sid)
     {
+        var p = null;
         if(!this.Persons.Map.hasOwnProperty(uid))
         {
-            var  p = new this.PersonClass(uid,sid,this.Roomid);
+            p = new this.PersonClass(uid,sid,this.Roomid);
             if(!this.Roomer)
             {
                 this.Roomer = uid;
@@ -53,9 +55,11 @@ Class({
         }
         var res = {};
         res[enums.PUSH_KEY.ROOM_NEW_PERSON] = p;
-        this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
+        if(this.Persons.Ay.length>0)
+            this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
 
         this.Channel.add(uid,sid);
+        return p;
     },
     removePerson:function(uid)
     {
@@ -97,7 +101,7 @@ Class({
     },
     toJSON:function()
     {
-        return this.Persons;
+        return {id:this.Roomid,roomer:this.Roomer,p:this.Persons};
     },
     ready:function(uid,r)
     {

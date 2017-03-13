@@ -1,22 +1,24 @@
 {
   "Client":[
-    {"ID":"10001", "name":"getToken","route":"119.29.99.205:8001/token","parameters":"ses;type","CNotify":"0","http":1,"comment":"获取token"},
-    {"ID":"10002", "name":"newUser","route":"119.29.99.205:8001/nUser","parameters":"rtoken;name;sex","CNotify":"0","http":1,"comment":"新建用户"},
+    {"ID":"10001", "name":"getToken","route":"192.168.2.7:8001/token","parameters":"ses;type","CNotify":"0","http":1,"comment":"获取token"},
+    {"ID":"10002", "name":"newUser","route":"192.168.2.7:8001/nUser","parameters":"rtoken;name;sex","CNotify":"0","http":1,"comment":"新建用户"},
     {"ID":"10003", "name":"enterGame","route":"connector.entryHandler.entry","parameters":"token","CNotify":"0","http":0,"comment":"用户登录"},
 
 
-    {"ID":"10003", "name":"enterGame","route":"connector.zjhHandler.join","parameters":"token","CNotify":"1","http":0,"comment":""},
-    {"ID":"10003", "name":"enterGame","route":"connector.zjhHandler.ready","parameters":"token","CNotify":"1","http":0,"comment":""},
-    {"ID":"10003", "name":"enterGame","route":"connector.zjhHandler.start","parameters":"token","CNotify":"1","http":0,"comment":""},
-    {"ID":"10003", "name":"enterGame","route":"connector.zjhHandler.giveup","parameters":"token","CNotify":"1","http":0,"comment":""},
-    {"ID":"10003", "name":"enterGame","route":"connector.zjhHandler.follow","parameters":"token","CNotify":"1","http":0,"comment":""},
-    {"ID":"10003", "name":"enterGame","route":"connector.zjhHandler.see","parameters":"token","CNotify":"1","http":0,"comment":""}
+    {"ID":"10004", "name":"zjh_join","route":"zjh.zjhHandler.join","parameters":"rid","CNotify":"0","http":0,"comment":""},
+    {"ID":"10005", "name":"zjh_ready","route":"zjh.zjhHandler.ready","parameters":"","CNotify":"1","http":0,"comment":""},
+    {"ID":"10006", "name":"zjh_start","route":"zjh.zjhHandler.start","parameters":"","CNotify":"1","http":0,"comment":""},
+    {"ID":"10007", "name":"zjh_giveup","route":"zjh.zjhHandler.giveup","parameters":"","CNotify":"1","http":0,"comment":""},
+    {"ID":"10008", "name":"zjh_follow","route":"zjh.zjhHandler.follow","parameters":"p","CNotify":"1","http":0,"comment":""},
+    {"ID":"10009", "name":"zjh_see","route":"zjh.zjhHandler.see","parameters":"","CNotify":"1","http":0,"comment":""}
   ],
   "Server":[
 
     {"ID":"10001","onmessage":"getTokenRes","comment":"获取token返回"},
     {"ID":"10002","onmessage":"newUserRes","comment":"新建用户返回"},
     {"ID":"10003","onmessage":"enterGameRes","comment":"用户登录返回"},
+
+    {"ID":"10004","onmessage":"zjhJoinRes","comment":"用户登录返回"},
 
 
     {"ID":"rnp","onmessage":"onRoomNewPerson","comment":""},

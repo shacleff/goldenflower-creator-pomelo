@@ -8,11 +8,14 @@ Class({
 
     onLoad:function()
     {
-        //var btn = this.node.getChildByName("UI_Button_Visitor");
-        //btn.on('click', this.Btn_Visitor_Click, this);
-        //
-        //btn = this.node.getChildByName("UI_Button_WeChat");
-        //btn.on('click', this.Btn_Wechat_Click, this);
+        var temp =this.node.getChildByName("UI_Create_Room");
+        var btn = temp.getChildByName("UI_Create_Btn");
+        btn.on('click', this.Btn_Create_Click, this);
+
+        temp =this.node.getChildByName("UI_Join_Room");
+        btn = temp.getChildByName("UI_Join_Btn");
+        btn.on('click', this.Btn_Join_Click, this);
+
 
 
         var controllerCache = Game.SceneState.CSceneStateFSM.Instance.CurrentSceneState.Controllers;
@@ -27,10 +30,24 @@ Class({
     },
     onEnable:function()
     {
-
+        Client.addmap("zjhJoinRes",this);
     },
     onDisable:function()
     {
 
+        Client.removemap("zjhJoinRes",this);
+    },
+    Btn_Create_Click:function()
+    {
+        Server.zjh_join(-1);
+    },
+    Btn_Join_Click:function()
+    {
+
+    },
+    zjhJoinRes:function(msg)
+    {
+
+        Game.SceneState.CSceneStateFSM.Instance.TransformToState(Game.Const.SceneState.StateID.ZJH);
     }
 })

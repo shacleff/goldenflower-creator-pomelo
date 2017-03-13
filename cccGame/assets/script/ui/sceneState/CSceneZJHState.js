@@ -1,29 +1,21 @@
 require("../../base/Core");
-require("../../data/user/CDataCenter");
+require("../zjh/CUIZJHController");
 Class({
-    ClassName:"Game.SceneState.login",
+    ClassName:"Game.SceneState.zjh",
     Base:"Game.SceneState.SceneStateBase",
     m_pTimer:null,
     Loader:null,
-    m_pPreloadPrefabs:["login/login"],
+    m_pPreloadPrefabs:["zjh/zjh"],
     onEnter:function()
     {
         var self = this;
-        cc.loader.loadResAll(Game.Config.Path.DataPath, function (err, jsons) {
-            self.GameDataInit();
-        });
 
 
-        this._super();
-    },
-    GameDataInit:function()
-    {
-        Game.Config.init();
-        Game.Data.CDataCenter.Instance.Clear();
         this.CurrentPercent = 30;
         this.loadPrefabs();
-
+        this._super();
     },
+
     onSceneLoaded:function()
     {
         this.CurrentPercent = 100;
@@ -37,22 +29,17 @@ Class({
         }
         this._super(err,prefab);
     },
-    onExit:function()
-    {
-        this._super();
-    },
+
     onComplete:function()
     {
         var self = this;
         cc.director.loadScene(this.ScneneName,function(){
-            var loginUI = Game.UI.CUIController.login.Create();
-            loginUI.parent = cc.director.getScene();
-            var size = cc.director.getWinSize();
-            loginUI.setPosition(size.width/2,size.height/2);
-            var controller = loginUI.Controller;
+            var ui = Game.UI.CUIController.zjh.Create();
+            ui.parent = cc.director.getScene();
+            var controller = ui.Controller;
             self.Controllers[controller.PerfabName] = controller;
         });
-
+        this._super();
     },
     prefabsLoaded:function()
     {

@@ -2,7 +2,8 @@
  * Created by Class on 2017/3/7.
  */
 require("../../core/Core");
-require("./CCard");
+require("../../core/CMapArray");
+require("./CBaseCard");
 Class({
     ClassName:"Game.Data.CBasePerson",
     Cards:null,
@@ -23,7 +24,7 @@ Class({
             }
         });
         this.RoomId = rid;
-        this.Cards = new Core.CMapArray("f",this.CardsSortKeys);
+        this.Cards = new Core.mapArray("f",this.CardsSortKeys);
     },
     AddCard:function(f)
     {

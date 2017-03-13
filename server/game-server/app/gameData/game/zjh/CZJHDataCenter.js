@@ -2,6 +2,9 @@
  * Created by Class on 2017/3/10.
  */
 require("../../../core/Core");
+require("./CZJHRoom");
+require("./CZJHPerson");
+require("./CZJHCard");
 Class({
     ClassName:"Game.Data.CZJHDataCenter",
     Persons:null,
@@ -24,7 +27,8 @@ Class({
     },
     intoRoom:function(uid,rid,sid)
     {
-        if(!!rid)
+        rid = parseInt(rid);
+        if(rid == -1)
         {
             rid = this.m_pNextRoomId++;
             this.createRoom(uid,rid,sid);
@@ -37,15 +41,15 @@ Class({
         this.joinRoom(uid,rid,sid);
         return rid;
     },
-    createRoom:function(uid,rid)
+    createRoom:function(uid,rid,sid)
     {
         this.Rooms[rid] = new Game.Data.CZJHRoom(rid);
-        this.joinRoom(uid,rid);
+        this.joinRoom(uid,rid,sid);
     },
-    joinRoom:function(uid,rid)
+    joinRoom:function(uid,rid,sid)
     {
-        this.Rooms[rid].addPerson(uid,sid);
-        this.Persons[uid] = 1;
+        var p = this.Rooms[rid].addPerson(uid,sid);
+        this.Persons[uid] = p;
         return rid;
     },
     removePerson:function(uid,rid)
@@ -61,4 +65,6 @@ Class({
     }
 
 
+}).Static({
+    Instance:Core.Instance
 })

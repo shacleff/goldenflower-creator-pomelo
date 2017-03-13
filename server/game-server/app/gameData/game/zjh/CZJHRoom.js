@@ -2,6 +2,7 @@
  * Created by Class on 2017/3/10.
  */
 require("../CBaseRoom");
+require("./CZJHPerson");
 var enums = require("../../../consts/enums");
 
 // 2-14   14=A

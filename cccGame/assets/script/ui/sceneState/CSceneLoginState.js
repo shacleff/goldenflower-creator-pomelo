@@ -37,10 +37,7 @@ Class({
         }
         this._super(err,prefab);
     },
-    onExit:function()
-    {
-       this._super();
-    },
+
     onComplete:function()
     {
         var self = this;
@@ -52,7 +49,7 @@ Class({
            var controller = loginUI.Controller;
            self.Controllers[controller.PerfabName] = controller;
        });
-
+        this._super();
     },
     prefabsLoaded:function()
     {

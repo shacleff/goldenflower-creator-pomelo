@@ -5,7 +5,8 @@ Core.$Defines("Game.Const.SceneState", global)({
     StateID:
     {
         "Login":"login",
-        "Hall":"hall"
+        "Hall":"hall",
+        "ZJH":"zjh"
     }
 });
 Class({

@@ -1,13 +1,13 @@
 {
   "development":{
     "connector": [
-      {"id": "connector-server-1", "host": "127.0.0.1", "port": 3150, "clientHost": "127.0.0.1", "clientPort": 3010, "frontend": true, "args" : "--debug=6868"}
+      {"id": "connector-server-1", "host": "127.0.0.1", "port": 3150, "clientHost": "127.0.0.1", "clientPort": 3010, "frontend": true}
     ],
     "manager": [
       {"id":"manager-server-1","host":"127.0.0.1","port":3250}
     ],
     "zjh": [
-      {"id":"zjh-server-1","host":"127.0.0.1","port":3350}
+      {"id":"zjh-server-1","host":"127.0.0.1","port":3350, "args" : "--debug=6868"}
     ],
     "db": [
       {"id":"db-server-1","host":"127.0.0.1","port":3450}

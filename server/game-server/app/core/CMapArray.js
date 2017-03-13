@@ -182,5 +182,9 @@ Class({
     afertDel:function(key,idx,value)
     {
         console.log("afertDel");
+    },
+    toJSON:function()
+    {
+        return this.Ay;
     }
 })
