@@ -23,14 +23,14 @@ Class({
         next();
         this.DataCenter = Game.Data.CZJHDataCenter.Instance;
     },
-    join:function(uid,rid, next)
+    join:function(rid,uid,sid, next)
     {
         var self = this;
         self.app.rpc.db.dbRemote.GetUser(null,uid,function(err,data)
         {
             if(!err)
             {
-                var rid = this.DataCenter.intoRoom(uid,rid);
+                var rid = this.DataCenter.intoRoom(uid,rid,sid);
                 if(rid>0)
                 {
                     var p = this.DataCenter.Persons[uid];
@@ -67,6 +67,37 @@ Class({
             }
         }
 
+        next();
+    },
+
+    giveup:function(uid, next)
+    {
+        var rid = this.uid2Roomid(uid);
+        if(rid>0)
+        {
+            var room = this.DataCenter.Rooms[rid];
+            this.DataCenter.Rooms[rid].giveup(uid);
+        }
+        next();
+    },
+    follow:function(point, uid, next)
+    {
+        var rid = this.uid2Roomid(uid);
+        if(rid>0)
+        {
+            var room = this.DataCenter.Rooms[rid];
+            this.DataCenter.Rooms[rid].follow(uid,point);
+        }
+        next();
+    },
+    seeCards:function(uid, next)
+    {
+        var rid = this.uid2Roomid(uid);
+        if(rid>0)
+        {
+            var room = this.DataCenter.Rooms[rid];
+            this.DataCenter.Rooms[rid].seeCards(uid);
+        }
         next();
     },
     onUserLeave:function(uid, next)

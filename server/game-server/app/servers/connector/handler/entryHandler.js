@@ -56,6 +56,7 @@ Class({
 		session.bind(uid);
 		session.set('token',token);
 		session.set('name',name);
+		session.pushAll(function(err,data){});
 		session.on('closed', this.onUserLeave.bind(null, this.app));
 
 		console.warn("---user in");

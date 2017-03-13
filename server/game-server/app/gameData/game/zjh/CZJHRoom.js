@@ -125,8 +125,6 @@ Class({
                 this.overGame();
         }
         Game.Data.CBaseRoom.prototype.removePerson.apply(this,arguments);
-
-
     },
     next:function(obj)
     {
