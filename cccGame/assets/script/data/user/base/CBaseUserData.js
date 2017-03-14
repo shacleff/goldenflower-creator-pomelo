@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/3/8.
  */
 require("../../../base/Core");
-Core.$Defines("Game.Const.Data", global)({
+Core.$Defines("Game.Const.CBaseUserData", global)({
     ChangeType:
     {
         "Add":1,

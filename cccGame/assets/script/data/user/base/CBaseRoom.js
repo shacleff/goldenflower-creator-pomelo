@@ -36,7 +36,7 @@ Class({
             this.Value[seateid] = p;
             this.m_pCurrentCount++;
         }
-        this.OldValue = [seateid,Game.Const.Data.ChangeType.Add];
+        this.OldValue = [seateid,Game.Const.CBaseUserData.ChangeType.Add];
         this.Notify();
         return p;
 
@@ -55,7 +55,7 @@ Class({
             this.m_pCurrentCount--;
         }
 
-        this.OldValue = [seateid,Game.Const.Data.ChangeType.REMOTE];
+        this.OldValue = [seateid,Game.Const.CBaseUserData.ChangeType.REMOTE];
         this.Notify();
 
     },
