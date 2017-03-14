@@ -2,7 +2,7 @@
  * Created by Class on 2017/3/7.
  */
 
-require("../../core/Core");
+require("../../../base/Core");;
 Class({
     ClassName:"Game.Data.CBaseCard",
     Color:

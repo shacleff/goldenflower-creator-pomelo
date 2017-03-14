@@ -6,6 +6,8 @@ Class({
     Base:"Game.UI.CUIBaseController",
     PerfabName:"hall/hall",
 
+    m_SearchPannel:null,
+    m_Input:null,
     onLoad:function()
     {
         var temp =this.node.getChildByName("UI_Create_Room");
@@ -22,6 +24,17 @@ Class({
         var ctr = Game.UI.CUIController.CUILeftTopHeadController.CreateByExistRoot(cc.find("hall/UI_Node_Head"));
         var controller = ctr.Controller;
         controllerCache[controller.PerfabName] = controller;
+
+        this.m_SearchPannel = this.node.getChildByName("UI_Room_Search");
+        temp = this.m_SearchPannel.getChildByName("UI_Bg");
+        this.m_Input = temp.getChildByName("UI_Input").getComponent("cc.EditBox");
+        btn = temp.getChildByName("UI_Btn_Search");
+        btn.on('click', this.Btn_Search_Click, this);
+
+
+        btn = temp.getChildByName("UI_Btn_Close");
+        btn.on('click', this.Btn_Close_Search_Click, this);
+        this.m_SearchPannel.active = false;
     },
     start:function()
     {
@@ -44,10 +57,22 @@ Class({
     Btn_Join_Click:function()
     {
 
+        this.m_SearchPannel.active = true;
     },
     zjhJoinRes:function(msg)
     {
 
         Game.SceneState.CSceneStateFSM.Instance.TransformToState(Game.Const.SceneState.StateID.ZJH);
+    },
+    Btn_Search_Click:function()
+    {
+        var num = parseInt(this.m_Input.string);
+        this.m_Input.string="";
+        if(num)
+            Server.zjh_join(num);
+    },
+    Btn_Close_Search_Click:function()
+    {
+        this.m_SearchPannel.active = false;
     }
 })

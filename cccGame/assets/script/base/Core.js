@@ -321,14 +321,14 @@ var Core = {};
             {
                 this.destruct();
             }
-            for(var key in this)
-            {
-                if(this[key].$Dispose)
-                {
-                    this[key].$Dispose();
-                }
-                delete this[key];
-            }
+            //for(var key in this)
+            //{
+            //    if(this[key].$Dispose)
+            //    {
+            //        this[key].$Dispose();
+            //    }
+            //    delete this[key];
+            //}
         }
     })
     Core.Instance =

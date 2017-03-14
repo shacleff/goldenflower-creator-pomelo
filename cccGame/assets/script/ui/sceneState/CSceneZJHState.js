@@ -5,7 +5,7 @@ Class({
     Base:"Game.SceneState.SceneStateBase",
     m_pTimer:null,
     Loader:null,
-    m_pPreloadPrefabs:["zjh/zjh"],
+    m_pPreloadPrefabs:["zjh/zjh","common/card"],
     onEnter:function()
     {
         var self = this;

@@ -29,6 +29,7 @@ Class({
         Object.defineProperty(this, "Observers", {
             get: function () { return Observers}
         });
+        this.Value = this.factoryValue;
         this.init();
     },
     Clear:function()

@@ -3,6 +3,7 @@
  */
 require("../base/CBaseRoom");
 require("../../../base/Core");
+require("./CZJHPerson");
 
 Core.$Defines("Game.Const.CDataZJHRoom", global)({
     ChangeType:
@@ -16,6 +17,7 @@ Core.$Defines("Game.Const.CDataZJHRoom", global)({
 Class({
     ClassName:"Game.Data.CDataZJHRoom",
     Base:"Game.Data.CBaseRoom",
+    PersonClass:Game.Data.CZJHPerson,
     ctor:function()
     {
         Client.addmap("onRoomNewPerson",this);
@@ -46,9 +48,15 @@ Class({
     {
 
     },
-    zjhJoinRes:function()
-    {
-
+    zjhJoinRes:function(msg) {
+        var room = msg.r;
+        this.RoomID = room.id;
+        this.Roomer = room.roomer;
+        for(var i=0;i<room.p.length;i++)
+        {
+            this.addPerson(room.p[i])
+        }
+        this.OldValue = null;
     },
     onZJHActivity:function()
     {

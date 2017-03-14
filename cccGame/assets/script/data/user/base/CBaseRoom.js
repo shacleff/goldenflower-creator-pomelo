@@ -1,7 +1,7 @@
 /**
  * Created by Class on 2017/3/14.
  */
-require("../../core/Core");
+require("../../../base/Core");
 require("./CBaseUserData");
 Class({
     ClassName:"Game.Data.CBaseRoom",
@@ -13,6 +13,7 @@ Class({
         }
     },
     Roomer:null,
+    RoomID:0,
     PersonClass:null,
     m_pCurrentCount:0,
     IsFull:{
@@ -23,16 +24,12 @@ Class({
     },
     addPerson:function(data)
     {
-        var seateid = data.Seat;
+        var seateid = data.seat;
         var p = null;
         if(!this.Value.hasOwnProperty(seateid))
         {
             p = new this.PersonClass();
             p.PersonInfo = data;
-            if(!this.Roomer)
-            {
-                this.Roomer = data.userid;
-            }
             this.Value[seateid] = p;
             this.m_pCurrentCount++;
         }
@@ -69,6 +66,6 @@ Class({
         }
         this.Roomer = undefined;
         this.m_pCurrentCount = 0;
-        Game.Data.CBaseUserData.prototype.ctor.apply(this,arguments);
+        Game.Data.CBaseUserData.prototype.Clear.apply(this,arguments);
     }
 })

@@ -11,7 +11,8 @@ Class({
     Roomer:null,
     PersonClass:null,
     Roomid:-1,
-    MaxCount:1,
+    MaxCount:3,
+    m_pFreeSeats:null,
     m_pCurrentCount:{
         get:function()
         {
@@ -36,6 +37,18 @@ Class({
         this.Roomid = id;
         this.Persons = new Core.mapArray("userid",[{"Seat":true}]);
         this.Channel = Core.app.get('channelService').getChannel(this.ChannelName, true);
+
+
+    },
+    FreeSeat:{
+        get:function()
+        {
+           return this.m_pFreeSeats.pop();
+        },
+        set:function(v)
+        {
+            this.m_pFreeSeats.push(v);
+        }
     },
     destruct:function()
     {
@@ -50,7 +63,17 @@ Class({
             if(!this.Roomer)
             {
                 this.Roomer = uid;
+
             }
+            else
+            {
+                var ay = this.Persons.Ay;
+                for(var i =1;i<ay.length;i++)
+                {
+
+                }
+            }
+            p.Seat = this.FreeSeat;
             this.Persons.InsertValue(p);
         }
         var res = {};
@@ -66,8 +89,9 @@ Class({
 
         if(this.Persons.Map.hasOwnProperty(uid))
         {
-            var person = this.Persons.Map[uid], sid = person.sid;
+            var person = this.Persons.Map[uid].Value, sid = person.sid;
 
+            this.FreeSeat = person.Seat;
             this.Channel.leave(uid,sid);
             this.Persons.RemoveValue(uid);
             person.$Dispose();
@@ -82,7 +106,7 @@ Class({
                 var value = {uid:uid};
                 if(uid == this.Roomer)
                 {
-                    for(var key in this.Persons)
+                    for(var key in this.Persons.Map)
                     {
                         this.Roomer = key;
                         value[roomer] = key;
@@ -105,7 +129,7 @@ Class({
     },
     ready:function(uid,r)
     {
-        this.Persons.Map[uid].Ready = r;
+        this.Persons.Map[uid].Value.Ready = r;
         var res = {};
         res[enums.PUSH_KEY.USER_READY] = {userid:uid,r:r};
         this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });

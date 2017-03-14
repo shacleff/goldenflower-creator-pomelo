@@ -59,7 +59,7 @@ Class({
 		session.pushAll(function(err,data){});
 		session.on('closed', this.onUserLeave.bind(null, this.app));
 
-		console.warn("---user in");
+
 		return true;
 	},
 	onUserLeave:function(app,session)
@@ -71,7 +71,6 @@ Class({
 		var uid = session.uid;
 
 
-		console.warn("---user leved");
 
 
 		app.rpc.db.dbRemote.onUserLeave(uid, uid, function(err, res){

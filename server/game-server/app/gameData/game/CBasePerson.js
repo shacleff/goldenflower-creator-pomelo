@@ -9,7 +9,23 @@ Class({
     Cards:null,
     RoomId:null,
     Ready:false,
-    Data:null,
+    Data:{
+        get:function()
+        {
+            return this.__Data;
+        },
+        set:function(v)
+        {
+            this.__Data = {
+                "userid": v.userid,
+                "head": v.head,
+                "sex": v.sex,
+                "name": v.name,
+                "point":0,
+                "seat":this.Seat
+            };
+        }
+    },
     Seat:0,
     ctor:function(uid,sid,rid)
     {

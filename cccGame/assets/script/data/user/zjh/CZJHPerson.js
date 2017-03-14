@@ -2,6 +2,7 @@
  * Created by Class on 2017/3/14.
  */
 
+require("../base/CBasePerson");
 Core.$Defines("Game.Const.CZJHPerson", global)({
     ChangeType:
     {
@@ -15,8 +16,6 @@ Class({
     Saw:false,
     ctor:function()
     {
-
-
         Client.addmap("onZJHSeeCards",this);
         Game.Data.CBasePerson.prototype.ctor.apply(this,arguments);
     },

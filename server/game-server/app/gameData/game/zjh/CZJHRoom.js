@@ -28,7 +28,7 @@ Class({
                 var map = this.Persons.Map;
                 for(var uid in map)
                 {
-                    if(!map[uid].Ready)
+                    if(!map[uid].Value.Ready)
                     {
                         r = false;
                         break;
@@ -38,9 +38,19 @@ Class({
             return  r;
         }
     },
+    ctor:function()
+    {
+        this.m_pFreeSeats = [3,2,1];
+        Game.Data.CBaseRoom.prototype.ctor.apply(this,arguments);
+    },
     PersonIsInGame:function(uid)
     {
-        return uid in this.GamePersons;
+        for(var i=0;i< this.GamePersons.length;i++)
+        {
+            if(uid == this.GamePersons[i])
+                return true;
+        }
+        return false ;
     },
     start:function()
     {
@@ -86,7 +96,7 @@ Class({
         var persons = this.Persons.Map;
         for(var i in persons)
         {
-            cards[id] = persons.Cards;
+            cards[id] = persons[i].Value.Cards;
         }
         var res = {};
         res[enums.PUSH_KEY.GAME_ZJH.SEE_CARDS] = this.Cards;
@@ -99,7 +109,7 @@ Class({
         if(this.IsGameing)
         {
             var map = this.Persons.Map;
-            var person = map[uid];
+            var person = map[uid].Value;
             this.OfflinePersons[uid] = person;
             if(this.m_pCurrentCount == 2)
             {
@@ -144,7 +154,7 @@ Class({
         {
             return
         }
-        this.Persons.Map[uid].seeCards();
+        this.Persons.Map[uid].Value.seeCards();
     },
     giveup:function(uid)
     {
@@ -191,7 +201,7 @@ Class({
             return;
         }
 
-        var person = this.Persons.Map(uid);
+        var person = this.Persons.Map[uid].Value;
         this.CurrentActivity++;
         this.HallPoint += point;
         this.next();

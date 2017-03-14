@@ -810,7 +810,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "zjh_person1",
+    "_name": "zjh_person2",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {
@@ -1313,7 +1313,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "zjh_person1",
+    "_name": "zjh_person3",
     "_objFlags": 0,
     "_opacity": 255,
     "_color": {

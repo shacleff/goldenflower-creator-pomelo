@@ -1,7 +1,7 @@
 /**
  * Created by Class on 2017/3/14.
  */
-require("../../core/Core");
+require("../../../base/Core");
 require("./CBaseUserData");
 Class({
     ClassName:"Game.Data.CBasePerson",
@@ -52,6 +52,6 @@ Class({
             temp.$Dispose();
         }
         this.__ready = false;
-        Game.Data.CBaseUserData.prototype.ctor.apply(this,arguments);
+        Game.Data.CBaseUserData.prototype.Clear.apply(this,arguments);
     }
 })
