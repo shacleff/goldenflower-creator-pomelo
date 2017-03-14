@@ -5,12 +5,14 @@ require("../../base/Core");
 require("./data/CDataCoins");
 require("./data/CDataGems");
 require("./data/CDataUser");
+require("./zjh/CDataZJHRoom");
 Class({
     ClassName:"Game.Data.CDataCenter",
     Datas:{},
     Coins:{get:function(){return this.Datas["CDataCoins"];}},
     Gems:{get:function(){return this.Datas["CDataGems"];}},
     User:{get:function(){return this.Datas["CDataUser"];}},
+    ZJHRoom:{get:function(){return this.Datas["CDataZJH"];}},
     ctor:function()
     {
         this.init();
@@ -20,6 +22,7 @@ Class({
         this.Datas["CDataCoins"] =new Game.Data.CDataCoins;
         this.Datas["CDataGems"] =new Game.Data.CDataGems;
         this.Datas["CDataUser"] =new Game.Data.CDataUser;
+        this.Datas["CDataZJH"] =new Game.Data.CDataZJHRoom;
     },
     Clear:function()
     {

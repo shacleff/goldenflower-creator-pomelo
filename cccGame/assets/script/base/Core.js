@@ -317,6 +317,10 @@ var Core = {};
     Core.baseClass = Core.baseClass.extend({
         $Dispose:function()
         {
+            if(this.destruct)
+            {
+                this.destruct();
+            }
             for(var key in this)
             {
                 if(this[key].$Dispose)

@@ -2,6 +2,14 @@
  * Created by Administrator on 2017/3/8.
  */
 require("../../../base/Core");
+Core.$Defines("Game.Const.Data", global)({
+    ChangeType:
+    {
+        "Add":1,
+        "Del":2,
+        "Modefy":3
+    }
+});
 
 Class({
     ClassName:"Game.Data.CBaseUserData",
