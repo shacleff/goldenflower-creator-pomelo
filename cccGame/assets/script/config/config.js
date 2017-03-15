@@ -23,8 +23,10 @@ Core.$Defines("Game.Config")({
     Data: {
         "StaticNames":
         {
-            "Servers":[ "server","id","id"],
-            "loadingtips_Table":[ "loadingtips","id","type", "id" ]
+
         }
+    },
+    Games:{
+        "zjh":1
     }
 });

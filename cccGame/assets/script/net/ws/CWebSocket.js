@@ -58,13 +58,18 @@ Class({
 
             pomelo.on("push",function(msg)
             {
-                var key;
+                var key = null;
                 for( key in msg)
                 {
                     break;
                 }
-                var c = msg[key];
-                self.onMessage(key,c);
+                console.log(JSON.stringify(msg))
+                if(key)
+                {
+                    var c = msg[key];
+                    self.onMessage(key,c);
+                }
+
             })
             return;
         }
@@ -104,7 +109,7 @@ Class({
     {
         data.ID = key;
         data.payloadName = key;
-        data.timestamp?0:c.timestamp = 0;
+        data.timestamp?0:data.timestamp = 0;
         Client.dispatch(data, null);
         delete data.ID;
         delete data.payloadName;

@@ -16,24 +16,38 @@ Class({
     RoomID:0,
     PersonClass:null,
     m_pCurrentCount:0,
+    SelfSeat:null,
     IsFull:{
         get:function()
         {
             return this.m_pCurrentCount == this.MaxCount;
         }
     },
+    CurrentActivity:0,
     addPerson:function(data)
     {
         var seateid = data.seat;
-        var p = null;
+
         if(!this.Value.hasOwnProperty(seateid))
         {
-            p = new this.PersonClass();
-            p.PersonInfo = data;
+            var p = new this.PersonClass();
+            p.PersonInfo = {
+                "seat":data.seat,
+                "name":data.name+data.userid,
+                "userid":data.userid,
+                "sex":data.sex,
+                "point":data.point
+            };
             this.Value[seateid] = p;
             this.m_pCurrentCount++;
+
+            if(data.userid == Game.Data.CDataCenter.Instance.User.Value.userid)
+            {
+                this.SelfSeat = seateid;
+            }
         }
-        this.OldValue = [seateid,Game.Const.CBaseUserData.ChangeType.Add];
+
+
         this.Notify();
         return p;
 
@@ -52,7 +66,7 @@ Class({
             this.m_pCurrentCount--;
         }
 
-        this.OldValue = [seateid,Game.Const.CBaseUserData.ChangeType.REMOTE];
+
         this.Notify();
 
     },

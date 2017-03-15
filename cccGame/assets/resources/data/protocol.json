@@ -5,12 +5,12 @@
     {"ID":"10003", "name":"enterGame","route":"connector.entryHandler.entry","parameters":"token","CNotify":"0","http":0,"comment":"ÓÃ»§µÇÂ¼"},
 
 
-    {"ID":"10004", "name":"zjh_join","route":"zjh.zjhHandler.join","parameters":"rid","CNotify":"0","http":0,"comment":""},
-    {"ID":"10005", "name":"zjh_ready","route":"zjh.zjhHandler.ready","parameters":"","CNotify":"1","http":0,"comment":""},
-    {"ID":"10006", "name":"zjh_start","route":"zjh.zjhHandler.start","parameters":"","CNotify":"1","http":0,"comment":""},
-    {"ID":"10007", "name":"zjh_giveup","route":"zjh.zjhHandler.giveup","parameters":"","CNotify":"1","http":0,"comment":""},
-    {"ID":"10008", "name":"zjh_follow","route":"zjh.zjhHandler.follow","parameters":"p","CNotify":"1","http":0,"comment":""},
-    {"ID":"10009", "name":"zjh_see","route":"zjh.zjhHandler.see","parameters":"","CNotify":"1","http":0,"comment":""}
+    {"ID":"10004", "name":"game_join","route":"zjh.zjhHandler.join","parameters":"rid;g","CNotify":"0","http":0,"comment":""},
+    {"ID":"10005", "name":"game_ready","route":"zjh.zjhHandler.ready","parameters":"r;g","CNotify":"1","http":0,"comment":""},
+    {"ID":"10006", "name":"game_start","route":"zjh.zjhHandler.start","parameters":"g","CNotify":"1","http":0,"comment":""},
+    {"ID":"10007", "name":"game_giveup","route":"zjh.zjhHandler.giveup","parameters":"g","CNotify":"1","http":0,"comment":""},
+    {"ID":"10008", "name":"game_follow","route":"zjh.zjhHandler.follow","parameters":"p;g","CNotify":"1","http":0,"comment":""},
+    {"ID":"10009", "name":"game_see","route":"zjh.zjhHandler.see","parameters":"g","CNotify":"1","http":0,"comment":""}
   ],
   "Server":[
 

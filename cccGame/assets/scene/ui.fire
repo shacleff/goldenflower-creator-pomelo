@@ -654,7 +654,7 @@
     "_tag": -1,
     "_opacityModifyRGB": false,
     "_id": "2e2e2GRAiBF34PfHQJ8SF30",
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 110
@@ -6955,7 +6955,7 @@
     "_tag": -1,
     "_opacityModifyRGB": false,
     "_id": "e2030vMiKRPTZzuHCuBjGfF",
-    "_active": false,
+    "_active": true,
     "_components": [],
     "_prefab": {
       "__id__": 230

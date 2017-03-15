@@ -25,30 +25,30 @@ Class({
             }
         }
     },
-    intoRoom:function(uid,rid,sid)
+    intoRoom:function(uid,rid,sid,data)
     {
         rid = parseInt(rid);
         if(rid == -1)
         {
             rid = this.m_pNextRoomId++;
-            this.createRoom(uid,rid,sid);
+            this.createRoom(uid,rid,sid,data);
             return rid;
         }
         if(!this.Rooms[rid])
         {
             return -1;
         }
-        this.joinRoom(uid,rid,sid);
+        this.joinRoom(uid,rid,sid,data);
         return rid;
     },
-    createRoom:function(uid,rid,sid)
+    createRoom:function(uid,rid,sid,data)
     {
         this.Rooms[rid] = new Game.Data.CZJHRoom(rid);
-        this.joinRoom(uid,rid,sid);
+        this.joinRoom(uid,rid,sid,data);
     },
-    joinRoom:function(uid,rid,sid)
+    joinRoom:function(uid,rid,sid,data)
     {
-        var p = this.Rooms[rid].addPerson(uid,sid);
+        var p = this.Rooms[rid].addPerson(uid,sid,data);
         this.Persons[uid] = p;
         return rid;
     },

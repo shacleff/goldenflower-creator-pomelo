@@ -23,16 +23,21 @@ Class({
     {
 
         Client.removemap("onZJHSeeCards",this);
-        Game.Data.CBasePerson.prototype.destruct.apply(this,arguments);
     },
-    onUserReady:function()
+    onUserReady:function(r)
     {
-
+        this.IsReady = r==1;
     },
 
-    onZJHSeeCards:function()
+    onZJHSeeCards:function(msg)
     {
-        this.OldValue = [Game.Const.CZJHPerson.ChangeType.Saw,this.Saw];
+        if(this.Value.userid == Game.Data.CDataCenter.Instance.User.Value.userid)
+        {
+            var value = [msg[0],msg[1],msg[2]];
+            this.OldValue = [Game.Const.CZJHPerson.ChangeType.Saw,value];
+            this.Value = {cards:value};
+            this.Notify();
+        }
     }
 
 })

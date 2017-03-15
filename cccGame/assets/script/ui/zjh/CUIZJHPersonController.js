@@ -40,14 +40,22 @@ Class({
     },
     onDisable:function()
     {
-        if(this.Seat != 0)
+        if(this.Seat != 0 && this.DataSource)
             this.DataSource.RemoveObserver(this.UpdateUI,this);
     },
     UpdateUI:function(n,o)
     {
-        if(o)
+        if(o && o instanceof Array)
         {
-
+            var type=o[0],value=o[1];
+            this.m_NodeCards.active = true;
+            if(type == Game.Const.CZJHPerson.ChangeType.Saw)
+            {
+                for(var i=1;i<4;i++)
+                {
+                    this.m_pCards[i].CardData = value[i-1]
+                }
+            }
         }
         else
         {

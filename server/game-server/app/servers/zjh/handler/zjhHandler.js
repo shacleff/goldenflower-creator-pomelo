@@ -16,7 +16,7 @@ Class({
     },
     ready:function(msg, session, next)
     {
-        this.app.rpc.zjh.zjhRemote.ready(null,session.uid ,next)
+        this.app.rpc.zjh.zjhRemote.ready(null,session.uid,msg.r ,next)
     },
     start:function(msg, session, next)
     {

@@ -31,11 +31,9 @@ Class({
         {
             if(!err)
             {
-                rid = self.DataCenter.intoRoom(uid,rid,sid);
+                rid = self.DataCenter.intoRoom(uid,rid,sid,data);
                 if(rid>0)
                 {
-                    var p = self.DataCenter.Persons[uid];
-                    p.Data=data;
                     var roomInfo = self.DataCenter.Rooms[rid];
                     next(null, {r: roomInfo});
                     return;
@@ -53,7 +51,7 @@ Class({
 
         var rid = this.uid2Roomid(uid);
         if(rid>0)
-            this.DataCenter.Rooms[rid].ready(uid,ready);
+            this.DataCenter.Rooms[rid].ready(uid,ready?1:0);
         next();
     },
     start:function(uid, next)

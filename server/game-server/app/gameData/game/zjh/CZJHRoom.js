@@ -15,7 +15,6 @@ Class({
     GiveUps:null,
     HallPoint:0,
     CurrentPoint:0,
-    CurrentActivity:0,
     Nums:null,
     LastWinner:-1,
     GamePersons:null,
@@ -28,7 +27,7 @@ Class({
                 var map = this.Persons.Map;
                 for(var uid in map)
                 {
-                    if(!map[uid].Value.Ready)
+                    if(uid !=this.Roomer  && !map[uid].Value.Ready)
                     {
                         r = false;
                         break;
@@ -66,7 +65,7 @@ Class({
 
         for(var i=0;i<ay.length;i++)
         {
-            ay[i].reset();
+            ay[i].Reset();
             this.GamePersons.push(ay[i].userid)
         }
         for(var j=0;j<3;j++)
@@ -96,7 +95,7 @@ Class({
         var persons = this.Persons.Map;
         for(var i in persons)
         {
-            cards[id] = persons[i].Value.Cards;
+            cards[i] = persons[i].Value.Cards;
         }
         var res = {};
         res[enums.PUSH_KEY.GAME_ZJH.SEE_CARDS] = this.Cards;
@@ -142,7 +141,8 @@ Class({
         this.CurrentActivity = this.CurrentActivity%this.GamePersons.length;
         obj = obj || {};
         obj["hp"] = this.HallPoint;
-        obj["au"] = this.GamePersons[this.CurrentActivity];
+        var uid = this.GamePersons[this.CurrentActivity];
+        obj["au"] = uid;
         var res = {};
         res[enums.PUSH_KEY.GAME_ZJH.NEXT_ACTIVITY] = obj;
         this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });

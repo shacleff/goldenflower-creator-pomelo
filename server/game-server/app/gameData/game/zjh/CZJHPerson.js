@@ -92,12 +92,13 @@ Class({
     {
         this.CardsSaw = true;
         var rs = [{'uid':this.userid,sid:this.sid}];
-        var info =
-        this.app.get('channelService').pushMessageByUids(enums.PUSH_KEY.PUSH, info, rs, errHandler);
+        var info = {};
+        info[enums.PUSH_KEY.GAME_ZJH.SEE_CARDS]=this.Cards;
+        Core.app.get('channelService').pushMessageByUids(enums.PUSH_KEY.PUSH, info, rs, function(){});
     }
 
 }).Static({
-    //±ª×Ó£¬Í¬»¨£¬Ë³×Ó,123£¬¶Ô×Ó£¬µ¥ÕÅ0,ÌØÊâ
+    //ï¿½ï¿½ï¿½Ó£ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½,123ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½0,ï¿½ï¿½ï¿½ï¿½
     Types:{
         BZ:0x1<6,
         TH:0x1<5,

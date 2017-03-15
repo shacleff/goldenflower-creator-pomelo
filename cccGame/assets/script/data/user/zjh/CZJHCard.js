@@ -10,7 +10,7 @@ Class({
     ShowValue:{
         get:function()
         {
-           return  Math.max(1,this.Value%14) ;
+           return  Math.max(1,this.Face%14) ;
         }
     }
 })

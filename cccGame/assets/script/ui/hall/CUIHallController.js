@@ -52,7 +52,7 @@ Class({
     },
     Btn_Create_Click:function()
     {
-        Server.zjh_join(-1);
+        Server.game_join(-1,Game.Config.Games.zjh);
     },
     Btn_Join_Click:function()
     {
@@ -69,7 +69,7 @@ Class({
         var num = parseInt(this.m_Input.string);
         this.m_Input.string="";
         if(num)
-            Server.zjh_join(num);
+            Server.game_join(num,Game.Config.Games.zjh);
     },
     Btn_Close_Search_Click:function()
     {

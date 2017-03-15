@@ -13,6 +13,7 @@ Class({
     Roomid:-1,
     MaxCount:3,
     m_pFreeSeats:null,
+    CurrentActivity:0,
     m_pCurrentCount:{
         get:function()
         {
@@ -54,7 +55,7 @@ Class({
     {
         Core.app.get('channelService').destroyChannel(this.ChannelName);
     },
-    addPerson:function(uid,sid)
+    addPerson:function(uid,sid,data)
     {
         var p = null;
         if(!this.Persons.Map.hasOwnProperty(uid))
@@ -74,11 +75,14 @@ Class({
                 }
             }
             p.Seat = this.FreeSeat;
+            p.Data = data;
             this.Persons.InsertValue(p);
         }
+
         var res = {};
         res[enums.PUSH_KEY.ROOM_NEW_PERSON] = p;
-        if(this.Persons.Ay.length>0)
+
+        if(this.Persons.Ay.length>1)
             this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
 
         this.Channel.add(uid,sid);
@@ -90,9 +94,10 @@ Class({
         if(this.Persons.Map.hasOwnProperty(uid))
         {
             var person = this.Persons.Map[uid].Value, sid = person.sid;
-
-            this.FreeSeat = person.Seat;
+            var seat = person.Seat;
+            this.FreeSeat = seat;
             this.Channel.leave(uid,sid);
+            console.warn("uid is:"+uid);
             this.Persons.RemoveValue(uid);
             person.$Dispose();
 
@@ -103,19 +108,23 @@ Class({
             }
             else
             {
-                var value = {uid:uid};
+                var value = {seat:seat};
                 if(uid == this.Roomer)
                 {
                     for(var key in this.Persons.Map)
                     {
                         this.Roomer = key;
-                        value[roomer] = key;
+                        value["roomer"] = key;
                         break;
                     }
                 }
-                var res = {};
-                res[enums.PUSH_KEY.ROOM_LEAVE_PERSON] = value;
-                this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
+                if(this.Persons.Ay.length>0)
+                {
+                    var res = {};
+                    res[enums.PUSH_KEY.ROOM_LEAVE_PERSON] = value;
+                    this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
+                }
+
             }
 
         }
@@ -129,9 +138,10 @@ Class({
     },
     ready:function(uid,r)
     {
-        this.Persons.Map[uid].Value.Ready = r;
+        var person = this.Persons.Map[uid].Value;
+        person.Ready = r;
         var res = {};
-        res[enums.PUSH_KEY.USER_READY] = {userid:uid,r:r};
+        res[enums.PUSH_KEY.USER_READY] = {seat:person.Seat,r:r};
         this.Channel.pushMessage(enums.PUSH_KEY.PUSH,res , function(err, res){ });
     },
     start:function()
