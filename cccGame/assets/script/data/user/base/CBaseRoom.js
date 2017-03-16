@@ -17,6 +17,12 @@ Class({
     PersonClass:null,
     m_pCurrentCount:0,
     SelfSeat:null,
+    SelfPerson:{
+        get:function()
+        {
+            return this.Value[this.SelfSeat];
+        }
+    },
     IsFull:{
         get:function()
         {

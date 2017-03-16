@@ -9,7 +9,8 @@ module.exports = {
         USER_READY:"urdy",
         GAME_ZJH:{
             NEXT_ACTIVITY:"zjhnact",
-            SEE_CARDS:"seecard"
+            SEE_CARDS:"seecard",
+            ONE_SEE:"osee"
         }
     },
     TOKEN:{

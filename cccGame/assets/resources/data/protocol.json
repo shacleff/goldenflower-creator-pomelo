@@ -25,6 +25,7 @@
     {"ID":"rlp","onmessage":"onRoomLeavePerson","comment":""},
     {"ID":"urdy","onmessage":"onUserReady","comment":""},
     {"ID":"zjhnact","onmessage":"onZJHActivity","comment":""},
-    {"ID":"seecard","onmessage":"onZJHSeeCards","comment":""}
+    {"ID":"seecard","onmessage":"onZJHSeeCards","comment":""},
+    {"ID":"osee","onmessage":"onZJHOnePersonSeeCards","comment":""}
   ]
 }

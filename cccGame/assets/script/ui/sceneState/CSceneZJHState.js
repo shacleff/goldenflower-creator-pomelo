@@ -38,6 +38,7 @@ Class({
             ui.parent = cc.director.getScene();
             var controller = ui.Controller;
             self.Controllers[controller.PerfabName] = controller;
+            ui.active = true;
         });
         this._super();
     },

@@ -19,10 +19,10 @@ Class({
     Base:"Game.Data.CBaseRoom",
     PersonClass:Game.Data.CZJHPerson,
     HallPoint:0,
+    CurrentPoint:0,
     Ready:{
         get:function()
         {
-
             var r = false;
             if(this.m_pCurrentCount>1)
             {
@@ -41,6 +41,12 @@ Class({
 
         }
 
+    },
+    Reset:function()
+    {
+        this.HallPoint = 0;
+        this.CurrentPoint = 0;
+        this.OldValue = null;
     },
     ctor:function()
     {
@@ -90,9 +96,21 @@ Class({
     },
     onZJHActivity:function(msg)
     {
+        if(msg.hasOwnProperty('start') )
+        {
+            for(var key in this.Value)
+            {
+                this.Value[key].Reset();
+            }
+            this.Reset();
+        }
+
+        this.CurrentPoint = parseInt(msg.cp);
         this.HallPoint = msg.hp;
         this.CurrentActivity = msg.au;
         this.OldValue = [this.CurrentActivity,Game.Const.CDataZJHRoom.ChangeType.Activity];
         this.Notify();
-    }
+
+    },
+
 })

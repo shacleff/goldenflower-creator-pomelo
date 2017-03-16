@@ -11,6 +11,8 @@ Class({
     m_pCards:null,
     Seat:0,
     m_NodeCards:null,
+    m_pNodeSawCard:null,
+    m_pNodePassCard:null,
     DataSource:{
         get:function()
         {
@@ -21,6 +23,10 @@ Class({
     {
         this.m_pHeadSprite = this.node.getChildByName("UI_Sprite_Head").getComponent(cc.Sprite);
         this.m_pNameTTF = this.node.getChildByName("UI_TTF_Name").getComponent(cc.Label);
+        this.m_pNodeSawCard = this.node.getChildByName("UI_TTF_SawCard");
+        this.m_pNodePassCard = this.node.getChildByName("UI_TTF_Pass");
+        this.m_pNodePassCard.active = false;
+        this.m_pNodeSawCard.active = false;
         var temp = this.m_NodeCards  = this.node.getChildByName("Cards");
         this.m_pCards = {};
         for(var i=1;i<4;i++)
@@ -45,17 +51,30 @@ Class({
     },
     UpdateUI:function(n,o)
     {
-        if(o && o instanceof Array)
+        if(void 0 != o )
         {
-            var type=o[0],value=o[1];
-            this.m_NodeCards.active = true;
-            if(type == Game.Const.CZJHPerson.ChangeType.Saw)
+            if(o instanceof Array)
             {
-                for(var i=1;i<4;i++)
+                var type=o[0],value=o[1];
+                this.m_NodeCards.active = true;
+                if(type == Game.Const.CZJHPerson.ChangeType.Saw)
                 {
-                    this.m_pCards[i].CardData = value[i-1]
+                    for(var i=1;i<4;i++)
+                    {
+                        this.m_pCards[i].CardData = value[i-1]
+                    }
                 }
             }
+            else if(o == Game.Const.CZJHPerson.ChangeType.Saw)
+            {
+                this.m_pNodeSawCard.active = true;
+            }
+            else if(o == Game.Const.CZJHPerson.ChangeType.Saw)
+            {
+                this.m_pNodeSawCard.active = false;
+                this.m_pNodeSawCard.active = true;
+            }
+
         }
         else
         {

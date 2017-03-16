@@ -12,7 +12,7 @@ Class({
             return {};
         }
     },
-
+    Seat:null,
     PersonInfo:{
         set:function(u)
         {

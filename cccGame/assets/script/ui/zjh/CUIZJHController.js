@@ -20,6 +20,7 @@ Class({
     m_pTTFRoomID:null,
     m_pUIPersons:null,
     m_pUIBtns:null,
+    m_pUIEditBoxPoint:null,
     BtnState:{
         get:function()
         {
@@ -40,9 +41,10 @@ Class({
     {
         this.m_pTTFRoomID = this.node.getChildByName("UI_TTF_RoomID").getComponent(cc.Label);
         this.m_pTTFRoomID.primevalString = this.m_pTTFRoomID.string;
+        this.m_pUIEditBoxPoint = this.node.getChildByName("UI_EditBox_Point").getComponent(cc.EditBox);
         this.m_pUIPersons = {};
-
         this.m_pUIBtns = {};
+
         var btns = this.node.getChildByName("Buttons");
         var btnNames = [
             ["UI_Btn_Start",this.Btn_Start_Click],
@@ -81,6 +83,7 @@ Class({
     },
     UpdateUI:function(n,o)
     {
+        this.m_pUIEditBoxPoint.node.active=false;
         var dataCenter = Game.Data.CDataCenter.Instance,roomid = dataCenter.ZJHRoom.RoomID,userid = dataCenter.User.Value.userid,roomer=dataCenter.ZJHRoom.Roomer;
         if(o)
         {
@@ -107,6 +110,8 @@ Class({
                 case types.Activity:
                 {
 
+                    this.m_pUIEditBoxPoint.node.active=true;
+                    this.m_pUIEditBoxPoint.string = dataCenter.ZJHRoom.CurrentPoint;
                     var btnStates = Game.Const.CUIController.zjh.BtnState;
                     var saw = dataCenter.ZJHRoom.Value[dataCenter.ZJHRoom.SelfSeat].Saw;
                     var seeCard = saw?0x0: btnStates.SeeCard;
@@ -159,10 +164,17 @@ Class({
     },
     Btn_Follow_Click:function()
     {
-
+        var myPserson = Game.Data.CDataCenter.Instance.ZJHRoom.SelfPerson
+        var point = parseInt(this.m_pUIEditBoxPoint.string);
+        if(!myPserson.CheckPointRight(point))
+        {
+            alert("point error");
+            return;
+        }
+        Server.game_follow(point,Game.Config.Games.zjh);
     },
     Btn_Pass_Click:function()
     {
-
+        Server.game_giveup(Game.Config.Games.zjh);
     }
 })

@@ -97,7 +97,6 @@ Class({
             var seat = person.Seat;
             this.FreeSeat = seat;
             this.Channel.leave(uid,sid);
-            console.warn("uid is:"+uid);
             this.Persons.RemoveValue(uid);
             person.$Dispose();
 

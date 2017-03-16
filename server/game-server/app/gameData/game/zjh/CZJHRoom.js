@@ -81,7 +81,7 @@ Class({
         this.Nums = nums;
         this.CurrentActivity = this.Persons.Map[this.LastWinner<0?this.Roomer:this.LastWinner].Index;
         Game.Data.CBaseRoom.prototype.start.call(this);
-        this.next();
+        this.next({"start":1});
     },
     overGame:function(winner)
     {
@@ -143,6 +143,7 @@ Class({
         obj["hp"] = this.HallPoint;
         var uid = this.GamePersons[this.CurrentActivity];
         obj["au"] = uid;
+        obj["cp"] = this.CurrentPoint;
         var res = {};
         res[enums.PUSH_KEY.GAME_ZJH.NEXT_ACTIVITY] = obj;
         this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
@@ -155,6 +156,11 @@ Class({
             return
         }
         this.Persons.Map[uid].Value.seeCards();
+
+
+        var res = {};
+        res[enums.PUSH_KEY.GAME_ZJH.ONE_SEE] = {seat:this.Persons.Map[uid].Value.Seat};
+        this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
     },
     giveup:function(uid)
     {
@@ -189,6 +195,7 @@ Class({
         {
             return
         }
+        var person = this.Persons.Map[uid].Value;
         var radix = person.Radix;
         var minPoint = this.CurrentPoint*radix;
         var nBasePoint = 0;
@@ -201,7 +208,6 @@ Class({
             return;
         }
 
-        var person = this.Persons.Map[uid].Value;
         this.CurrentActivity++;
         this.HallPoint += point;
         this.next();

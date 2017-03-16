@@ -123,15 +123,17 @@ Class({
         }
         else
         {
-
-            var aAy = a.Cards.Ay,bAy = b.Cards.Ay;
-            if(a.Type === this.Types.BZ && aAy[0].Num === 14 && b.Type === this.Types.TS)
-                return -1;
-            if(b.Type === this.Types.BZ && bAy[0].Num === 14 && a.Type === this.Types.TS)
-                return 1;
             return a.Type - b.Type;
         }
 
 
+    },
+    CMPTS:function(a,b)
+    {
+        var aAy = a.Cards.Ay,bAy = b.Cards.Ay;
+        if(a.Type === this.Types.BZ && aAy[0].Num === 14 && b.Type === this.Types.TS)
+            return -1;
+        if(b.Type === this.Types.BZ && bAy[0].Num === 14 && a.Type === this.Types.TS)
+            return 1;
     }
 });
