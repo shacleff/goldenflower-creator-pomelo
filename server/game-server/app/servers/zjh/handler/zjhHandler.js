@@ -33,6 +33,10 @@ Class({
     see:function(msg, session, next)
     {
         this.app.rpc.zjh.zjhRemote.seeCards(null,session.uid ,next)
+    },
+    open:function(msg, session, next)
+    {
+        this.app.rpc.zjh.zjhRemote.open(null,session.uid ,next);
     }
 
 })

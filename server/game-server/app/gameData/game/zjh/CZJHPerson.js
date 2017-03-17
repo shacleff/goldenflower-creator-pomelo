@@ -23,7 +23,7 @@ Class({
         value:0,
         get:function()
         {
-            if(0 === this.__type)
+            if(!this.__type)
             {
 
                 var t = this.CheckBZ();
@@ -100,23 +100,24 @@ Class({
 }).Static({
     //���ӣ�ͬ����˳��,123�����ӣ�����0,����
     Types:{
-        BZ:0x1<6,
-        TH:0x1<5,
-        SZ:0x1<4,
-        SZTS:0x1<3,
-        DZ:0x1<2,
-        DN:0x1<1,
+        BZ:0x1<<6,
+        TH:0x1<<5,
+        SZ:0x1<<4,
+        SZTS:0x1<<3,
+        DZ:0x1<<2,
+        DN:0x1<<1,
         TS:0x1
     },
     CMP:function(a,b)
     {
         if(a.Type === b.Type)
         {
+            var aAy = a.Cards.Ay,bAy = b.Cards.Ay;
             var resault = 0;
             for(var i=0;i<3;i++)
             {
                 resault = aAy[i].Num - bAy[i].Num;
-                if(resault )
+                if(!!resault )
                     break;
             }
             return resault;
@@ -135,5 +136,16 @@ Class({
             return -1;
         if(b.Type === this.Types.BZ && bAy[0].Num === 14 && a.Type === this.Types.TS)
             return 1;
+
+        return 0;
+    },
+    ALLCMP:function(a,b)
+    {
+        var r = this.CMPTS(a,b);
+        if(0!=r)
+        {
+            return r;
+        }
+        return this.CMP(a,b);
     }
 });

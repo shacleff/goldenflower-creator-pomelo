@@ -30,7 +30,7 @@ Class({
         rid = parseInt(rid);
         if(rid == -1)
         {
-            rid = this.m_pNextRoomId++;
+            rid = (this.m_pNextRoomId++%999998);
             this.createRoom(uid,rid,sid,data);
             return rid;
         }

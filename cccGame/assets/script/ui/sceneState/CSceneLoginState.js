@@ -8,13 +8,11 @@ Class({
     m_pPreloadPrefabs:["login/login"],
     onEnter:function()
     {
+        this._super();
         var self = this;
         cc.loader.loadResAll(Game.Config.Path.DataPath, function (err, jsons) {
             self.GameDataInit();
         });
-        
-        
-        this._super();
     },
     GameDataInit:function()
     {

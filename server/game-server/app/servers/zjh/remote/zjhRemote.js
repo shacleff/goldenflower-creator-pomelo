@@ -99,6 +99,16 @@ Class({
         }
         next();
     },
+    open:function( uid, next)
+    {
+        var rid = this.uid2Roomid(uid);
+        if(rid>0)
+        {
+            var room = this.DataCenter.Rooms[rid];
+            this.DataCenter.Rooms[rid].open(uid);
+        }
+        next();
+    },
     onUserLeave:function(uid, next)
     {
         next();

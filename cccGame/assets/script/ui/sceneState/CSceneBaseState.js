@@ -37,6 +37,7 @@ Class({
         // {
         //     this.m_pTimer = setInterval(this.update,0.1,this);
         // }
+        cc.director.runScene(new cc.Scene());
         this.m_pCacheInfo = cacheInfo;
         this.Loader.CompleteCallBack = this.onComplete;
         this.Loader.Target = this;
@@ -60,7 +61,7 @@ Class({
     {
        console.log("must overWrite onComplete");
     },
-    loadPrefabs:function()
+    delayloadPrefabs:function()
     {
         this.m_pCurrentPrefab = -1;
         this.Prefabs = {};
@@ -72,7 +73,10 @@ Class({
         {
             this.prefabOneLoaded();
         }
-
+    },
+    loadPrefabs:function()
+    {
+        setTimeout(this.delayloadPrefabs,10,this);
     },
     prefabOneLoaded:function(err,perfab)
     {

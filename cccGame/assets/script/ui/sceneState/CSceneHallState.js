@@ -9,10 +9,6 @@ Class({
     onEnter:function()
     {
         var self = this;
-
-        var scene = cc.director.getRunningScene();
-        if(scene)
-            scene.removeAllChildren();
         this.CurrentPercent = 30;
         this.loadPrefabs();
         this._super();

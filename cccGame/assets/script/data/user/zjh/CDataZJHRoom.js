@@ -20,6 +20,7 @@ Class({
     PersonClass:Game.Data.CZJHPerson,
     HallPoint:0,
     CurrentPoint:0,
+    PersonsInGame:0,
     Ready:{
         get:function()
         {
@@ -108,6 +109,7 @@ Class({
         this.CurrentPoint = parseInt(msg.cp);
         this.HallPoint = msg.hp;
         this.CurrentActivity = msg.au;
+        this.PersonsInGame = msg.cguser;
         this.OldValue = [this.CurrentActivity,Game.Const.CDataZJHRoom.ChangeType.Activity];
         this.Notify();
 

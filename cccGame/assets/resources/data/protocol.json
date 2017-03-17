@@ -10,7 +10,8 @@
     {"ID":"10006", "name":"game_start","route":"zjh.zjhHandler.start","parameters":"g","CNotify":"1","http":0,"comment":""},
     {"ID":"10007", "name":"game_giveup","route":"zjh.zjhHandler.giveup","parameters":"g","CNotify":"1","http":0,"comment":""},
     {"ID":"10008", "name":"game_follow","route":"zjh.zjhHandler.follow","parameters":"p;g","CNotify":"1","http":0,"comment":""},
-    {"ID":"10009", "name":"game_see","route":"zjh.zjhHandler.see","parameters":"g","CNotify":"1","http":0,"comment":""}
+    {"ID":"10009", "name":"game_see","route":"zjh.zjhHandler.see","parameters":"g","CNotify":"1","http":0,"comment":""},
+    {"ID":"10010", "name":"game_open","route":"zjh.zjhHandler.open","parameters":"g","CNotify":"1","http":0,"comment":""}
   ],
   "Server":[
 

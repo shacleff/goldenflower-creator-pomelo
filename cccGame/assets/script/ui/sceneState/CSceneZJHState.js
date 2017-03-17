@@ -9,8 +9,6 @@ Class({
     onEnter:function()
     {
         var self = this;
-
-
         this.CurrentPercent = 30;
         this.loadPrefabs();
         this._super();

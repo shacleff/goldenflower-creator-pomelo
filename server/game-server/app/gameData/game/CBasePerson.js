@@ -40,7 +40,7 @@ Class({
             }
         });
         this.RoomId = rid;
-        this.Cards = new Core.mapArray("f",this.CardsSortKeys);
+        this.Cards = new Core.mapArray("Face",this.CardsSortKeys);
     },
     AddCard:function(f)
     {

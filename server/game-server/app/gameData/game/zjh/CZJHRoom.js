@@ -132,7 +132,7 @@ Class({
                 }
             }
             if(winner)
-                this.overGame();
+                this.overGame(winner);
         }
         Game.Data.CBaseRoom.prototype.removePerson.apply(this,arguments);
     },
@@ -144,6 +144,7 @@ Class({
         var uid = this.GamePersons[this.CurrentActivity];
         obj["au"] = uid;
         obj["cp"] = this.CurrentPoint;
+        obj["cguser"] = this.GamePersons.length;
         var res = {};
         res[enums.PUSH_KEY.GAME_ZJH.NEXT_ACTIVITY] = obj;
         this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
@@ -211,6 +212,40 @@ Class({
         this.CurrentActivity++;
         this.HallPoint += point;
         this.next();
+
+    },
+    open:function(uid)
+    {
+
+        var inGame = this.PersonIsInGame(uid);
+        if(!inGame)
+        {
+            return
+        }
+        if(this.GamePersons.length != 2)
+        {
+            return;
+        }
+
+        var person = this.Persons.Map[uid].Value;
+
+        var radix = person.Radix;
+        var point = this.CurrentPoint*radix;
+        this.HallPoint += point;
+
+        var buid = null;
+        for(var i=0;i< this.GamePersons.length;i++)
+        {
+            if(uid != this.GamePersons[i])
+            {
+                buid =this.GamePersons[i];
+                break;
+            }
+        }
+        var aperson = person,bperson = this.Persons.Map[buid].Value;
+
+        var ret = Game.Data.CZJHPerson.ALLCMP(aperson,bperson);
+        this.overGame(ret>0?uid:buid)
 
     }
 })

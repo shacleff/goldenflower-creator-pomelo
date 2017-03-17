@@ -9,7 +9,8 @@ Core.$Defines("Game.Const.CUIController.zjh")({
         "Ready":0x1<<1,
         "SeeCard":0x1<<2,
         "Fllow":0x1<<3,
-        "GiveUp":0x1<<4
+        "GiveUp":0x1<<4,
+        "Open":0x1<<5
     }
 });
 Class({
@@ -21,6 +22,7 @@ Class({
     m_pUIPersons:null,
     m_pUIBtns:null,
     m_pUIEditBoxPoint:null,
+    m_pUIHallPoint:null,
     BtnState:{
         get:function()
         {
@@ -29,7 +31,7 @@ Class({
         set:function(v)
         {
             this.__BtnState = v;
-            for(var i=0;i<5;i++)
+            for(var i=0;i<6;i++)
             {
                 var value = 0x1<<i;
                 this.m_pUIBtns[value].active = v&value;
@@ -42,6 +44,8 @@ Class({
         this.m_pTTFRoomID = this.node.getChildByName("UI_TTF_RoomID").getComponent(cc.Label);
         this.m_pTTFRoomID.primevalString = this.m_pTTFRoomID.string;
         this.m_pUIEditBoxPoint = this.node.getChildByName("UI_EditBox_Point").getComponent(cc.EditBox);
+        this.m_pUIHallPoint = this.node.getChildByName("UI_TTF_HallPoints").getComponent(cc.Label);
+        this.m_pUIHallPoint.node.active = false;
         this.m_pUIPersons = {};
         this.m_pUIBtns = {};
 
@@ -51,7 +55,8 @@ Class({
             ["UI_Btn_Ready",this.Btn_Ready_Click],
             ["UI_Btn_See",this.Btn_See_Click],
             ["UI_Btn_Follow",this.Btn_Follow_Click],
-            ["UI_Btn_Pass",this.Btn_Pass_Click]];
+            ["UI_Btn_Pass",this.Btn_Pass_Click],
+            ["UI_Btn_Open",this.Btn_Open_Click]];
         for(var i=0;i<btnNames.length;i++)
         {
             var btnTip = btnNames[i];
@@ -74,11 +79,12 @@ Class({
 
     onEnable:function()
     {
-
+        Client.addmap("onZJHSeeCards",this);
         Game.Data.CDataCenter.Instance.ZJHRoom.AddObserver(this.UpdateUI,this);
     },
     onDisable:function()
     {
+        Client.removemap("onZJHSeeCards",this);
         Game.Data.CDataCenter.Instance.ZJHRoom.RemoveObserver(this.UpdateUI,this);
     },
     UpdateUI:function(n,o)
@@ -109,16 +115,25 @@ Class({
                 }
                 case types.Activity:
                 {
+                    this.m_pUIHallPoint.node.active = true;
+                    this.m_pUIHallPoint.string = dataCenter.ZJHRoom.HallPoint;
 
-                    this.m_pUIEditBoxPoint.node.active=true;
-                    this.m_pUIEditBoxPoint.string = dataCenter.ZJHRoom.CurrentPoint;
                     var btnStates = Game.Const.CUIController.zjh.BtnState;
-                    var saw = dataCenter.ZJHRoom.Value[dataCenter.ZJHRoom.SelfSeat].Saw;
-                    var seeCard = saw?0x0: btnStates.SeeCard;
+                    var selfPerson = dataCenter.ZJHRoom.Value[dataCenter.ZJHRoom.SelfSeat];
+                    var seeCard = selfPerson.Saw?0x0: btnStates.SeeCard;
                     var actUserid = seat;
+
+
+
                     if(actUserid == userid)
                     {
-                        this.BtnState = seeCard | btnStates.Fllow | btnStates.GiveUp;
+                        this.m_pUIEditBoxPoint.node.active=true;
+                        this.m_pUIEditBoxPoint.string = selfPerson.BasePoint;
+
+                        if(dataCenter.ZJHRoom.PersonsInGame == 2)
+                            this.BtnState = seeCard | btnStates.Fllow | btnStates.GiveUp | btnStates.Open;
+                        else
+                            this.BtnState = seeCard | btnStates.Fllow | btnStates.GiveUp;
                     }
                     else
                     {
@@ -164,17 +179,32 @@ Class({
     },
     Btn_Follow_Click:function()
     {
-        var myPserson = Game.Data.CDataCenter.Instance.ZJHRoom.SelfPerson
+        var dataCenter = Game.Data.CDataCenter.Instance;
+        var myPserson = dataCenter.ZJHRoom.SelfPerson;
         var point = parseInt(this.m_pUIEditBoxPoint.string);
         if(!myPserson.CheckPointRight(point))
         {
             alert("point error");
+            this.m_pUIEditBoxPoint.string = myPserson.BasePoint;
             return;
         }
         Server.game_follow(point,Game.Config.Games.zjh);
     },
+    onZJHSeeCards:function()
+    {
+        var label = this.m_pUIEditBoxPoint;
+        setTimeout(function()
+        {
+            label.string = Game.Data.CDataCenter.Instance.ZJHRoom.SelfPerson.BasePoint;
+        },10)
+
+    },
     Btn_Pass_Click:function()
     {
         Server.game_giveup(Game.Config.Games.zjh);
+    },
+    Btn_Open_Click:function()
+    {
+        Server.game_open(Game.Config.Games.zjh);
     }
 })
