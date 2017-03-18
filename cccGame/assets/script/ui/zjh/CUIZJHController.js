@@ -93,12 +93,15 @@ Class({
     onEnable:function()
     {
         Client.addmap("onZJHSeeCards",this);
+        Client.addmap("onZJHOneOver",this);
+
         this.ResetUI();
         Game.Data.CDataCenter.Instance.ZJHRoom.AddObserver(this.UpdateUI,this);
     },
     onDisable:function()
     {
         Client.removemap("onZJHSeeCards",this);
+        Client.removemap("onZJHOneOver",this);
         Game.Data.CDataCenter.Instance.ZJHRoom.RemoveObserver(this.UpdateUI,this);
     },
     UpdateUI:function(n,o)
@@ -209,5 +212,9 @@ Class({
     Btn_Open_Click:function()
     {
         Server.game_open(Game.Config.Games.zjh);
+    },
+    onZJHOneOver:function(msg)
+    {
+        setTimeout(this.ResetUI,3000,this);
     }
 })

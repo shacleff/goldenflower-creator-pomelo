@@ -10,7 +10,7 @@ Class({
     Base: "Game.Data.CBasePerson",
     CardsSortKeys:[{"Num":false}],
     CardClass:Game.Data.CZJHCard,
-    CostPoints:0,
+    Point:0,
     Radix:{
         get:function()
         {

@@ -56,6 +56,7 @@ Class({
         Client.addmap("onUserReady",this);
         Client.addmap("zjhJoinRes",this);
         Client.addmap("onZJHActivity",this);
+        Client.addmap("onZJHOneOver",this);
         Game.Data.CBaseRoom.prototype.ctor.apply(this,arguments);
     },
     destruct:function()
@@ -65,6 +66,7 @@ Class({
         Client.removemap("onUserReady",this);
         Client.removemap("zjhJoinRes",this);
         Client.removemap("onZJHActivity",this);
+        Client.removemap("onZJHOneOver",this);
 
     },
     onRoomLeavePerson:function(msg)
@@ -114,5 +116,9 @@ Class({
         this.Notify();
 
     },
+    onZJHOneOver:function()
+    {
+        
+    }
 
 })

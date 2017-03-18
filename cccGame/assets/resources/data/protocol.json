@@ -27,6 +27,7 @@
     {"ID":"urdy","onmessage":"onUserReady","comment":""},
     {"ID":"zjhnact","onmessage":"onZJHActivity","comment":""},
     {"ID":"seecard","onmessage":"onZJHSeeCards","comment":""},
-    {"ID":"osee","onmessage":"onZJHOnePersonSeeCards","comment":""}
+    {"ID":"osee","onmessage":"onZJHOnePersonSeeCards","comment":""},
+    {"ID":"overonce","onmessage":"onZJHOneOver","comment":""}
   ]
 }

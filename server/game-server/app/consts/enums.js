@@ -10,7 +10,8 @@ module.exports = {
         GAME_ZJH:{
             NEXT_ACTIVITY:"zjhnact",
             SEE_CARDS:"seecard",
-            ONE_SEE:"osee"
+            ONE_SEE:"osee",
+            OVER_ONCE:"overonce"
         }
     },
     TOKEN:{

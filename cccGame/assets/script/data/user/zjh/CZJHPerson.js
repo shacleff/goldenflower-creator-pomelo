@@ -16,6 +16,7 @@ Class({
 
     Saw:false,
     Pass:false,
+    Point:0,
     BasePoint:{
         get:function()
         {
@@ -39,6 +40,7 @@ Class({
     {
         Client.addmap("onZJHSeeCards",this);
         Client.addmap("onZJHOnePersonSeeCards",this);
+        Client.addmap("onZJHOneOver",this);
 
         Game.Data.CBasePerson.prototype.ctor.apply(this,arguments);
     },
@@ -46,6 +48,7 @@ Class({
     {
         Client.removemap("onZJHSeeCards",this);
         Client.removemap("onZJHOnePersonSeeCards",this);
+        Client.addmap("onZJHOneOver",this);
     },
     onUserReady:function(r)
     {
@@ -70,6 +73,24 @@ Class({
             this.Saw = true;
             this.Notify();
         }
+    },
+    onZJHOneOver:function(msg)
+    {
+        var persons = msg.p;
+        for(var key in persons)
+        {
+            if(key == this.Value.userid)
+            {
+                var cards = persons[key].cards;
+                this.Point = persons[key].point;
+                var value = [cards[0],cards[1],cards[2]];
+                this.OldValue = [Game.Const.CZJHPerson.ChangeType.Saw,value];
+                this.PersonInfo = {cards:value};
+                this.Notify();
+            }
+        }
+
+        this.Saw = false;
     }
 
 })

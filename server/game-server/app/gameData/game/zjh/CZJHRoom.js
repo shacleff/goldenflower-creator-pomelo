@@ -86,20 +86,28 @@ Class({
     overGame:function(winner)
     {
         this.LastWinner = winner;
+
+
+        var persons = this.Persons.Map;
+        persons[winner].Value.Point += this.HallPoint;
+        var p = {};
+
+        for(var i=0;i<  this.GamePersons.length;i++)
+        {
+            var person = persons[this.GamePersons[i]].Value;
+            p[this.GamePersons[i]] = {
+                cards:person.Cards,
+                point:person.Point
+            };
+        }
+        var res = {};
+        res[enums.PUSH_KEY.GAME_ZJH.OVER_ONCE] = {p:p,winner:winner};
+        this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
+
         Game.Data.CBaseRoom.prototype.overGame.call(this,[winner]);
         this.OfflinePersons = {};
         this.GiveUps = {};
         this.GamePersons = [];
-
-        var cards = {};
-        var persons = this.Persons.Map;
-        for(var i in persons)
-        {
-            cards[i] = persons[i].Value.Cards;
-        }
-        var res = {};
-        res[enums.PUSH_KEY.GAME_ZJH.SEE_CARDS] = this.Cards;
-        this.Channel.pushMessage(enums.PUSH_KEY.PUSH, res, function(err, res){ });
     },
 
     removePerson:function(uid)
@@ -211,7 +219,8 @@ Class({
 
         this.CurrentActivity++;
         this.HallPoint += point;
-        this.next();
+        person.Point -= point;
+        this.next({person:[uid,person.Point]});
 
     },
     open:function(uid)
