@@ -1,6 +1,7 @@
 require("../../base/Core");
 require("../uiBase/CUIBaseController");
 require("./CUIZJHPersonController");
+require("./CUIZJHGameOverController");
 
 Core.$Defines("Game.Const.CUIController.zjh")({
     BtnState:
@@ -23,6 +24,7 @@ Class({
     m_pUIBtns:null,
     m_pUIEditBoxPoint:null,
     m_pUIHallPoint:null,
+    m_pGameOverCtr:null,
     BtnState:{
         get:function()
         {
@@ -45,6 +47,10 @@ Class({
         this.m_pTTFRoomID.primevalString = this.m_pTTFRoomID.string;
         this.m_pUIEditBoxPoint = this.node.getChildByName("UI_EditBox_Point").getComponent(cc.EditBox);
         this.m_pUIHallPoint = this.node.getChildByName("UI_TTF_HallPoints").getComponent(cc.Label);
+
+        this.m_pGameOverCtr = Game.UI.CUIController.CUIZJHGameOverController.CreateByExistRoot(this.node.getChildByName("UI_Over_Layer")).Controller;
+
+
         this.m_pUIHallPoint.node.active = false;
         this.m_pUIPersons = {};
         this.m_pUIBtns = {};
@@ -89,6 +95,7 @@ Class({
         }
         console.log("ready");
         this.BtnState = userid ==roomer ?Game.Const.CUIController.zjh.BtnState.Start :  Game.Const.CUIController.zjh.BtnState.Ready;
+        this.m_pGameOverCtr.node.active = false;
     },
     onEnable:function()
     {
@@ -215,6 +222,7 @@ Class({
     },
     onZJHOneOver:function(msg)
     {
-        setTimeout(this.ResetUI,3000,this);
+        this.m_pGameOverCtr.Show(msg.p,msg.winner);
+        setTimeout(this.ResetUI,5000,this);
     }
 })
