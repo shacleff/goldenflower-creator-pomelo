@@ -2,7 +2,7 @@
 change old code to ccc
 一款扎金花游戏  客户端是 cocos creator 1.3.3  服务器是pomelo
 
-暂时 只完成到登录主界面
+暂时 就细节没写完 基本功能都有了 已经可以玩
 
 改代码详解 见 http://blog.sina.com.cn/s/articlelist_2808783193_14_1.html
 

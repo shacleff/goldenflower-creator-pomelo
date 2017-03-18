@@ -76,10 +76,24 @@ Class({
             ctr.Seat = i;
         }
     },
+    ResetUI:function()
+    {
+        var dataCenter = Game.Data.CDataCenter.Instance,roomid = dataCenter.ZJHRoom.RoomID,userid = dataCenter.User.Value.userid,roomer=dataCenter.ZJHRoom.Roomer;
+        this.m_pTTFRoomID.string = this.m_pTTFRoomID.primevalString.Format(roomid);
+        var n = dataCenter.ZJHRoom.Value;
+        for(var i in n)
+        {
 
+            console.log("node true:"+i);
+            this.m_pUIPersons[i].node.active = true;
+        }
+        console.log("ready");
+        this.BtnState = userid ==roomer ?Game.Const.CUIController.zjh.BtnState.Start :  Game.Const.CUIController.zjh.BtnState.Ready;
+    },
     onEnable:function()
     {
         Client.addmap("onZJHSeeCards",this);
+        this.ResetUI();
         Game.Data.CDataCenter.Instance.ZJHRoom.AddObserver(this.UpdateUI,this);
     },
     onDisable:function()
@@ -145,18 +159,7 @@ Class({
 
             }
         }
-        else
-        {
-            this.m_pTTFRoomID.string = this.m_pTTFRoomID.primevalString.Format(Game.Data.CDataCenter.Instance.ZJHRoom.RoomID);
-            for(var i in n)
-            {
 
-                console.log("node true:"+i);
-                this.m_pUIPersons[i].node.active = true;
-            }
-            console.log("ready");
-            this.BtnState = userid ==roomer ?Game.Const.CUIController.zjh.BtnState.Start :  Game.Const.CUIController.zjh.BtnState.Ready;
-        }
     },
     Btn_Start_Click:function()
     {
