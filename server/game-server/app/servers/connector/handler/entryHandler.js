@@ -77,7 +77,7 @@ Class({
 
 		});
 
-		app.rpc.zjh.zjhRemote.onUserLeave(session, uid, function(err, res){
+		app.rpc.zjh.gameRemote.onUserLeave(session, uid, function(err, res){
 
 		});
 

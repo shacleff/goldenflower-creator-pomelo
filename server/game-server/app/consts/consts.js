@@ -7,6 +7,10 @@ module.exports = {
         HOST:"192.168.2.7",
         PORT:3010
     },
+    Games:{
+        1:"zjh",
+        2:"niuniu"
+    },
     NOR_CODE : {
         SUC_OK						: 0,		// success
         ERR_FAIL					: -1,		// Failded without specific reason

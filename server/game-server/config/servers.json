@@ -6,11 +6,17 @@
     "manager": [
       {"id":"manager-server-1","host":"127.0.0.1","port":3250}
     ],
+    "business": [
+      {"id":"business-server-1","host":"127.0.0.1","port":3350}
+    ],
     "zjh": [
-      {"id":"zjh-server-1","host":"127.0.0.1","port":3350, "args" : "--debug=6868"}
+      {"id":"zjh-server-1","host":"127.0.0.1","port":3450, "args" : "--debug=6868"}
+    ],
+    "niuniu": [
+      {"id":"niuniu-server-1","host":"127.0.0.1","port":3550}
     ],
     "db": [
-      {"id":"db-server-1","host":"127.0.0.1","port":3450}
+      {"id":"db-server-1","host":"127.0.0.1","port":3650}
     ]
   },
   "production":{
@@ -20,11 +26,17 @@
     "manager": [
       {"id":"manager-server-1","host":"127.0.0.1","port":3250}
     ],
+    "business": [
+      {"id":"business-server-1","host":"127.0.0.1","port":3350}
+    ],
     "zjh": [
-      {"id":"zjh-server-1","host":"127.0.0.1","port":3350}
+      {"id":"zjh-server-1","host":"127.0.0.1","port":3450}
+    ],
+    "niuniu": [
+      {"id":"niuniu-server-1","host":"127.0.0.1","port":3550}
     ],
     "db": [
-      {"id":"db-server-1","host":"127.0.0.1","port":3450}
+      {"id":"db-server-1","host":"127.0.0.1","port":3650}
     ]
   },
   "http":{

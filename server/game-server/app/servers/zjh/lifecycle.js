@@ -3,7 +3,7 @@
  */
 module.exports.afterStartup = function(app, cb) {
     cb();
-    app.rpc.zjh.zjhRemote.init(null,function()
+    app.rpc.zjh.gameRemote.init(null,function()
     {
 
     });

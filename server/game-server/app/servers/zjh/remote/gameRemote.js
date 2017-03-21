@@ -3,7 +3,6 @@
  */
 var consts = require('../../../consts/consts');
 var Token = require('../../../util/token');
-var secret = require('../../../../config/session').secret;
 require('../../../base/CBaseRemote');
 require('../../../gameData/game/zjh/CZJHDataCenter');
 
