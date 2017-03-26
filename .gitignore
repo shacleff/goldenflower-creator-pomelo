@@ -46,4 +46,3 @@ Temporary Items
 ./server/.idea
 ./server/server/game-server/logs
 .idea
-*.meta
