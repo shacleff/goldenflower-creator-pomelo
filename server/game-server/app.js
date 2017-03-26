@@ -30,7 +30,7 @@ app.configure('production|development', function(){
 });
 app.configure('production|development', 'manager', function(){
 
-  Game.HttpServer.Login.Instance.init(app);
+  Game.HttpServer.Login.CreateMore(app,1);
 });
 app.configure('production|development', 'manager|db', function(){
 

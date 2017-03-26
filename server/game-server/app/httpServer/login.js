@@ -14,7 +14,6 @@ var encode = require('../util/encode');
 Class({
     ClassName:"Game.HttpServer.Login",
     Base:"Game.HttpServer.BaseHttp",
-    Port:require("../../config/servers").http.login,
     checkFuncs:{
         "/token":"getToken",
         "/nUser":"createUser"
@@ -111,5 +110,15 @@ Class({
     //    resback({code: consts.LOGIN.LOGIN_FAIL});
     //},
 }).Static({
-    Instance:Core.Instance
+    //Instance:Core.Instance,
+    Servers:{},
+    Port:require("../../config/servers").http.login,
+    CreateMore:function(app,n)
+    {
+        for(var i=0;i<n;i++)
+        {
+           var temp = this.Servers[i] = new this;
+            temp.init(app,this.Port+i);
+        }
+    }
 })
