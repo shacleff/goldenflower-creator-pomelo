@@ -10,12 +10,12 @@ Class({
     ClassName:"Game.HttpServer.BaseHttp",
     m_App:null,
     m_Server:null,
-    init:function(app)
+    init:function(app,port)
     {
         this.m_App = app;
         this.m_Server = http.createServer(this.initHttpServers.bind(this));
         var self = this;
-        this.m_Server.listen(this.Port);
+        this.m_Server.listen(port);
         this.m_Server.addListener("connection", function(socket){
             socket.setTimeout(5000);
         });
