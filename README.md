@@ -21,7 +21,6 @@
 `4 配置  server/game-server/mysql.json 为自己 mysql 账户密码`
 
 # 注:
-
 server代码 不需要执行 npm-install.sh 直接 node app.js （ubuntu 执行 nodejs app.js）
 
 ## 也可以进qq群一起讨论：275348123
