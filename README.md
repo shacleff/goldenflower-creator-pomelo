@@ -13,6 +13,7 @@ change old code to ccc
 也可以进qq群一起讨论：275348123
 
 环境配置:
+
 1 cccGame/assets/resources/data/protocol.json  内修改 http地址 为服务器地址
 
 2 server/game-server/app/consts/consts.js  修改host地址 为服务器地址
