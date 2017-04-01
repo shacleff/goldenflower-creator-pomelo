@@ -1,5 +1,5 @@
 const CLoadingController = require('./ui/CLoadingController');
-
+require('./ui/sceneState/CSceneStateFSM');
 cc.Class({
     extends: cc.Component,
 
