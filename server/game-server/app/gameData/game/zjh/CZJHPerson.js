@@ -95,10 +95,15 @@ Class({
         var info = {};
         info[enums.PUSH_KEY.GAME_ZJH.SEE_CARDS]=this.Cards;
         Core.app.get('channelService').pushMessageByUids(enums.PUSH_KEY.PUSH, info, rs, function(){});
+    },
+    Auto:function()
+    {
+        Game.Data.CBasePerson.prototype.Auto.apply(this);
+        this.Room.giveup(this.userid);
     }
 
 }).Static({
-    //���ӣ�ͬ����˳��,123�����ӣ�����0,����
+    //
     Types:{
         BZ:0x1<<6,
         TH:0x1<<5,

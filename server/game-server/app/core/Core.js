@@ -1,7 +1,6 @@
 /**
  * Created by Class on 2016/2/24.
  */
-//var global = global || this;
 var Core = {};
 (function()
 {
@@ -10,7 +9,7 @@ var Core = {};
         if (!a || 0 >= a.length) return c;
         for (var b = a.split("."), d = 0; d < b.length; d++) {
             var e = b[d];
-            if (!e || 0 === e.length) throw "$Defines:(obj,name) name format error.";
+            if (!e || 0 === e.length) Core.Assert(false,"$Defines:(obj,name) name format error.");
             if (c.hasOwnProperty(e)) c[e].constructor !== Object && (c[e] = {}),
                 c = c[e];
             else {
@@ -26,11 +25,8 @@ var Core = {};
         for (var b = a.split("."), d = 0; d < b.length; d++) {
             var e = b[d];
             if (!e || 0 === e.length) return null;
-            if (c.hasOwnProperty(e))
-                c = c[e];
-            else {
+            if (!(c = c[e]))
                 return null;
-            }
         }
         return c
     }
@@ -39,7 +35,7 @@ var Core = {};
         return function(a, c) {
             for (var f in a) if (b.hasOwnProperty(f)) {
 
-                 throw "Item defined "  + f + " defined before.";
+                Core.Assert(false,"Item defined "  + f + " defined before.") ;
             } else b[f] = a[f];
             return b
         }
@@ -63,9 +59,10 @@ var Core = {};
     }
     var fnTest  = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
     var cc = cc;
+    var tempBaseClass;
     if(cc && cc.Class)
     {
-        Core.baseClass = cc.Class;
+        tempBaseClass = cc.Class;
     }
     else
     {
@@ -130,9 +127,9 @@ var Core = {};
 
 
 
-        Core.baseClass = function () {
+        tempBaseClass = function () {
         };
-        Core.baseClass.extend = function (props) {
+        tempBaseClass.extend = function (props) {
             var _super = this.prototype;
 
             // Instantiate a base Class (but only create the instance,
@@ -263,7 +260,7 @@ var Core = {};
             }
 
             // And make this Class extendable
-            Class.extend = Core.baseClass.extend;
+            Class.extend = tempBaseClass.extend;
 
             //add implementation method
             Class.implement = function (prop) {
@@ -271,13 +268,17 @@ var Core = {};
                     prototype[name] = prop[name];
                 }
             };
+            var oldContructor = prototype.__proto__.constructor;
             Class.Static = function(funs)
             {
+                var oldStaticPro = oldContructor.__static_self_pro || {};
                 for(var fname in funs)
                 {
                     var f = funs[fname];
+
                     if(f instanceof Object && (f.set || f.get) )
                     {
+                        oldStaticPro[fname] = f;
                         Object.defineProperty(Class,fname,f);
 
                         var defaultValue = f.value || 0;
@@ -291,11 +292,19 @@ var Core = {};
                     }
                     else
                         Class[fname] = f;
+
+                    Object.defineProperty(Class,"__static_self_pro",{
+                        enumerable:false,
+                        configurable: false,
+                        writable: true,
+                        value:oldStaticPro
+                    })
                 }
+
                 return Class;
             }
 
-            var oldContructor = prototype.__proto__.constructor;
+
             for(var key in oldContructor)
             {
                 if(!Class.hasOwnProperty(key))
@@ -304,31 +313,20 @@ var Core = {};
                 }
             }
 
-            if(prop.ClassName)
-            {
-                Core.$AlwaysDefines(prop.ClassName,Class)
-            }
+
             return Class;
         };
 
 
     }
 
-    Core.baseClass = Core.baseClass.extend({
+    tempBaseClass = tempBaseClass.extend({
         $Dispose:function()
         {
             if(this.destruct)
             {
                 this.destruct();
             }
-            //for(var key in this)
-            //{
-            //    if(this[key].$Dispose)
-            //    {
-            //        this[key].$Dispose();
-            //    }
-            //    delete this[key];
-            //}
         }
     })
     Core.Instance =
@@ -336,51 +334,118 @@ var Core = {};
         get:function(){
             if(!this.__instance)
             {
+                console.log("new instance");
                 this.__instance = new this;
             }
+            console.log("call instance");
             return this.__instance;
         }
     }
 
 
-    //Core.$AlwaysDefines("Class",function(b)
-    //{
-    //    if(b.Base)
-    //    {
-    //        var baseClass = Core.$TryGetMember(b.Base);
-    //        if(baseClass && baseClass.extend)
-    //        {
-    //            return baseClass.extend(b);
-    //        }
-    //        else
-    //        {
-    //            throw "not find baseClass:"+ b.Base;
-    //            return null;
-    //        }
-    //    }
-    //    else
-    //        return Core.baseClass.extend(b);
-    //});
+
     global.Class = function(b)
     {
-        if(b.Base)
+        var base = b.Base;
+        var className = b.ClassName;
+        if(!className)
         {
-            var baseClass = Core.$TryGetMember(b.Base);
+            Core.Assert(false, "Class not find ClassName:");
+            return;
+        }
+        delete b.Base;
+        delete b.ClassName;
+        var res = null;
+        var staticPro = {};
+        if(base)
+        {
+            var baseClass = Core.$TryGetMember(base);
             if(baseClass && baseClass.extend)
             {
-                return baseClass.extend(b);
+                res = baseClass.extend(b);
+
+                Object.defineProperty(res,"Base",{
+                    enumerable:false,
+                    configurable: false,
+                    writable: false,
+                    value:base
+                })
+                Object.defineProperty(res,"SuperClass",{
+                    enumerable:false,
+                    configurable: false,
+                    writable: false,
+                    value:baseClass
+                })
+                staticPro = baseClass.__static_self_pro;
             }
             else
             {
-                throw "not find baseClass:"+ b.Base;
+                Core.Assert(false, "not find baseClass:"+ base);
                 return null;
             }
         }
         else
-            return Core.baseClass.extend(b);
+            res = tempBaseClass.extend(b);
+
+        if(className)
+        {
+            Core.$AlwaysDefines(className,res)
+        }
+
+        Object.defineProperty(res,"ClassName",{
+            enumerable:false,
+            configurable: false,
+            writable: false,
+            value:className
+        })
+
+
+        Object.defineProperty(res,"__static_self_pro",{
+            enumerable:false,
+            configurable: false,
+            writable: true,
+            value:staticPro
+        })
+        for(var fname  in staticPro)
+        {
+            staticPro[fname].configurable=true;
+            Object.defineProperty(res,fname,staticPro[fname]);
+        }
+        return res;
+
+    }
+
+    Core.Assert = !!cc ?cc.assert :function(t,msg)
+    {
+        if(!t)
+        {
+            console.error(msg);
+        }
     }
 })()
+
 module.exports = Core;
 global.Core = Core;
 
+if(!console.error)
+{
+    console.error = function(str)
+    {
+        console.log("error:"+str);
+    };
+}
+if(!console.warn)
+{
+    console.warn =  function(str)
+    {
+        console.log("warn:"+str);
+    };
+}
+if(!global.alert)
+{
+    global.alert=function(arg)
+    {
+        window.alert(arg);
+    };
+}
 

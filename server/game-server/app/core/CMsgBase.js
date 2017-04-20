@@ -1,7 +1,8 @@
 /**
  * Created by Administrator on 2016/11/24.
  */
-Core.MSGClass =Core.baseClass.extend({
+Class({
+    ClassName:"Core.msgClass",
     ctor:function()
     {
         /*

@@ -37,6 +37,7 @@ Class({
             return  r;
         }
     },
+    m_pCurrentActivePerson:null,
     ctor:function()
     {
         this.m_pFreeSeats = [3,2,1];
@@ -85,6 +86,11 @@ Class({
     },
     overGame:function(winner)
     {
+        if(this.m_pCurrentActivePerson)
+        {
+            this.m_pCurrentActivePerson.BeDeath()
+        }
+        this.m_pCurrentActivePerson = null;
         this.LastWinner = winner;
 
 
@@ -150,6 +156,14 @@ Class({
         obj = obj || {};
         obj["hp"] = this.HallPoint;
         var uid = this.GamePersons[this.CurrentActivity];
+
+        if(this.m_pCurrentActivePerson)
+        {
+            this.m_pCurrentActivePerson.BeDeath()
+        }
+        this.m_pCurrentActivePerson = this.Persons.Map[uid];
+        this.m_pCurrentActivePerson.BeActive();
+
         obj["au"] = uid;
         obj["cp"] = this.CurrentPoint;
         obj["cguser"] = this.GamePersons.length;

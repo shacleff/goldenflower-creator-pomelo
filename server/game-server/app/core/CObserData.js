@@ -2,7 +2,8 @@
  * Created by Administrator on 2016/11/24.
  */
 
-Core.obserData = Core.baseClass.extend({
+Class({
+    ClassName:"Core.obserData",
     m_pNotifyMap:null,
     m_pNotifying:false,
     ctor:function()

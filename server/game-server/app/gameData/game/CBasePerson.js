@@ -7,7 +7,13 @@ require("./CBaseCard");
 Class({
     ClassName:"Game.Data.CBasePerson",
     Cards:null,
-    RoomId:null,
+    RoomId:{
+        get:function()
+        {
+            return this.Room.RoomId;
+        }
+    },
+    Room:null,
     Ready:false,
     Data:{
         get:function()
@@ -27,7 +33,8 @@ Class({
         }
     },
     Seat:0,
-    ctor:function(uid,sid,rid)
+    m_pTimeout:null,
+    ctor:function(uid,sid,room)
     {
         Object.defineProperty(this, "userid", {
             get: function () {
@@ -39,12 +46,29 @@ Class({
                 return sid;
             }
         });
-        this.RoomId = rid;
+        this.Room = room;
         this.Cards = new Core.mapArray("Face",this.CardsSortKeys);
     },
     AddCard:function(f)
     {
         this.Cards.InsertValue(new this.CardClass(f));
+    },
+    Auto:function()
+    {
+        this.m_pTimeout = null;
+    },
+    BeActive:function()
+    {
+        this.BeDeath();
+        this.m_pTimeout = setTimeout(this.Auto,28*1000,this);
+    },
+    BeDeath:function()
+    {
+        if(this.m_pTimeout)
+        {
+            clearTimeout(this.m_pTimeout);
+        }
+        this.m_pTimeout = null;
     },
     toJSON:function()
     {

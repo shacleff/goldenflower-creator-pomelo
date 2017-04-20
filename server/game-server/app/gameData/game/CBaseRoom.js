@@ -60,7 +60,7 @@ Class({
         var p = null;
         if(!this.Persons.Map.hasOwnProperty(uid))
         {
-            p = new this.PersonClass(uid,sid,this.Roomid);
+            p = new this.PersonClass(uid,sid,this);
             if(!this.Roomer)
             {
                 this.Roomer = uid;
