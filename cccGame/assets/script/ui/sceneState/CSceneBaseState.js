@@ -12,7 +12,7 @@ Class({
     ScneneName:{
         get:function()
         {
-           return this.ClassName.split(".")[2];
+           return this.constructor.ClassName.split(".")[2];
         }
     },
     CurrentPercent:{
