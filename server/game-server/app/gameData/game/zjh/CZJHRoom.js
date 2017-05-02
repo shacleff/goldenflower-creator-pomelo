@@ -161,7 +161,7 @@ Class({
         {
             this.m_pCurrentActivePerson.BeDeath()
         }
-        this.m_pCurrentActivePerson = this.Persons.Map[uid];
+        this.m_pCurrentActivePerson = this.Persons.Map[uid].Value;
         this.m_pCurrentActivePerson.BeActive();
 
         obj["au"] = uid;
