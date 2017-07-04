@@ -4,11 +4,11 @@
 Core.$Defines("Game.CStaticInformationClass")({
     addValueKey:function(key,value,map)
     {
-        if( !map.$Length )
-        {
-            map.$Length=0;
-        }
-        map.$Length++;
+        //if( !map.$Length )
+        //{
+        //    map.$Length=0;
+        //}
+        //map.$Length++;
         map[key] = value;
     },
     getJsonData:function(file)
@@ -18,17 +18,17 @@ Core.$Defines("Game.CStaticInformationClass")({
     Create: function(keys) {
         var data = this.getJsonData(keys[0]);
         var mainKey = keys[1];
-        var value={};
+
         var map = {};
         for(var i=0;i<data.length;i++)
         {
             var temp = data[i];
             var tempMap = map;
-            value[temp[mainKey]] = temp;
-            var count = keys.length;
-            for(var j=2;j<count;j++)
+            //value[temp[mainKey]] = temp;
+            var count = mainKey.length;
+            for(var j=0;j<count;j++)
             {
-                var key = temp[keys[j]];
+                var key = temp[mainKey[j]];
                 if(j === count-1)
                 {
                     this.addValueKey(key,temp,tempMap);
@@ -48,8 +48,9 @@ Core.$Defines("Game.CStaticInformationClass")({
                 }
             }
         }
-        map.$Value = value;
-        return map;
+        return {
+            $Value:map
+        };
     }
 });
 
