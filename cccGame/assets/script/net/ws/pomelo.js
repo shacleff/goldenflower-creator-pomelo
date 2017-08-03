@@ -2872,7 +2872,11 @@ if(!window || !window.pomelo)
 
                 var send = function(packet) {
                     if(socket)
-                        socket.send(packet.buffer);
+                    {
+                        socket.send(packet.buffer)
+                    }
+                        //socket.send(packet.buffer, {binary: true, mask: true});
+
                 };
 
                 var handler = {};

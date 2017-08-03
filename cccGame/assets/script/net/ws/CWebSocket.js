@@ -3,6 +3,10 @@ Class({
     ClassName:"Game.Net.CWebSocket",
     state:0,
     pomelo:window.pomelo,
+    ctor:function()
+    {
+        this.initPomelo();
+    },
     IsOpened:function()
     {
         return this.state==1;
@@ -23,7 +27,8 @@ Class({
             "heartbeat timeout":function()
             {
                 self.ondisconnect({code:1000})
-            }
+            },
+            "push":self.onServerPushMsg.bind(self)
         };
 
         for(var key in map)
@@ -35,52 +40,51 @@ Class({
             }
         }
     },
+    onServerPushMsg:function(msg)
+    {
+        var key = null;
+        for( key in msg)
+        {
+            break;
+        }
+        if(key)
+        {
+            var c = msg[key];
+            this.onMessage(key,c);
+        }
+    },
     beginConnect:function(host,port,cb,t)
     {
         var self = this;
         var pomelo = self.pomelo;
-        if(self.IsOpened())
-        {
-            Server.disconnect();
-        }
+        //if(self.IsOpened())
+        //{
+        //    Server.disconnect();
+        //}
 
         if(self.state == 0)
         {
-            self.initPomelo();
             pomelo.init({
                 host: host,
                 port: port,
-                log: true
+                log: true,
+                reconnect:true
             }, function() {
                 self.state = 1;
                 cb &&(t?cb.apply(t):cb());
             });
 
-            pomelo.on("push",function(msg)
-            {
-                var key = null;
-                for( key in msg)
-                {
-                    break;
-                }
-                console.log(JSON.stringify(msg))
-                if(key)
-                {
-                    var c = msg[key];
-                    self.onMessage(key,c);
-                }
 
-            })
             return;
         }
-        Class.Assert(0,"server connected!");
+        Server.disconnect();
+        //Class.Assert(0,"server connected!");
     },
-    disconect:function()
+    disconnect:function()
     {
         if(this.IsOpened())
         {
             var pomelo = this.pomelo;
-            pomelo.removeAllListeners();
             pomelo.disconnect();
             this.close();
         }
@@ -107,6 +111,7 @@ Class({
     },
     onMessage:function(key,data)
     {
+
         data.ID = key;
         data.payloadName = key;
         data.timestamp?0:data.timestamp = 0;
@@ -115,9 +120,12 @@ Class({
         delete data.payloadName;
         delete data.timestamp;
     },
-    ondisconnect:function()
+    ondisconnect:function(msg)
     {
-
+        if(msg.code != 1)
+        {
+            Server.ondisconnect();
+        }
     },
     onerror:function()
     {
