@@ -334,10 +334,8 @@ var Core = {};
         get:function(){
             if(!this.__instance)
             {
-                console.log("new instance");
                 this.__instance = new this;
             }
-            console.log("call instance");
             return this.__instance;
         }
     }
