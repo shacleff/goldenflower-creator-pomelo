@@ -18,6 +18,12 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
         this.Controller = this.node.Controller;
+        if(!this.Controller.AccpectUI)
+        {
+            this.node.x =0;
+            this.node.y = 0;
+        }
+
         if(this.Controller.onLoad)
         {
             this.Controller.onLoad();
@@ -38,6 +44,7 @@ cc.Class({
         {
             this.Controller.onDestroy();
         }
+        this.Controller.onClearup();
     },
     onEnable:function()
     {
