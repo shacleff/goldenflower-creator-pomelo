@@ -10,7 +10,8 @@ Class({
     {
         this._super();
         var self = this;
-        cc.loader.loadResAll(Game.Config.Path.DataPath, function (err, jsons) {
+        
+        cc.loader.loadResDir(Game.Config.Path.DataPath, function (err, jsons) {
             self.GameDataInit();
         });
     },
