@@ -1,84 +1,64 @@
 // mysql CRUD
-var sqlclient = function()
-{
+var sqlclient = module.exports;
 
+var _pool;
 
+var NND = {};
 
-	this._pool = null;
-	var self = this;
+/*
+ * Init sql connection pool
+ * @param {Object} app The app for the server.
+ */
+NND.init = function(app,opt,id){
+	_pool = require('./dao-pool').createMysqlPool(app,opt,id);
+};
 
-	var NND = {};
-
-	/*
-	 * Init sql connection pool
-	 * @param {Object} app The app for the server.
-	 */
-	NND.init = function(app,opt,id){
-		self._pool = require('./dao-pool').createMysqlPool(app,opt,id);
-	};
-
-	/**
-	 * Excute sql statement
-	 * @param {String} sql Statement The sql need to excute.
-	 * @param {Object} args The args for the sql.
-	 * @param {fuction} cb Callback function.
-	 *
-	 */
-	NND.query = function(sql, args, cb){
-		self._pool.acquire(function(err, client) {
-			if (!!err) {
-				console.error('[sqlqueryErr] '+err.stack);
-				return;
-			}
-			client.query(sql, args, function(err, res) {
-				self._pool.release(client);
-				cb(err, res);
-			});
+/**
+ * Excute sql statement
+ * @param {String} sql Statement The sql need to excute.
+ * @param {Object} args The args for the sql.
+ * @param {fuction} cb Callback function.
+ *
+ */
+NND.query = function(sql, args, cb){
+	_pool.acquire(function(err, client) {
+		if (!!err) {
+			console.error('[sqlqueryErr] '+err.stack);
+			return;
+		}
+		client.query(sql, args, function(err, res) {
+			_pool.release(client);
+			cb(err, res);
 		});
-	};
+	});
+};
 
-	/**
-	 * Close connection pool.
-	 */
-	NND.shutdown = function(){
-		self._pool.destroyAllNow();
-	};
-	this.NND = NND;
-
-
-}
-module.exports = sqlclient;
-
-
-var pro = sqlclient.prototype;
-
+/**
+ * Close connection pool.
+ */
+NND.shutdown = function(){
+	_pool.destroyAllNow();
+};
 
 /**
  * init database
  */
-pro.init = function(app,opt,id) {
-	if (!this._pool){
-
-		var NND = this.NND;
+sqlclient.init = function(app,opt,id) {
+	if (!!_pool){
+		return sqlclient;
+	} else {
 		NND.init(app,opt,id);
-		this.insert = NND.query;
-		this.update = NND.query;
-		this.delete = NND.query;
-		this.query = NND.query;
+		sqlclient.insert = NND.query;
+		sqlclient.update = NND.query;
+		sqlclient.delete = NND.query;
+		sqlclient.query = NND.query;
+		return sqlclient;
 	}
-
-	return this;
 };
 
 /**
  * shutdown database
  */
-pro.shutdown = function(app) {
-	this.NND.shutdown(app);
+sqlclient.shutdown = function(app) {
+	NND.shutdown(app);
 };
-
-
-
-
-
-

@@ -14,6 +14,7 @@ Class({
     uid2Roomid:function(uid)
     {
         var p = this.DataCenter.Persons[uid];
+        console.log(this.DataCenter.Persons)
         return p?p.RoomId:-1;
 
     },
@@ -50,14 +51,18 @@ Class({
 
         var rid = this.uid2Roomid(uid);
         if(rid>0)
+        {
             this.DataCenter.Rooms[rid].ready(uid,ready?1:0);
+        }
         next();
     },
     start:function(uid, next)
     {
+        console.warn("star");
         var rid = this.uid2Roomid(uid);
         if(rid>0)
         {
+            console.warn("star2");
             var room = this.DataCenter.Rooms[rid];
             if(uid == room.Roomer && !room.IsGameing && room.isReady)
             {

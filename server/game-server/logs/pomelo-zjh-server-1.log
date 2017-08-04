@@ -61,3 +61,125 @@
 [2017-03-08 22:45:20.345] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
 [2017-03-08 22:45:20.345] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 943 ms
 [2017-03-08 22:46:21.962] [INFO] pomelo - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:01:03.812] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:01:04.792] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:01:04.793] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:01:04.798] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 957 ms
+[2017-08-05 00:03:08.674] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:03:09.576] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:03:09.577] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:03:09.583] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 907 ms
+[2017-08-05 00:03:56.381] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:03:56.725] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:03:56.726] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:03:56.730] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 347 ms
+[2017-08-05 00:05:34.810] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:05:35.231] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:05:35.231] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:05:35.234] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 423 ms
+[2017-08-05 00:05:55.889] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:05:56.235] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:05:56.238] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:05:56.245] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 354 ms
+[2017-08-05 00:06:29.175] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:06:29.742] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:06:29.743] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:06:29.746] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 569 ms
+[2017-08-05 00:07:00.602] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:07:01.022] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:07:01.024] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:07:01.026] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 423 ms
+[2017-08-05 00:09:15.829] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:09:16.092] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:09:16.093] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:09:16.096] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 243 ms
+[2017-08-05 00:10:23.076] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:10:23.571] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:10:23.572] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:10:23.576] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 498 ms
+[2017-08-05 00:10:47.199] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:10:47.766] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:10:47.767] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:10:47.772] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 571 ms
+[2017-08-05 00:11:16.371] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:11:17.465] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:11:17.465] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:11:17.473] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1100 ms
+[2017-08-05 00:11:39.272] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:11:39.729] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:11:39.731] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:11:39.739] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 466 ms
+[2017-08-05 00:13:53.662] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:13:54.808] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:13:54.810] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:13:54.817] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1154 ms
+[2017-08-05 00:38:45.527] [ERROR] pomelo - [31m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/common/service/channelService.js] [39m[pushMessage] fail to dispatch msg to serverId: connector-server-1, err:Error: rpc failed with error code: 5
+    at failfast (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:151:27)
+    at module.exports (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:24:10)
+    at emit (events.js:106:17)
+    at send (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailstation.js:252:14)
+    at Object.exp.invokeCallback (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/util/utils.js:5:8)
+    at SocketNamespace.<anonymous> (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailboxes/ws-mailbox.js:74:13)
+    at SocketNamespace.EventEmitter.emit [as $emit] (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/events.js:165:15)
+    at Socket.publish (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/socket.js:103:19)
+    at Socket.onDisconnect (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/socket.js:483:14)
+    at Transport.onDisconnect (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/transport.js:128:17)
+[2017-08-05 00:38:45.529] [ERROR] pomelo - [31m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/common/service/channelService.js] [39m[pushMessage] fail to dispatch msg to serverId: connector-server-1, err:Error: rpc failed with error code: 5
+    at failfast (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:151:27)
+    at module.exports (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:24:10)
+    at emit (events.js:106:17)
+    at send (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailstation.js:252:14)
+    at Object.exp.invokeCallback (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/util/utils.js:5:8)
+    at null.<anonymous> (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailboxes/ws-mailbox.js:178:11)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)
+[2017-08-05 00:40:15.867] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:40:17.006] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:40:17.007] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:40:17.014] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1144 ms
+[2017-08-05 00:42:02.239] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:42:05.703] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:42:05.704] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:42:05.709] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 3468 ms
+[2017-08-05 00:43:34.838] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:43:38.125] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:43:38.126] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:43:38.132] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 3247 ms
+[2017-08-05 00:45:01.789] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:45:02.966] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:45:02.966] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:45:02.972] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1181 ms
+[2017-08-05 00:47:02.707] [ERROR] pomelo - [31m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/common/service/channelService.js] [39m[pushMessage] fail to dispatch msg to serverId: connector-server-1, err:Error: rpc failed with error code: 5
+    at failfast (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:151:27)
+    at module.exports (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:24:10)
+    at emit (events.js:106:17)
+    at send (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailstation.js:252:14)
+    at Object.exp.invokeCallback (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/util/utils.js:5:8)
+    at SocketNamespace.<anonymous> (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailboxes/ws-mailbox.js:74:13)
+    at SocketNamespace.EventEmitter.emit [as $emit] (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/events.js:165:15)
+    at Socket.publish (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/socket.js:103:19)
+    at Socket.onDisconnect (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/socket.js:483:14)
+    at Transport.onDisconnect (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/node_modules/socket.io-client/lib/transport.js:128:17)
+[2017-08-05 00:47:02.707] [ERROR] pomelo - [31m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/common/service/channelService.js] [39m[pushMessage] fail to dispatch msg to serverId: connector-server-1, err:Error: rpc failed with error code: 5
+    at failfast (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:151:27)
+    at module.exports (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/failureProcess.js:24:10)
+    at emit (events.js:106:17)
+    at send (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailstation.js:252:14)
+    at Object.exp.invokeCallback (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/util/utils.js:5:8)
+    at null.<anonymous> (/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/node_modules/pomelo-rpc/lib/rpc-client/mailboxes/ws-mailbox.js:178:11)
+    at Timer.listOnTimeout [as ontimeout] (timers.js:112:15)
+[2017-08-05 00:47:11.878] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:47:15.177] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:47:15.177] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:47:15.183] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 3271 ms
+[2017-08-05 00:51:22.730] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:51:23.841] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:51:23.841] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:51:23.846] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1114 ms
+[2017-08-05 00:53:56.753] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:53:57.852] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:53:57.852] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:53:57.859] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1104 ms
+[2017-08-05 00:54:24.937] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "zjh-server-1"
+[2017-08-05 00:54:26.158] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" enter after start...
+[2017-08-05 00:54:26.159] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" finish start
+[2017-08-05 00:54:26.166] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"zjh-server-1" startup in 1228 ms

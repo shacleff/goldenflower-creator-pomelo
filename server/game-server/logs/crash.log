@@ -7,3 +7,6 @@
 [2017-03-07 23:12:11.351] [INFO] crash-log - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/master/master.js] [39m[manager],[manager-server-1],[1488899531351],[disconnect]
 [2017-03-07 23:15:08.145] [INFO] crash-log - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/master/master.js] [39m[manager],[manager-server-1],[1488899708145],[disconnect]
 [2017-03-08 22:43:33.995] [INFO] crash-log - [32m[/mnt/hgfs/server/game-server/node_modules/pomelo/lib/master/master.js] [39m[db],[db-server-1],[1488984213995],[disconnect]
+[2017-08-05 00:38:33.154] [INFO] crash-log - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/master/master.js] [39m[zjh],[zjh-server-1],[1501864713153],[disconnect]
+[2017-08-05 00:40:11.041] [INFO] crash-log - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/master/master.js] [39m[zjh],[zjh-server-1],[1501864811041],[disconnect]
+[2017-08-05 00:47:02.707] [INFO] crash-log - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/master/master.js] [39m[zjh],[zjh-server-1],[1501865222707],[disconnect]

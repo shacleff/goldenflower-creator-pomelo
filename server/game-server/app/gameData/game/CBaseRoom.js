@@ -10,7 +10,7 @@ Class({
     Persons:null,
     Roomer:null,
     PersonClass:null,
-    Roomid:-1,
+    RoomId:-1,
     MaxCount:3,
     m_pFreeSeats:null,
     CurrentActivity:0,
@@ -31,11 +31,11 @@ Class({
     ChannelName:{
         get:function()
         {
-            return "room_"+this.Roomid;
+            return "room_"+this.RoomId;
         }
     },
     ctor:function(id) {
-        this.Roomid = id;
+        this.RoomId = id;
         this.Persons = new Core.mapArray("userid",[{"Seat":true}]);
         this.Channel = Core.app.get('channelService').getChannel(this.ChannelName, true);
 
@@ -78,6 +78,11 @@ Class({
             p.Data = data;
             this.Persons.InsertValue(p);
         }
+        else
+        {
+            p = this.Persons.Map[uid].Value;
+        }
+
 
         var res = {};
         res[enums.PUSH_KEY.ROOM_NEW_PERSON] = p;
@@ -103,7 +108,7 @@ Class({
 
             if(this.m_pCurrentCount == 0)
             {
-                Game.Data.CZJHDataCenter.Instance.ClearRoom(this.Roomid);
+                Game.Data.CZJHDataCenter.Instance.ClearRoom(this.RoomId);
             }
             else
             {
@@ -133,7 +138,7 @@ Class({
     },
     toJSON:function()
     {
-        return {id:this.Roomid,roomer:this.Roomer,p:this.Persons};
+        return {id:this.RoomId,roomer:this.Roomer,p:this.Persons};
     },
     ready:function(uid,r)
     {

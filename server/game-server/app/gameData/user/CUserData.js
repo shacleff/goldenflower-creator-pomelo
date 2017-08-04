@@ -43,9 +43,9 @@ Class({
     {
         userDao.getDataByAcc(acc,function(err,data)
         {
-            if(err)
+            if(err || data.length == 0)
             {
-                cb(err,null)
+                cb({"e":"no user"},null)
             }
             else
             {

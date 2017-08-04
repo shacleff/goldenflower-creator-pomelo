@@ -12,7 +12,7 @@ mysqlMgr.init = function(app,opt,id)
     {
         return mysqlMap[id];
     }
-    return mysqlMap[id] = new mysql().init(app,opt,id);
+    return mysqlMap[id] = mysql.init(app,opt,id);
 }
 
 mysqlMgr.shutdown = function()

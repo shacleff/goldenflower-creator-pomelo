@@ -1,14 +1,15 @@
 var _poolModule = require('generic-pool');
-
+var mysql = require('mysql');
 /*
  * Create mysql connection pool.
  */
 var createMysqlPool = function(app,opt,id) {
+
 	var mysqlConfig = app.get(opt)[id];
-	return _poolModule.Pool({
+	return new _poolModule.Pool({
 		name: mysqlConfig.database,
 		create: function(callback) {
-			var mysql = require('mysql');
+
 			var client = mysql.createConnection({
 				host: mysqlConfig.host,
 				user: mysqlConfig.user,
@@ -26,4 +27,7 @@ var createMysqlPool = function(app,opt,id) {
 	});
 };
 
+
 exports.createMysqlPool = createMysqlPool;
+
+
