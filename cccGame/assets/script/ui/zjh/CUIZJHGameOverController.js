@@ -5,6 +5,7 @@ Class({
     ClassName:"Game.UI.CUIController.CUIZJHGameOverController",
     Base:"Game.UI.CUIBaseController",
     m_UIOnePersons:null,
+    AccpectUI:true,
     onLoad:function()
     {
         this.m_UIOnePersons = {};

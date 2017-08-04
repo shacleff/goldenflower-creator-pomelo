@@ -33,7 +33,8 @@ Class({
     addPerson:function(data)
     {
         var seateid = data.seat;
-
+        if(seateid == undefined)
+            return;
         if(!this.Value.hasOwnProperty(seateid))
         {
             var p = new this.PersonClass();

@@ -9,6 +9,7 @@ Class({
     m_pTTFName:null,
     m_pValue:null,
     m_pWinTip:null,
+    AccpectUI:true,
     onLoad:function()
     {
         this.m_pTTFName = this.node.getChildByName("UI_TTF_Name").getComponent(cc.Label);

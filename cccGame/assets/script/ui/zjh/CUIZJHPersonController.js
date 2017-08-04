@@ -13,6 +13,8 @@ Class({
     m_NodeCards:null,
     m_pNodeSawCard:null,
     m_pNodePassCard:null,
+
+    AccpectUI:true,
     DataSource:{
         get:function()
         {
@@ -43,11 +45,13 @@ Class({
     {
         if(this.Seat != 0)
             this.DataSource.AddObserver(this.UpdateUI,this);
+        Game.UI.CUIBaseController.prototype.onEnable.call(this);
     },
     onDisable:function()
     {
         if(this.Seat != 0 && this.DataSource)
             this.DataSource.RemoveObserver(this.UpdateUI,this);
+        Game.UI.CUIBaseController.prototype.onDisable.call(this);
     },
     UpdateUI:function(n,o)
     {

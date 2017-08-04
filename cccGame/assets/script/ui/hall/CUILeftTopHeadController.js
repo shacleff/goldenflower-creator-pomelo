@@ -1,11 +1,11 @@
 /**
  * Created by Administrator on 2017/3/11.
  */
-require("../../base/Core");
 require("../uiBase/CUIBaseController");
 Class({
     ClassName:"Game.UI.CUIController.CUILeftTopHeadController",
     Base:"Game.UI.CUIBaseController",
+    PerfabName:"headInfo",
 
     m_pHeadSprite:null,
     m_pNameTTF:null,
@@ -33,14 +33,14 @@ Class({
     onEnable:function()
     {
        var dataCenter = Game.Data.CDataCenter.Instance;
-        //dataCenter.User.AddObserver(this.updateUser,this);
         dataCenter.Gems.AddObserver(this.updateGems,this);
+        Game.UI.CUIBaseController.prototype.onEnable.call(this);
     },
     onDisable:function()
     {
         var dataCenter = Game.Data.CDataCenter.Instance;
-        //dataCenter.User.RemoveObserver(this.updateUser,this);
         dataCenter.Gems.RemoveObserver(this.updateGems,this);
+        Game.UI.CUIBaseController.prototype.onDisable.call(this);
     },
     //updateUser:function(v)
     //{

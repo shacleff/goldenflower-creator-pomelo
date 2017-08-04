@@ -19,6 +19,7 @@ Class({
     Base:"Game.UI.CUIBaseController",
     PerfabName:"zjh/zjh",
 
+    AccpectUI:true,
     m_pTTFRoomID:null,
     m_pUIPersons:null,
     m_pUIBtns:null,
@@ -104,12 +105,15 @@ Class({
 
         this.ResetUI();
         Game.Data.CDataCenter.Instance.ZJHRoom.AddObserver(this.UpdateUI,this);
+        Game.UI.CUIBaseController.prototype.onEnable.call(this);
     },
     onDisable:function()
     {
         Client.removemap("onZJHSeeCards",this);
         Client.removemap("onZJHOneOver",this);
         Game.Data.CDataCenter.Instance.ZJHRoom.RemoveObserver(this.UpdateUI,this);
+
+        Game.UI.CUIBaseController.prototype.onDisable.call(this);
     },
     UpdateUI:function(n,o)
     {

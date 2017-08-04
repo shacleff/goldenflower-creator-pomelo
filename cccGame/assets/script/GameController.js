@@ -18,6 +18,8 @@ cc.Class({
         sceneFSM.Loader = this.Loader;
         sceneFSM.TransformToState(this.DefaultScene);//Game.Const.SceneState.Login
 
+
+
     }
 
 

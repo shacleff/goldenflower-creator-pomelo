@@ -111,7 +111,7 @@ Class({
     },
     onMessage:function(key,data)
     {
-
+        data = data || {};
         data.ID = key;
         data.payloadName = key;
         data.timestamp?0:data.timestamp = 0;

@@ -29,7 +29,7 @@ Class({
     },
     ctor:function()
     {
-        cc.director.loadScene(new cc.Scene())
+        cc.director.runScene(new cc.Scene());
     },
     onEnter:function(cacheInfo)
     {

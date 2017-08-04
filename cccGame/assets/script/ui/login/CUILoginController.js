@@ -24,12 +24,15 @@ Class({
         Client.addmap("getTokenRes",this);
         Client.addmap("newUserRes",this);
         Client.addmap("enterGameRes",this);
+        Game.UI.CUIBaseController.prototype.onEnable.call(this);
     },
     onDisable:function()
     {
         Client.removemap("getTokenRes",this);
         Client.removemap("newUserRes",this);
         Client.removemap("enterGameRes",this);
+
+        Game.UI.CUIBaseController.prototype.onDisable.call(this);
     },
     Btn_Visitor_Click:function()
     {
