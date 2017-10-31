@@ -1,7 +1,9 @@
 # cccGame
 
 
-一款扎金花游戏  客户端是 cocos creator 1.3.3  服务器是pomelo
+一款扎金花游戏  客户端是 cocos creator <=1.5.2  服务器是pomelo
+
+cocos creator =1.6.2 见 https://github.com/gjh1987/cccGame/tree/1.6.2
 
 暂时 就细节没写完 基本功能都有了 已经可以玩
 
