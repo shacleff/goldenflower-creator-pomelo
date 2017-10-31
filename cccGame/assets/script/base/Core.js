@@ -2,6 +2,8 @@
  * Created by Class on 2016/2/24.
  */
 var Core = {};
+var global = global||window;
+//var module = module || {};
 (function()
 {
     Core.$AlwaysGetMember = function(a, c) {
@@ -422,7 +424,7 @@ var Core = {};
     }
 })()
 
-module.exports = Core;
+//module.exports = Core;
 global.Core = Core;
 
 if(!console.error)
@@ -447,3 +449,8 @@ if(!global.alert)
     };
 }
 
+var require = require;
+if(!require)
+{
+    require = function(){};
+}

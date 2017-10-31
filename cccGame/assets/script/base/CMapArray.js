@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2016/11/24.
  */
-var Core = require("./Core");
+//var Core = require("./Core");
 Core.mapArrayHelper = {
     arrayInsert:function(skeys,list,value,from,to)
     {
