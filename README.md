@@ -18,7 +18,7 @@
 
 `5 配置  server/game-server/mysql.json 为自己 mysql 账户密码`
 
-# 效果
+# 效果(模拟器运行，浏览器报错)
 ![](shotscreens/1.png)
 
 #   技术讨论群
