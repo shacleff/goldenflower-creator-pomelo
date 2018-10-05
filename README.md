@@ -5,7 +5,7 @@
 # 运行
 
 ## 客户端
-*   cocos creator 1.5.0
+*   cocos creator 1.5.0 用2个模拟器运行
 
 ## 服务器
 `1 pomelo node 4.5.0 + mysql`
