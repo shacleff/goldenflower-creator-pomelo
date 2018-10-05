@@ -424,3 +424,23 @@
 [2017-08-05 00:54:25.252] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
 [2017-08-05 00:54:25.253] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
 [2017-08-05 00:54:25.253] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 589 ms
+[2018-10-05 18:06:27.575] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2018-10-05 18:06:27.917] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2018-10-05 18:06:27.920] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2018-10-05 18:06:27.920] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 311 ms
+[2018-10-05 18:11:26.078] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2018-10-05 18:11:26.490] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2018-10-05 18:11:26.493] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2018-10-05 18:11:26.493] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 373 ms
+[2018-10-05 18:11:59.831] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2018-10-05 18:12:00.222] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2018-10-05 18:12:00.225] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2018-10-05 18:12:00.225] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 352 ms
+[2018-10-05 18:16:07.426] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2018-10-05 18:16:07.786] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2018-10-05 18:16:07.789] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2018-10-05 18:16:07.790] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 330 ms
+[2018-10-05 18:17:16.050] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "connector-server-1"
+[2018-10-05 18:17:16.423] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" enter after start...
+[2018-10-05 18:17:16.427] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" finish start
+[2018-10-05 18:17:16.427] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"connector-server-1" startup in 333 ms

@@ -82,3 +82,23 @@
 [2017-08-05 00:54:25.675] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" enter after start...
 [2017-08-05 00:54:25.676] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" finish start
 [2017-08-05 00:54:25.676] [INFO] pomelo - [32m[/home/roo/Downloads/cccGame-master/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" startup in 802 ms
+[2018-10-05 18:06:27.588] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "business-server-1"
+[2018-10-05 18:06:27.882] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" enter after start...
+[2018-10-05 18:06:27.884] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" finish start
+[2018-10-05 18:06:27.884] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" startup in 290 ms
+[2018-10-05 18:11:26.075] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "business-server-1"
+[2018-10-05 18:11:26.468] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" enter after start...
+[2018-10-05 18:11:26.469] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" finish start
+[2018-10-05 18:11:26.470] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" startup in 383 ms
+[2018-10-05 18:11:59.827] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "business-server-1"
+[2018-10-05 18:12:00.192] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" enter after start...
+[2018-10-05 18:12:00.194] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" finish start
+[2018-10-05 18:12:00.194] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" startup in 360 ms
+[2018-10-05 18:16:07.424] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "business-server-1"
+[2018-10-05 18:16:07.741] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" enter after start...
+[2018-10-05 18:16:07.742] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" finish start
+[2018-10-05 18:16:07.742] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" startup in 311 ms
+[2018-10-05 18:17:16.057] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39mapplication inited: "business-server-1"
+[2018-10-05 18:17:16.438] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" enter after start...
+[2018-10-05 18:17:16.441] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" finish start
+[2018-10-05 18:17:16.441] [INFO] pomelo - [32m[/Users/jianan/Documents/Core/GoldenFlower-creator-pomelo/server/game-server/node_modules/pomelo/lib/application.js] [39m"business-server-1" startup in 378 ms

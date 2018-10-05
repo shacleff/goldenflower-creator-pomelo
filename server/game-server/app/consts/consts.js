@@ -4,7 +4,7 @@
 module.exports = {
 
     GAME_INFO:{
-        HOST:"192.168.2.7",
+        HOST:"127.0.0.1",
         PORT:3010
     },
     Games:{

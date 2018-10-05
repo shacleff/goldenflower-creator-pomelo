@@ -36,6 +36,7 @@ Class({
                 var acc = ay[0],pwd = encode.md5(ay[1]);
                 Game.Data.CAccountData.CreateByMysql(acc,function(err,accData)
                 {
+                    // console.log("-----登陆信息:" + JSON.stringify(accData));
                     if(!err && accData.password === pwd)
                     {
                         Game.Data.CUserData.CreateByMysql(acc,function(err,userData)
