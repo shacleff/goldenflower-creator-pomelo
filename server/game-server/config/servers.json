@@ -1,45 +1,100 @@
 {
-  "development":{
+  "development": {
     "connector": [
-      {"id": "connector-server-1", "host": "127.0.0.1", "port": 3150, "clientHost": "127.0.0.1", "clientPort": 3010, "frontend": true}
+      {
+        "id": "connector-server-1",
+        "host": "127.0.0.1",
+        "port": 3150,
+        "clientHost": "127.0.0.1",
+        "clientPort": 3010,
+        "frontend": true
+      }
     ],
     "manager": [
-      {"id":"manager-server-1","host":"127.0.0.1","port":3250}
+      {
+        "id": "manager-server-1",
+        "host": "127.0.0.1",
+        "port": 3250
+      }
     ],
     "business": [
-      {"id":"business-server-1","host":"127.0.0.1","port":3350}
+      {
+        "id": "business-server-1",
+        "host": "127.0.0.1",
+        "port": 3350
+      }
     ],
     "zjh": [
-      {"id":"zjh-server-1","host":"127.0.0.1","port":3450, "args" : "--debug=6868"}
+      {
+        "id": "zjh-server-1",
+        "host": "127.0.0.1",
+        "port": 3450,
+        "args": "--debug=6868"
+      }
     ],
     "niuniu": [
-      {"id":"niuniu-server-1","host":"127.0.0.1","port":3550}
+      {
+        "id": "niuniu-server-1",
+        "host": "127.0.0.1",
+        "port": 3550
+      }
     ],
     "db": [
-      {"id":"db-server-1","host":"127.0.0.1","port":3650}
+      {
+        "id": "db-server-1",
+        "host": "127.0.0.1",
+        "port": 3650
+      }
     ]
   },
-  "production":{
+  "production": {
     "connector": [
-      {"id": "connector-server-1", "host": "127.0.0.1", "port": 3150, "clientHost": "127.0.0.1", "clientPort": 3010, "frontend": true}
+      {
+        "id": "connector-server-1",
+        "host": "127.0.0.1",
+        "port": 3150,
+        "clientHost": "127.0.0.1",
+        "clientPort": 3010,
+        "frontend": true
+      }
     ],
     "manager": [
-      {"id":"manager-server-1","host":"127.0.0.1","port":3250}
+      {
+        "id": "manager-server-1",
+        "host": "127.0.0.1",
+        "port": 3250
+      }
     ],
     "business": [
-      {"id":"business-server-1","host":"127.0.0.1","port":3350}
+      {
+        "id": "business-server-1",
+        "host": "127.0.0.1",
+        "port": 3350
+      }
     ],
     "zjh": [
-      {"id":"zjh-server-1","host":"127.0.0.1","port":3450}
+      {
+        "id": "zjh-server-1",
+        "host": "127.0.0.1",
+        "port": 3450
+      }
     ],
     "niuniu": [
-      {"id":"niuniu-server-1","host":"127.0.0.1","port":3550}
+      {
+        "id": "niuniu-server-1",
+        "host": "127.0.0.1",
+        "port": 3550
+      }
     ],
     "db": [
-      {"id":"db-server-1","host":"127.0.0.1","port":3650}
+      {
+        "id": "db-server-1",
+        "host": "127.0.0.1",
+        "port": 3650
+      }
     ]
   },
-  "http":{
-    "login":8001
+  "http": {
+    "login": 8001
   }
 }

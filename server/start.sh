@@ -1,1 +1,1 @@
-cd game-server && rm -f nohup.out &&  nohup node app.js &
+cd game-server && node app.js 
