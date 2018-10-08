@@ -11,8 +11,8 @@ var crypto = require('crypto');
  * @param  {String} pwd encrypt password
  * @return {String}     token string
  */
-module.exports.create = function(uid, pwd) {
-    var msg = uid + '|' + Date.parse(new Date())/1000 ;
+module.exports.create = function (uid, pwd) {
+    var msg = uid + '|' + Date.parse(new Date()) / 1000;
     var cipher = crypto.createCipher('aes256', pwd);
     var enc = cipher.update(msg, 'utf8', 'hex');
     enc += cipher.final('hex');
@@ -26,9 +26,8 @@ module.exports.create = function(uid, pwd) {
  * @param  {String} pwd   decrypt password
  * @return {Object}  uid and timestamp that exported from token. null for illegal token.
  */
-module.exports.parse = function(token, pwd) {
-    if(token == "undefined" || !token)
-    {
+module.exports.parse = function (token, pwd) {
+    if (token == "undefined" || !token) {
         return null;
     }
     var decipher = crypto.createDecipher('aes256', pwd);
@@ -36,14 +35,14 @@ module.exports.parse = function(token, pwd) {
     try {
         dec = decipher.update(token, 'hex', 'utf8');
         dec += decipher.final('utf8');
-    } catch(err) {
+    } catch (err) {
         console.error('[token] fail to decrypt token. %j', token);
         return null;
     }
     var ts = dec.split('|');
-    if(ts.length !== 2) {
+    if (ts.length !== 2) {
         // illegal token
         return null;
     }
-    return {userid: ts[0], timestamp: Number(ts[1])};
+    return { userid: ts[0], timestamp: Number(ts[1]) };
 };
