@@ -4,35 +4,30 @@
 
 require("../../core/Core");
 Class({
-    ClassName:"Game.Data.CBaseCard",
+    ClassName: "Game.Data.CBaseCard",
     Color:
     {
-        get:function()
-        {
-            return this.Face>>4;
+        get: function () {
+            return this.Face >> 4;
         }
     },
     Num:
     {
-        get:function()
-        {
-            return this.Face&0xF;
+        get: function () {
+            return this.Face & 0xF;
         }
     },
-    ctor:function(f)
-    {
+    ctor: function (f) {
         Object.defineProperty(this, "Face", {
             get: function () {
                 return f;
             }
         });
     },
-    toJSON:function()
-    {
+    toJSON: function () {
         return this.Face;
     }
 })
-
 
 //for(var i=1;i<4;i++)
 //{

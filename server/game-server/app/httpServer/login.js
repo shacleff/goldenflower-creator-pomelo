@@ -12,90 +12,71 @@ var secret = require('../../config/session').secret;
 var encode = require('../util/encode');
 
 Class({
-    ClassName:"Game.HttpServer.Login",
-    Base:"Game.HttpServer.BaseHttp",
-    checkFuncs:{
-        "/token":"getToken",
-        "/nUser":"createUser"
+    ClassName: "Game.HttpServer.Login",
+    Base: "Game.HttpServer.BaseHttp",
+    checkFuncs: {
+        "/token": "getToken",
+        "/nUser": "createUser"
     },
-    getToken:function(reqInfo,resback)
-    {
+    getToken: function (reqInfo, resback) {
         var ses = reqInfo.ses;
         var type = reqInfo.type;
-        if(type == 0)
-        {
-            if(ses == null)
-            {
+        if (type == 0) {
+            if (ses == null) {
                 var acc = Game.Data.CAccountData.NextAccount;
-                this.register(acc,acc,resback);
+                this.register(acc, acc, resback);
                 return;
             }
             var ay = ses.split("|");
-            if(ay.length == 2)
-            {
-                var acc = ay[0],pwd = encode.md5(ay[1]);
-                Game.Data.CAccountData.CreateByMysql(acc,function(err,accData)
-                {
+            if (ay.length == 2) {
+                var acc = ay[0], pwd = encode.md5(ay[1]);
+                Game.Data.CAccountData.CreateByMysql(acc, function (err, accData) {
                     // console.log("-----登陆信息:" + JSON.stringify(accData));
-                    if(!err && accData.password === pwd)
-                    {
-                        Game.Data.CUserData.CreateByMysql(acc,function(err,userData)
-                        {
-                            if(!err)
-                            {
-                                resback({token:Token.create(userData.userid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
+                    if (!err && accData.password === pwd) {
+                        Game.Data.CUserData.CreateByMysql(acc, function (err, userData) {
+                            if (!err) {
+                                resback({ token: Token.create(userData.userid, secret), host: consts.GAME_INFO.HOST, port: consts.GAME_INFO.PORT });
                             }
-                            else
-                            {
-                                resback({rtoken:Token.create(acc,secret)});
+                            else {
+                                resback({ rtoken: Token.create(acc, secret) });
                             }
                         });
                     }
-                    else
-                    {
-                        resback({code: consts.LOGIN.LOGIN_FAIL});
+                    else {
+                        resback({ code: consts.LOGIN.LOGIN_FAIL });
                     }
                 })
                 return;
             }
         }
-        resback({code: consts.LOGIN.REGIEST_FAIL});
+        resback({ code: consts.LOGIN.REGIEST_FAIL });
     },
 
-    createUser:function(reqInfo,resback)
-    {
-
-        var rtoken = reqInfo.rtoken,nickName = reqInfo.name,sex=parseInt(reqInfo.sex) || 0;
-        var info = Token.parse(rtoken,secret);
-        if(info)
-        {
+    createUser: function (reqInfo, resback) {
+        var rtoken = reqInfo.rtoken, nickName = reqInfo.name, sex = parseInt(reqInfo.sex) || 0;
+        var info = Token.parse(rtoken, secret);
+        if (info) {
             var acc = info.userid;
-            Game.Data.CUserData.CreateByData(acc,nickName,sex,function(err,userData)
-            {
-                if(!err)
-                {
-                    resback({token:Token.create(userData.userid,secret),host:consts.GAME_INFO.HOST,port:consts.GAME_INFO.PORT});
+            Game.Data.CUserData.CreateByData(acc, nickName, sex, function (err, userData) {
+                if (!err) {
+                    resback({ token: Token.create(userData.userid, secret), host: consts.GAME_INFO.HOST, port: consts.GAME_INFO.PORT });
                 }
-                else
-                {
-                    resback({code: consts.LOGIN.CREATE_USER_ERROR});
+                else {
+                    resback({ code: consts.LOGIN.CREATE_USER_ERROR });
                 }
             });
             return;
         }
-        resback({code: consts.LOGIN.CREATE_USER_ERROR});
+        resback({ code: consts.LOGIN.CREATE_USER_ERROR });
     },
-    register:function(acc,pwd,resback)
-    {
-        Game.Data.CAccountData.CreateByData(acc,encode.md5(pwd),function(err,accData)
-        {
-            if(!err )
-            {
-                resback({rtoken: Token.create(acc,secret),acc:acc});
+    
+    register: function (acc, pwd, resback) {
+        Game.Data.CAccountData.CreateByData(acc, encode.md5(pwd), function (err, accData) {
+            if (!err) {
+                resback({ rtoken: Token.create(acc, secret), acc: acc });
             }
-            else
-            {
-                resback({code: consts.LOGIN.LOGIN_TOKEN_ERR});
+            else {
+                resback({ code: consts.LOGIN.LOGIN_TOKEN_ERR });
             }
         })
     },
@@ -112,14 +93,12 @@ Class({
     //},
 }).Static({
     //Instance:Core.Instance,
-    Servers:{},
-    Port:require("../../config/servers").http.login,
-    CreateMore:function(app,n)
-    {
-        for(var i=0;i<n;i++)
-        {
-           var temp = this.Servers[i] = new this;
-            temp.init(app,this.Port+i);
+    Servers: {},
+    Port: require("../../config/servers").http.login,
+    CreateMore: function (app, n) {
+        for (var i = 0; i < n; i++) {
+            var temp = this.Servers[i] = new this;
+            temp.init(app, this.Port + i);
         }
     }
 })

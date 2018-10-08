@@ -4,52 +4,40 @@
 require("../../core/Core");
 var userDao = require("../../dao/userDao");
 Class({
-    ClassName:"Game.Data.CUserData",
-    Value:null,
-    ctor:function(data)
-    {
+    ClassName: "Game.Data.CUserData",
+    Value: null,
+    ctor: function (data) {
         var value = {};
-        for(var key in data)
-        {
+        for (var key in data) {
             value[key] = data[key];
         }
         this.Value = value;
     },
-    toJSON:function()
-    {
+    toJSON: function () {
         return this.Value;
     }
 
 }).Static({
-    Create:function(data)
-    {
+    Create: function (data) {
         return new this(data);
     },
-    CreateByData:function(acc,name,sex,cb)
-    {
-        userDao.CreateData(acc,name,sex,function(err,data)
-        {
-            if(err)
-            {
-                cb(err,null)
+    CreateByData: function (acc, name, sex, cb) {
+        userDao.CreateData(acc, name, sex, function (err, data) {
+            if (err) {
+                cb(err, null)
             }
-            else
-            {
-                cb(null,{"userid":data.insertId})
+            else {
+                cb(null, { "userid": data.insertId })
             }
         })
     },
-    CreateByMysql:function(acc,cb)
-    {
-        userDao.getDataByAcc(acc,function(err,data)
-        {
-            if(err || data.length == 0)
-            {
-                cb({"e":"no user"},null)
+    CreateByMysql: function (acc, cb) {
+        userDao.getDataByAcc(acc, function (err, data) {
+            if (err || data.length == 0) {
+                cb({ "e": "no user" }, null)
             }
-            else
-            {
-                cb(null,data[0])
+            else {
+                cb(null, data[0])
             }
         })
         //cb({
@@ -63,20 +51,15 @@ Class({
         //    gems:1
         //})
     },
-    CreateByMysqlByUid:function(uid,cb)
-    {
+    CreateByMysqlByUid: function (uid, cb) {
         var self = this;
-        userDao.getDataByUid(uid,function(err,data)
-        {
-            if(err)
-            {
-                cb(err,null)
+        userDao.getDataByUid(uid, function (err, data) {
+            if (err) {
+                cb(err, null)
             }
-            else
-            {
-                cb(null,self.Create(data[0]))
+            else {
+                cb(null, self.Create(data[0]))
             }
         })
     }
-
 })
