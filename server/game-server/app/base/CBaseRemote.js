@@ -4,10 +4,8 @@
 var Core = require("../core/Core");
 
 Class({
-    ClassName:"CPomelo.Remote.CBaseRemote",
-    ctor:function(app)
-    {
+    ClassName: "CPomelo.Remote.CBaseRemote",
+    ctor: function (app) {
         this.app = app;
     }
-
 })

@@ -4,15 +4,13 @@
 var Core = require("../core/Core");
 
 Class({
-    ClassName:"CPomelo.Handler.CBaseHandler",
-    ctor:function(app)
-    {
+    ClassName: "CPomelo.Handler.CBaseHandler",
+    ctor: function (app) {
         this.app = app;
     }
 
 }).Static({
-    Create:function()
-    {
+    Create: function () {
         return new this
     }
 })

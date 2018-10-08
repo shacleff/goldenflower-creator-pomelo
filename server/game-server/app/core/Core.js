@@ -2,14 +2,13 @@
  * Created by Class on 2016/2/24.
  */
 var Core = {};
-(function()
-{
-    Core.$AlwaysGetMember = function(a, c) {
+(function () {
+    Core.$AlwaysGetMember = function (a, c) {
         c || (c = global);
         if (!a || 0 >= a.length) return c;
         for (var b = a.split("."), d = 0; d < b.length; d++) {
             var e = b[d];
-            if (!e || 0 === e.length) Core.Assert(false,"$Defines:(obj,name) name format error.");
+            if (!e || 0 === e.length) Core.Assert(false, "$Defines:(obj,name) name format error.");
             if (c.hasOwnProperty(e)) c[e].constructor !== Object && (c[e] = {}),
                 c = c[e];
             else {
@@ -19,7 +18,7 @@ var Core = {};
         }
         return c
     }
-    Core.$TryGetMember = function(a, c) {
+    Core.$TryGetMember = function (a, c) {
         c || (c = global);
         if (!a || 0 >= a.length) return c;
         for (var b = a.split("."), d = 0; d < b.length; d++) {
@@ -30,42 +29,37 @@ var Core = {};
         }
         return c
     }
-    Core.$Defines = function(a, c) {
+    Core.$Defines = function (a, c) {
         var b = this.$AlwaysGetMember(a, c);
-        return function(a, c) {
+        return function (a, c) {
             for (var f in a) if (b.hasOwnProperty(f)) {
 
-                Core.Assert(false,"Item defined "  + f + " defined before.") ;
+                Core.Assert(false, "Item defined " + f + " defined before.");
             } else b[f] = a[f];
             return b
         }
     }
-    Core.$AlwaysDefines = function(a,c)
-    {
+    Core.$AlwaysDefines = function (a, c) {
         var b = global;
         var d = a.split(".");
-        for(var i=0;i<d.length;i++)
-        {
+        for (var i = 0; i < d.length; i++) {
             var key = d[i];
-            if(i == d.length-1)
+            if (i == d.length - 1)
                 b[key] = c;
-            else
-            {
-                if(!b[key])
+            else {
+                if (!b[key])
                     b[key] = {};
-                b = b[key] ;
+                b = b[key];
             }
         }
     }
-    var fnTest  = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
+    var fnTest = /xyz/.test(function () { xyz; }) ? /\b_super\b/ : /.*/;
     var cc = cc;
     var tempBaseClass;
-    if(cc && cc.Class)
-    {
+    if (cc && cc.Class) {
         tempBaseClass = cc.Class;
     }
-    else
-    {
+    else {
         Core.ClassManager = {};
 
         Core.clone = function (obj) {
@@ -75,7 +69,7 @@ var Core = {};
             for (var key in obj) {
                 var copy = obj[key];
                 // Beware that typeof null == "object" !
-                if (((typeof copy) === "object") && copy  && !(copy instanceof HTMLElement)) {
+                if (((typeof copy) === "object") && copy && !(copy instanceof HTMLElement)) {
                     newObj[key] = Core.clone(copy);
                 } else {
                     newObj[key] = copy;
@@ -86,7 +80,7 @@ var Core = {};
 
         var id = 1,
             instanceid = 1;
-        Core.expand = function(root, name) {
+        Core.expand = function (root, name) {
             var results = [], parts, part;
             if (/^\.\.?(\/|$)/.test(name)) {
                 parts = [root, name].join('/').split('/');
@@ -103,29 +97,21 @@ var Core = {};
             }
             return results.join('/');
         }
-        Core.forceRequire = function (file,fileTye)
-        {
-            file = '/' + Core.expand('',file) + (fileTye || ".json");
+        Core.forceRequire = function (file, fileTye) {
+            file = '/' + Core.expand('', file) + (fileTye || ".json");
 
-            if(require.cache[file]  )
-            {
+            if (require.cache[file]) {
                 delete require.cache[file]
             }
 
             return require(file);
         }
-        Core.NewClassId = function()
-        {
+        Core.NewClassId = function () {
             return id++;
         }
-        Core.NewInstanceId = function()
-        {
+        Core.NewInstanceId = function () {
             return instanceid++;
         }
-
-
-
-
 
         tempBaseClass = function () {
         };
@@ -174,7 +160,7 @@ var Core = {};
             this.__getters__ && (Class.__getters__ = Core.clone(this.__getters__));
             this.__setters__ && (Class.__setters__ = Core.clone(this.__setters__));
 
-            for(var idx = 0, li = arguments.length; idx < li; ++idx) {
+            for (var idx = 0, li = arguments.length; idx < li; ++idx) {
                 var prop = arguments[idx];
                 for (var name in prop) {
                     var isFunc = (typeof prop[name] === "function");
@@ -203,30 +189,25 @@ var Core = {};
                         prototype[name] = prop[name];
                     } else {
                         var pobj = prop[name];
-                        if(pobj instanceof Object && (pobj.set || pobj.get))
-                        {
+                        if (pobj instanceof Object && (pobj.set || pobj.get)) {
 
-                            if(pobj.get )
-                            {
+                            if (pobj.get) {
                                 prototype.__defineGetter__(name, pobj.get)
                             }
-                            if(pobj.set )
-                            {
-                                prototype.__defineSetter__(name, pobj.set )
+                            if (pobj.set) {
+                                prototype.__defineSetter__(name, pobj.set)
                             }
 
                             var defaultValue = pobj.value || 0;
-                            if(pobj.key)
-                            {
+                            if (pobj.key) {
                                 prototype[pobj.key] = defaultValue;
                             }
-                            else if(defaultValue){
-                                prototype["__"+name] =defaultValue;
+                            else if (defaultValue) {
+                                prototype["__" + name] = defaultValue;
                             }
 
                         }
-                        else
-                        {
+                        else {
                             prototype[name] = pobj;
                         }
                         //prototype[name] = prop[name];
@@ -269,35 +250,31 @@ var Core = {};
                 }
             };
             var oldContructor = prototype.__proto__.constructor;
-            Class.Static = function(funs)
-            {
+            Class.Static = function (funs) {
                 var oldStaticPro = oldContructor.__static_self_pro || {};
-                for(var fname in funs)
-                {
+                for (var fname in funs) {
                     var f = funs[fname];
 
-                    if(f instanceof Object && (f.set || f.get) )
-                    {
+                    if (f instanceof Object && (f.set || f.get)) {
                         oldStaticPro[fname] = f;
-                        Object.defineProperty(Class,fname,f);
+                        Object.defineProperty(Class, fname, f);
 
                         var defaultValue = f.value || 0;
-                        if(f.key)
-                        {
+                        if (f.key) {
                             Class[f.key] = defaultValue;
                         }
-                        else if(defaultValue){
-                            Class["__"+fname] =defaultValue;
+                        else if (defaultValue) {
+                            Class["__" + fname] = defaultValue;
                         }
                     }
                     else
                         Class[fname] = f;
 
-                    Object.defineProperty(Class,"__static_self_pro",{
-                        enumerable:false,
+                    Object.defineProperty(Class, "__static_self_pro", {
+                        enumerable: false,
                         configurable: false,
                         writable: true,
-                        value:oldStaticPro
+                        value: oldStaticPro
                     })
                 }
 
@@ -305,10 +282,8 @@ var Core = {};
             }
 
 
-            for(var key in oldContructor)
-            {
-                if(!Class.hasOwnProperty(key))
-                {
+            for (var key in oldContructor) {
+                if (!Class.hasOwnProperty(key)) {
                     Class[key] = oldContructor[key];
                 }
             }
@@ -321,35 +296,28 @@ var Core = {};
     }
 
     tempBaseClass = tempBaseClass.extend({
-        $Dispose:function()
-        {
-            if(this.destruct)
-            {
+        $Dispose: function () {
+            if (this.destruct) {
                 this.destruct();
             }
         }
     })
     Core.Instance =
-    {
-        get:function(){
-            if(!this.__instance)
-            {
-                console.log("new instance");
-                this.__instance = new this;
+        {
+            get: function () {
+                if (!this.__instance) {
+                    console.log("new instance");
+                    this.__instance = new this;
+                }
+                console.log("call instance");
+                return this.__instance;
             }
-            console.log("call instance");
-            return this.__instance;
         }
-    }
 
-
-
-    global.Class = function(b)
-    {
+    global.Class = function (b) {
         var base = b.Base;
         var className = b.ClassName;
-        if(!className)
-        {
+        if (!className) {
             Core.Assert(false, "Class not find ClassName:");
             return;
         }
@@ -357,68 +325,61 @@ var Core = {};
         delete b.ClassName;
         var res = null;
         var staticPro = {};
-        if(base)
-        {
+        if (base) {
             var baseClass = Core.$TryGetMember(base);
-            if(baseClass && baseClass.extend)
-            {
+            if (baseClass && baseClass.extend) {
                 res = baseClass.extend(b);
 
-                Object.defineProperty(res,"Base",{
-                    enumerable:false,
+                Object.defineProperty(res, "Base", {
+                    enumerable: false,
                     configurable: false,
                     writable: false,
-                    value:base
+                    value: base
                 })
-                Object.defineProperty(res,"SuperClass",{
-                    enumerable:false,
+                Object.defineProperty(res, "SuperClass", {
+                    enumerable: false,
                     configurable: false,
                     writable: false,
-                    value:baseClass
+                    value: baseClass
                 })
                 staticPro = baseClass.__static_self_pro;
             }
-            else
-            {
-                Core.Assert(false, "not find baseClass:"+ base);
+            else {
+                Core.Assert(false, "not find baseClass:" + base);
                 return null;
             }
         }
         else
             res = tempBaseClass.extend(b);
 
-        if(className)
-        {
-            Core.$AlwaysDefines(className,res)
+        if (className) {
+            Core.$AlwaysDefines(className, res)
         }
 
-        Object.defineProperty(res,"ClassName",{
-            enumerable:false,
+        Object.defineProperty(res, "ClassName", {
+            enumerable: false,
             configurable: false,
             writable: false,
-            value:className
+            value: className
         })
 
 
-        Object.defineProperty(res,"__static_self_pro",{
-            enumerable:false,
+        Object.defineProperty(res, "__static_self_pro", {
+            enumerable: false,
             configurable: false,
             writable: true,
-            value:staticPro
+            value: staticPro
         })
-        for(var fname  in staticPro)
-        {
-            staticPro[fname].configurable=true;
-            Object.defineProperty(res,fname,staticPro[fname]);
+        for (var fname in staticPro) {
+            staticPro[fname].configurable = true;
+            Object.defineProperty(res, fname, staticPro[fname]);
         }
         return res;
 
     }
 
-    Core.Assert = !!cc ?cc.assert :function(t,msg)
-    {
-        if(!t)
-        {
+    Core.Assert = !!cc ? cc.assert : function (t, msg) {
+        if (!t) {
             console.error(msg);
         }
     }
@@ -427,24 +388,18 @@ var Core = {};
 module.exports = Core;
 global.Core = Core;
 
-if(!console.error)
-{
-    console.error = function(str)
-    {
-        console.log("error:"+str);
+if (!console.error) {
+    console.error = function (str) {
+        console.log("error:" + str);
     };
 }
-if(!console.warn)
-{
-    console.warn =  function(str)
-    {
-        console.log("warn:"+str);
+if (!console.warn) {
+    console.warn = function (str) {
+        console.log("warn:" + str);
     };
 }
-if(!global.alert)
-{
-    global.alert=function(arg)
-    {
+if (!global.alert) {
+    global.alert = function (arg) {
         window.alert(arg);
     };
 }
