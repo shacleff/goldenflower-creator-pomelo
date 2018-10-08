@@ -9,8 +9,8 @@ var NND = {};
  * Init sql connection pool
  * @param {Object} app The app for the server.
  */
-NND.init = function(app,opt,id){
-	_pool = require('./dao-pool').createMysqlPool(app,opt,id);
+NND.init = function (app, opt, id) {
+	_pool = require('./dao-pool').createMysqlPool(app, opt, id);
 };
 
 /**
@@ -20,13 +20,13 @@ NND.init = function(app,opt,id){
  * @param {fuction} cb Callback function.
  *
  */
-NND.query = function(sql, args, cb){
-	_pool.acquire(function(err, client) {
+NND.query = function (sql, args, cb) {
+	_pool.acquire(function (err, client) {
 		if (!!err) {
-			console.error('[sqlqueryErr] '+err.stack);
+			console.error('[sqlqueryErr] ' + err.stack);
 			return;
 		}
-		client.query(sql, args, function(err, res) {
+		client.query(sql, args, function (err, res) {
 			_pool.release(client);
 			cb(err, res);
 		});
@@ -36,18 +36,18 @@ NND.query = function(sql, args, cb){
 /**
  * Close connection pool.
  */
-NND.shutdown = function(){
+NND.shutdown = function () {
 	_pool.destroyAllNow();
 };
 
 /**
  * init database
  */
-sqlclient.init = function(app,opt,id) {
-	if (!!_pool){
+sqlclient.init = function (app, opt, id) {
+	if (!!_pool) {
 		return sqlclient;
 	} else {
-		NND.init(app,opt,id);
+		NND.init(app, opt, id);
 		sqlclient.insert = NND.query;
 		sqlclient.update = NND.query;
 		sqlclient.delete = NND.query;
@@ -59,6 +59,6 @@ sqlclient.init = function(app,opt,id) {
 /**
  * shutdown database
  */
-sqlclient.shutdown = function(app) {
+sqlclient.shutdown = function (app) {
 	NND.shutdown(app);
 };
